@@ -1,0 +1,1423 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-07",
+  "ranking_state": "evidence-based desk review",
+  "coverage": {
+    "statement": "Public manufacturer documentation, released source code and public project posts reviewed through September 7, 2026. This is a curated, non-exhaustive comparison, not a complete market survey. Product claims, code inspection and unverified gaps are distinguished; no hardware has been bench-tested."
+  },
+  "notice": "Shipping research pending \u00b7 ZIP 10014 \u00b7 quantity 1 \u00b7 USD. Board prices are not complete working-device totals. No fastest-delivery winner is established.",
+  "items": [
+    {
+      "id": "ALT01",
+      "name": "Waveshare ePaper 1.54 V2",
+      "summary": "Best exact e-ink + two-way audio hardware lead: 200\u00d7200 e-paper, onboard microphone, ES8311 codec, speaker, side buttons and Wi-Fi.",
+      "evidence": [
+        "Require V2: 8MB flash/8MB PSRAM; V1 is 4MB/2MB and examples are not interchangeable.",
+        "Exact non-touch battery-included SKU 32298 selected on live store: $16.99 quantity one before tax/shipping. Add to Cart present; workshop quantities and fulfillment not verified. Store lists 8MB/8MB matching V2; confirm received revision.",
+        "Actual button-driven fixed-buffer record/playback example inspected. This is not hold-to-record/release-to-send or an agent client. Top-level source license unresolved.",
+        "Battery-variant description mentions case; package lists board and optional battery with Included selected. Battery capacity, assembled dimensions and measured runtime remain unverified."
+      ],
+      "gaps": "First bench pilot, not a ready kit: implement licensed physical PTT/Hermes/TLS firmware, test battery/reconnect and confirm delivered bundle. No cellular or documented headphone jack.",
+      "sources": [
+        {
+          "label": "Documentation",
+          "url": "https://docs.waveshare.com/ESP32-S3-ePaper-1.54"
+        },
+        {
+          "label": "Exact family",
+          "url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298"
+        },
+        {
+          "label": "Audio source",
+          "url": "https://github.com/waveshareteam/ESP32-S3-ePaper-1.54/blob/main/02_Example/Arduino/08_Audio_Test/user_app.cpp"
+        }
+      ],
+      "category": "E-ink / reflective",
+      "scope": "Development platform",
+      "rank": 1,
+      "recommendation": "Best e-ink pilot",
+      "status": "Primary sources checked",
+      "image": {
+        "path": "../static/voice-device-media/alt01.webp",
+        "source_url": "https://www.waveshare.com/img/devkit/ESP32-S3-ePaper-1.54/ESP32-S3-ePaper-1.54-details-size.jpg",
+        "alt": "Waveshare ESP32-S3-ePaper-1.54 manufacturer dimension diagram",
+        "kind": "Manufacturer dimension diagram \u2014 verify delivered V2"
+      }
+    },
+    {
+      "id": "KIT01",
+      "name": "M5StickS3",
+      "category": "Voice / handheld",
+      "scope": "Development platform",
+      "rank": 2,
+      "recommendation": "Prototype first",
+      "status": "Primary sources checked",
+      "summary": "Compact Wi-Fi PTT prototype with built-in microphone, speaker, buttons and 250 mAh battery. LCD, not e-ink.",
+      "evidence": [
+        "Reference firmware implements hold-to-talk, cancel and streamed PCM replies. Author reports LAN operation; not independently hardware-tested.",
+        "Stick $21.50 + SIM7080G $36.90 + 1NCE $14 plan / $1 SIM = $73.40 incomplete prototype subtotal.",
+        "No license found for the AI-Guru integration: obtain permission before redistribution or implement independently licensed firmware."
+      ],
+      "gaps": "No modem, compressed audio, network switching or secure public cellular transport in inspected firmware. PCM exceeds documented modem UART throughput. Power/transients and complete enclosure unqualified; no built-in headphone path.",
+      "sources": [
+        {
+          "label": "StickS3",
+          "url": "https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit"
+        },
+        {
+          "label": "Reference firmware",
+          "url": "https://github.com/AI-Guru/2026_m5sticks3_hermes"
+        },
+        {
+          "label": "Modem",
+          "url": "https://docs.m5stack.com/en/unit/cat_m"
+        },
+        {
+          "label": "Data plan",
+          "url": "https://www.1nce.com/en-us/1nce-connect/pricing"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/kit01.webp",
+        "source_url": "https://cdn.shopify.com/s/files/1/0056/7689/2250/files/1_f50b328d-f753-4bef-92ec-6f0e8a69e5c0.webp?v=1769049123",
+        "alt": "M5StickS3 manufacturer source image",
+        "kind": "Manufacturer image"
+      }
+    },
+    {
+      "id": "BM01",
+      "name": "Waveshare ESP32-S3 Touch-AMOLED-1.8",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Prototype first",
+      "status": "Primary sources checked",
+      "rank": 3,
+      "summary": "Integrated AMOLED voice prototype: ESP32-S3, microphone, ES8311 codec, speaker and case. Not e-ink.",
+      "evidence": [
+        "Battery-included SKU 29957; SKU 29958 has no battery. Observed range $27.99\u2013$29.99 before shipping/tax.",
+        "V1 SH8601/FT3168 and V2 CO5300/CST820 require matching firmware. Manufacturer audio examples inspected; no hardware tested."
+      ],
+      "gaps": "Implement physical PTT and authenticated Hermes relay. Qualify runtime, headphones and cellular separately.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Alacritic_Super/status/2095894425251787060"
+        },
+        {
+          "label": "Product",
+          "url": "https://www.waveshare.com/esp32-s3-touch-amoled-1.8.htm"
+        },
+        {
+          "label": "Documentation",
+          "url": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.8"
+        },
+        {
+          "label": "Firmware",
+          "url": "https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-1.8"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm01.webp",
+        "source_url": "https://pbs.twimg.com/media/HRYc2SWbwAA9ma6.jpg",
+        "alt": "Waveshare ESP32-S3 Touch-AMOLED-1.8 \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM12",
+      "name": "AtomS3R AI Chatbot Kit K147",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "LCD audio alternative",
+      "status": "Primary sources checked",
+      "rank": 4,
+      "summary": "Small LCD/audio baseline: $21.50 kit includes AtomS3R plus Atomic Voice Base microphone, ES8311 and speaker. No battery in listed contents.",
+      "evidence": [
+        "Bare C126 AtomS3R is $17.50/out of stock and has no onboard mic/speaker; do not conflate it with K147.",
+        "Optional $7.50 Atomic Audio 3.5 Base A166 explicitly supports CTIA headset output/input. It replaces the base; simultaneous stacking is not verified."
+      ],
+      "gaps": "Qualify battery/power packaging, physical PTT, real headset routing and Hermes integration. No cellular.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Alacritic_Super/status/2095577876871688459"
+        },
+        {
+          "label": "Audio kit",
+          "url": "https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram"
+        },
+        {
+          "label": "CTIA base",
+          "url": "https://shop.m5stack.com/products/atomic-audio-3-5-base"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm12.webp",
+        "source_url": "https://cdn.shopify.com/s/files/1/0056/7689/2250/files/AtomS3R_AI_Chatbot_Kit_8MB_PSRAM_9.webp?v=1786609615",
+        "alt": "AtomS3R AI Chatbot Kit K147 with Atomic Voice Base",
+        "kind": "Manufacturer image \u2014 exact K147 audio kit"
+      }
+    },
+    {
+      "id": "BM07",
+      "name": "Seeed reTerminal Sticky",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Voice input / text reply",
+      "status": "Primary sources checked",
+      "rank": 5,
+      "summary": "E-paper voice-input shortlist: genuine PDM microphone and physical hold \u2192 speak \u2192 release workflow. Output is a buzzer, not spoken replies.",
+      "evidence": [
+        "$49.90 in stock at audit; 3.97-inch e-paper, 750mAh battery, case and USB cable included.",
+        "Phone required for stock first setup; then works independently on Wi-Fi. Actual vendor 16kHz capture example inspected."
+      ],
+      "gaps": "No documented speech/headphone path or configurable Hermes endpoint. Peripheral-demo root license unresolved.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/seeedstudio/status/2094267651506012328"
+        },
+        {
+          "label": "Product",
+          "url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html"
+        },
+        {
+          "label": "Hardware",
+          "url": "https://www.seeedstudio.com/sticky/docs/en/device-guide/hardware-overview/"
+        },
+        {
+          "label": "PTT workflow",
+          "url": "https://www.seeedstudio.com/sticky/docs/en/quick-start"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm07.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094267241034633216/img/C0QrhNZh9RP3RLbp.jpg",
+        "alt": "Seeed reTerminal Sticky \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "DONOR02",
+      "name": "PaperMono-Lite",
+      "category": "E-ink / reflective",
+      "scope": "Development platform",
+      "rank": 6,
+      "recommendation": "Voice input / text reply",
+      "status": "Primary sources checked",
+      "summary": "Lowest-assembly e-ink voice-input lead: microphone, physical buttons, 1150 mAh battery and case. Buzzer only; no documented speech output.",
+      "evidence": [
+        "ESP32-S3R8, 16 MB flash / 8 MB PSRAM; 3.97-inch 480\u00d7800 SSD1677 display and PDM microphone.",
+        "Manufacturer source implements microphone capture. Use the recommended OTP waveform example; custom waveforms have explicit stability/panel-life warnings.",
+        "Completed follow-up found Lite $55/out of stock on the official store; recheck before procurement."
+      ],
+      "gaps": "Add a qualified speech/headphone output path and Hermes/PTT firmware. No ready cellular integration or tested replacement voice enclosure.",
+      "sources": [
+        {
+          "label": "Lite documentation",
+          "url": "https://docs.m5stack.com/en/core/PaperMono-Lite"
+        },
+        {
+          "label": "Microphone demo",
+          "url": "https://github.com/m5stack/M5PaperMono-UserDemo"
+        },
+        {
+          "label": "OTP display demo",
+          "url": "https://github.com/m5stack/M5PaperMono-OTP-Demo"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/donor02.webp",
+        "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_main_pictures_01.webp",
+        "alt": "PaperMono-Lite \u2014 source image",
+        "kind": "Manufacturer image"
+      }
+    },
+    {
+      "id": "DONOR01",
+      "name": "WeatherPaper / WeAct 2.9\u2033",
+      "category": "E-ink / reflective",
+      "scope": "Development platform",
+      "rank": 7,
+      "recommendation": "Custom e-ink path",
+      "status": "Primary sources checked",
+      "summary": "Custom e-ink donor route: 296\u00d7128 black/white SPI module, ESP32-C3 weather firmware and printable body/lid. Not a voice BOM.",
+      "evidence": [
+        "GxEPD2_290_BS / SSD1680 compatibility target; actual ESP32 and Raspberry Pi display example code inspected. No Pi Zero bench test.",
+        "WeatherPaper body/lid downloads verified as binary STLs; not fit-checked voice enclosures. Sketch/STL reuse license unestablished.",
+        "Exact AliExpress item matches the intended donor; selected variant, live price, stock and delivery unverified."
+      ],
+      "gaps": "Add microphone, speech output, physical PTT, suitable MCU/audio design, power and revised enclosure. Display I/O is 3.3V; do not infer 5V GPIO tolerance.",
+      "sources": [
+        {
+          "label": "WeatherPaper",
+          "url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/"
+        },
+        {
+          "label": "Display source",
+          "url": "https://github.com/WeActStudio/WeActStudio.EpaperModule"
+        },
+        {
+          "label": "Exact listing",
+          "url": "https://www.aliexpress.us/item/3256804458201128.html"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/donor01.webp",
+        "source_url": "https://raw.githubusercontent.com/WeActStudio/WeActStudio.EpaperModule/master/Images/2.png",
+        "alt": "WeatherPaper / WeAct 2.9\u2033 \u2014 source image",
+        "kind": "Manufacturer image"
+      }
+    },
+    {
+      "id": "BM32",
+      "name": "Pi Zero + PiSugar Whisplay",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Software donor",
+      "status": "Source implementation checked",
+      "rank": 8,
+      "summary": "Strong spoken PTT architecture precedent: real hold/release capture, STT, streamed agent responses and optional TTS/playback in source. LCD, not e-ink.",
+      "evidence": [
+        "Exact repository is sebastianvkl/pizero-openclaw. TTS defaults true in code despite README false. Requires remote OpenClaw gateway; not local LLM.",
+        "Current Whisplay driver entry points differ from old instructions; codec revisions, ALSA names and daemon ownership need qualification.",
+        "Whisplay $35.99 + PiSugar 3 $39.99 = $75.98 before Pi, SD, header, case and delivery. MIT-declared project omits full license file."
+      ],
+      "gaps": "Adapt the endpoint contract to Hermes and test headphones, power and recovery. No cellular. Original clip does not independently verify spoken replies.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/basti_vkl/status/2025727742784983427"
+        },
+        {
+          "label": "Exact source",
+          "url": "https://github.com/sebastianvkl/pizero-openclaw"
+        },
+        {
+          "label": "Current hardware",
+          "url": "https://docs.pisugar.com/docs/product-wiki/whisplay/overview"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm32.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2025727582822653952/img/PLSL_sDBxst_cC3f.jpg",
+        "alt": "Pi Zero W OpenClaw PTT handheld \u2014 @basti_vkl \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "ALT02",
+      "name": "Waveshare ePaper 3.97",
+      "summary": "Larger e-ink/audio and rotary-control alternative: microphone, ES8311, amplifier and speaker connector, Wi-Fi/BLE; no verified complete pocket package.",
+      "evidence": [
+        "3.97-inch 800\u00d7480, ESP32-S3 16MB flash/8MB PSRAM; TG28 power management and rotary/PWR/BOOT controls.",
+        "Variants 33552 base, 33810 EN, 33811 Kit. Exact battery/speaker/enclosure inclusions, price and stock unresolved."
+      ],
+      "gaps": "Source license, physical PTT/Hermes code and final audio bundle need verification; no cellular/headset established.",
+      "sources": [
+        {
+          "label": "Documentation",
+          "url": "https://docs.waveshare.com/ESP32-S3-ePaper-3.97"
+        }
+      ],
+      "category": "E-ink / reflective",
+      "scope": "Development platform",
+      "rank": null,
+      "recommendation": "Investigate",
+      "status": "Primary sources checked",
+      "image": null
+    },
+    {
+      "id": "BM02",
+      "name": "Grok Pocket \u2014 Bobby Thakkar",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 unresolved",
+      "rank": null,
+      "summary": "Physical bot-selection prototype shown in the creator video; exact board, microphone, PTT, audio output and independent networking remain unknown.",
+      "evidence": [
+        "No attributable released firmware or BOM found. The similarly tempting DinoTamagotchi repo is a macOS pet, not this device."
+      ],
+      "gaps": "Need creator-linked device source/BOM before a purchase or fork.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/BobbyThakkar/status/2094122297044996136"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm02.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094122120032710656/img/g-CYN1KJ0vU51jQ9.jpg",
+        "alt": "Grok Pocket \u2014 Bobby Thakkar \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM03",
+      "name": "DayRing / DayRing for Kids \u2014 Henry Li",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Concept / source gap",
+      "rank": null,
+      "summary": "DayRing for Kids: quiet portrait UI, jog dial and physical recording slide. Strong interaction reference, not a reproducible voice-device build.",
+      "evidence": [
+        "Public organization exposed only a profile README, not firmware, PCB, BOM, printable case or explicit license.",
+        "Published images do not establish working electronics. Offline recording is not phone-independent agent access."
+      ],
+      "gaps": "Exact production hardware, licensing, two-way audio and released build files unverified.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/henry19840301/status/2095709666517139694"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/henry19840301/status/2094828674092880129"
+        },
+        {
+          "label": "Project profile",
+          "url": "https://github.com/dayring/.github"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm03.webp",
+        "source_url": "https://pbs.twimg.com/media/HRV0E63bkAALqvI.jpg",
+        "alt": "DayRing / DayRing for Kids \u2014 Henry Li \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM04",
+      "name": "Pamir Lapis One",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Later / higher budget",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Video narration resolves the handheld as Lapis One, not Distiller One. Linux, dual microphones and speaker; Sharp memory LCD, not e-ink.",
+      "evidence": [
+        "RK3576, 8GB RAM, Wi-Fi/Bluetooth and 3300mAh battery; vendor expects 2\u20134 hours depending on workload.",
+        "$359 preorder; October 2026 shipping advertised, not immediate stock. Older Distiller SDKs do not prove a complete Lapis stack."
+      ],
+      "gaps": "Physical Hermes PTT, current shipping SDK and headphones unverified. AirPods in video are a size comparison.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/pamir_ai/status/2094906365169090630"
+        },
+        {
+          "label": "Manufacturer",
+          "url": "https://www.pamir.ai/"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm04.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094906267693432832/img/FIWIvWvo6WMfKlhA.jpg",
+        "alt": "Pamir AI unlabeled handheld \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM05",
+      "name": "Origami Computing \u2014 Sarvasv Kulpati",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 unresolved",
+      "rank": null,
+      "summary": "Creator resolves to the Origami Computing family, but the colorful handhelds have no verified production SKU or released technical specification.",
+      "evidence": [
+        "Face animations visible in the clip; this does not prove microphones, speakers or display technology.",
+        "Older recorder/MP3 aspirations must not be imported as current device capabilities."
+      ],
+      "gaps": "BOM, voice/PTT, networking, battery, price and device-source license unknown.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/SarvasvKulpati/status/2094556712208638327"
+        },
+        {
+          "label": "Project",
+          "url": "https://origamicomputing.com/"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm05.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094556692898004992/img/rRAWLw6P9LbBbP2p.jpg",
+        "alt": "Sarvasv Kulpati colorful small computers \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM06",
+      "name": "OpenTrailPaper / LILYGO T5S3 Pro",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Substantive Apache-2.0 e-paper bike computer with offline maps and GPS. Music controls command a phone; they do not play audio on the board.",
+      "evidence": [
+        "4.7-inch 960\u00d7540 e-paper, ESP32-S3, GPS variant. No onboard microphone, speech speaker or headphone interface in inspected pin map.",
+        "915MHz with-GPS China variant $84.21 and available at audit; US variant unavailable. Bare hardware is not weatherproof."
+      ],
+      "gaps": "Needs audio hardware, voice firmware and protection/enclosure. Vendor hardware root license unresolved.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/RaemondBW/status/2095705823096033427"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2090655732647759977"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2095733425357680882"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2081566677473632495"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2095705833216877053"
+        },
+        {
+          "label": "Project",
+          "url": "https://opentrailpaper.com/"
+        },
+        {
+          "label": "Firmware",
+          "url": "https://github.com/RaemondBW/OpenTrailPaper"
+        },
+        {
+          "label": "Hardware",
+          "url": "https://lilygo.cc/products/t5-e-paper-s3-pro"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm06.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2090655678956552192/img/WhmIL2_9y0ncqYjG.jpg",
+        "alt": "OpenTrailPaper / LILYGO e-ink bike computer \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM08",
+      "name": "Santek EZ Sign",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "Japanese post says battery-free e-paper, powered by smartphone during updates. Explicit phone involvement conflicts with autonomous voice goal; useful display/status reference.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/santekjp/status/2095799528611795453"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm08.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095748489368236032/img/q7xUg_GSVx8agfW2.jpg",
+        "alt": "Santek EZ Sign \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM09",
+      "name": "Unidentified pocket e-reader",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 unresolved",
+      "rank": null,
+      "summary": "Compact reflective reader with two lower-front buttons; no readable model identity in the reviewed photos.",
+      "evidence": [
+        "Do not assign Xteink specifications or price from visual resemblance. Macintosh-like screen imagery does not establish an emulator."
+      ],
+      "gaps": "Exact model, microphone, audio, networking and source license unresolved.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/andrea_fanelli/status/2088234085709734153"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/andremooij/status/2087711337623253205"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm09.webp",
+        "source_url": "https://pbs.twimg.com/media/HPrlhXZWIAEKHMq.jpg",
+        "alt": "Pocket e-reader: \u201ciPod for reading\u201d \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM10",
+      "name": "Giant color e-ink curriculum display \u2014 Jesse Genet",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "Large color e-ink education/art display. Model unspecified; size makes it a visual reference rather than handheld candidate.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/jessegenet/status/2092362786374582498"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm10.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2092362412964126720/img/fY7npC8t2VVzywtD.jpg",
+        "alt": "Giant color e-ink curriculum display \u2014 Jesse Genet \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM11",
+      "name": "60 fps paper-like reflective displays \u2014 @_welf",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "Older public post claims an internal 60 fps paper-like reflective display; not verified commercial e-ink hardware or health evidence.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/_welf/status/2065771656799261135"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/_welf/status/2065493220122140805"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm11.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2065771595876982784/img/hCXbMMf1zmf9A6xY.jpg",
+        "alt": "60 fps paper-like reflective displays \u2014 @_welf \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM13",
+      "name": "Spotify Puck \u2014 @atq_ren",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "Working round-display ESP32/LVGL Spotify API controller; compact UI inspiration, not proof it streams audio or acts as a voice agent.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/atq_ren/status/2096120528910340146"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm13.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2096120424681910272/img/Ai6EeLk1yraCdbND.jpg",
+        "alt": "Spotify Puck \u2014 @atq_ren \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM14",
+      "name": "Robert Bye interactive desktop ESP32 device",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "Quoted first-party prototype built with Claude; web-connected interactive desktop hardware. Exact board/audio unspecified.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Alacritic_Super/status/2095893493722104142"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RobertJBye/status/2095629694293193060"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm14.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095893078477615104/img/Xp2OPNYbF3Xh8jiy.jpg",
+        "alt": "Robert Bye interactive desktop ESP32 device \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM15",
+      "name": "Maks Surguy synchronized mini touch art displays",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "ESP32 touchscreen synchronized with other miniature displays through touch; interaction inspiration, no voice evidence.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Alacritic_Super/status/2095940472703439317"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/msurguy/status/2095686740384395713"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm15.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095940405296857088/img/_jI1wO2xPTRfQBPB.jpg",
+        "alt": "Maks Surguy synchronized mini touch art displays \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM16",
+      "name": "Three.js Conf buddy badges \u2014 @rbriaux",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "Conference-speaker badges\u2014not loudspeakers\u2014with ESP-NOW peer discovery and face greetings. No audio evidence; ESP-NOW is not Internet voice transport.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Alacritic_Super/status/2095928799166931170"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/rbriaux/status/2095127863615685027"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/rbriaux/status/2095845917299499213"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm16.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095928746687791104/img/CPiPoaDhR2xsVqfn.jpg",
+        "alt": "Three.js Conf buddy badges \u2014 @rbriaux \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM17",
+      "name": "Hardware with the girls desk-buddy workshop",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "Digital desk companions built at workshop with @covacut / @womp3D. Platform/model unspecified.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/meshtimes_/status/2088401568878174457"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm17.webp",
+        "source_url": "https://pbs.twimg.com/media/HPt94l9bgAAM_Iv.jpg",
+        "alt": "Hardware with the girls desk-buddy workshop \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM18",
+      "name": "ESPHome voice-assistant architecture",
+      "category": "Ecosystem / learning",
+      "scope": "Public project reference",
+      "recommendation": "Software donor",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "The endorsement names no device. Official ESPHome docs do implement hold/release PTT to Home Assistant Assist, with optional response audio.",
+      "evidence": [
+        "GPIO on_press starts with silence detection disabled; on_release stops. Not a direct Hermes client.",
+        "C/C++ runtime GPLv3; Python/other parts MIT. BLE plus audio can strain MCU resources."
+      ],
+      "gaps": "Requires appropriate audio hardware and a Home Assistant-side integration or different bridge.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/jessfraz/status/2095892125842022632"
+        },
+        {
+          "label": "PTT documentation",
+          "url": "https://esphome.io/components/voice_assistant/"
+        },
+        {
+          "label": "License",
+          "url": "https://github.com/esphome/esphome/blob/main/LICENSE"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "BM19",
+      "name": "tldraw little-computers workshop",
+      "category": "Ecosystem / learning",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Workshop-format reference; public image explicitly identifies Waveshare 1.8-inch AMOLED WAV-29957, duplicating BM01 rather than a separate mystery board.",
+      "evidence": [
+        "Battery bundle selected in historical image; pictured \u00a328.80 is not a current price.",
+        "Event is closed. Social posts do not provide device firmware or CAD licensing."
+      ],
+      "gaps": "Reuse workshop format as an idea, not an unverified ready lesson plan.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/tldraw/status/2085414240622375035"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/steveruizok/status/2081120951320678422"
+        },
+        {
+          "label": "Event",
+          "url": "https://luma.com/tldraw-vp8y"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm19.webp",
+        "source_url": "https://pbs.twimg.com/media/HPDgbifW8AADpyt.jpg",
+        "alt": "Steve Ruiz little-computers seed / tldraw event \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM20",
+      "name": "Build in Public gadgets directory",
+      "category": "Ecosystem / learning",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Public hardware discovery directory; manufacturer sources must independently verify each candidate.",
+      "evidence": [
+        "Useful filters include e-ink, microphone, speaker and battery. Manufacturer sources override stale directory pricing/status.",
+        "Quoted public hardware duplicates BM19/BM01."
+      ],
+      "gaps": "No directory-wide compatibility or licensing inference.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/marckohlbrugge/status/2085396227751866478"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/steveruizok/status/2081120951320678422"
+        },
+        {
+          "label": "Directory",
+          "url": "https://buildinpublic.com/gadgets"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm20.webp",
+        "source_url": "https://pbs.twimg.com/media/HPDQvX2WwAEfj12.jpg",
+        "alt": "Build in Public gadgets directory \u2014 Marc K\u00f6hlbrugge \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM21",
+      "name": "Palmimo DevKit \u2014 Jizai",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Real open audio/agent software on a tabletop robot, but roughly 2kg and $3,980 reference pricing\u2014not affordable pocket hardware.",
+      "evidence": [
+        "Raspberry Pi 5, ReSpeaker microphone array, stereo speakers, 21 servos and mains-derived power.",
+        "Apache-2.0 Python SDK and OpenClaw/MCP connection kit; manufacturing designs not published. Visualization GLB has separate terms."
+      ],
+      "gaps": "Architecture reference only; not physical PTT or verified Hermes integration.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/maze_rapid/status/2095294835364364337"
+        },
+        {
+          "label": "Product",
+          "url": "https://palmimo.dev/"
+        },
+        {
+          "label": "Software",
+          "url": "https://github.com/Jizai-inc/palmimo-devkit"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm21.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095294532451790848/img/yPRucr9de2iBWCK2.jpg",
+        "alt": "Palmimo DevKit \u2014 Jizai \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM22",
+      "name": "Ato voice companion",
+      "category": "Voice / handheld",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Screen-free senior voice UX reference; 650g tabletop device with no battery and USB-C PD power.",
+      "evidence": [
+        "Wi-Fi; phone required once for setup. December 2026 shipping advertised for preorders.",
+        "Free and paid service tiers; no verified open firmware, CAD license or Hermes interface."
+      ],
+      "gaps": "Not portable; pricing presentation not a firm current quotation.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/JuanCereigido/status/2095205890207220099"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/heyato_ai/status/2095167624229626164"
+        },
+        {
+          "label": "Manufacturer",
+          "url": "https://heyato.ai/"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm22.webp",
+        "source_url": "https://pbs.twimg.com/media/HROqplGaEAAvbnH.jpg",
+        "alt": "Ato voice computer for seniors \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM23",
+      "name": "Microduck / proposed open PCB",
+      "category": "Robotics",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Pollen Robotics biped with real Apache-2.0 software; roughly 25cm/800g, not a minimal pocket terminal.",
+      "evidence": [
+        "Rust daemons, servo control, Wi-Fi/Bluetooth and media handling.",
+        "Separate fully open PCB effort remains a promise, not a verified release."
+      ],
+      "gaps": "Software license does not establish fully open hardware or independent PCB availability.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/DeRonin_/status/2095832887635386440"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/ChihYang04/status/2095322008175435780"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/Scav/status/2093781288742437184"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/tspy/status/2094963381220622638"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RemiFabreRobot/status/2093465891191042057"
+        },
+        {
+          "label": "Source",
+          "url": "https://github.com/pollen-robotics/microduck"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm23.webp",
+        "source_url": "https://pbs.twimg.com/media/HRQUMGVa0AA6cuu.jpg",
+        "alt": "Microduck + open circuit-board effort \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM24",
+      "name": "Microdino \u2014 David Feldt",
+      "category": "Robotics",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 unresolved",
+      "rank": null,
+      "summary": "Microduck-like blueprint.io build claim; exact project files, BOM and equivalence unresolved.",
+      "evidence": [
+        "Quoted $399/Christmas offer refers to Microduck, not Microdino or verified current availability."
+      ],
+      "gaps": "Robotics workshop lead only; no verified build license or voice kit.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/davidfeldt/status/2093491570867884322"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/pollenrobotics/status/2092915032052879425"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm24.webp",
+        "source_url": "https://pbs.twimg.com/media/HQ2SqBLbUAAPkup.png",
+        "alt": "Microdino \u2014 David Feldt \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM25",
+      "name": "Open Duck Mini V2 / EmoLo",
+      "category": "Robotics",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Substantial biped CAD/BOM/assembly and Pi Zero 2 W runtime; excessive actuation and assembly for a pocket voice terminal.",
+      "evidence": [
+        "Canonical Open Duck Mini v2 metadata identifies Apache-2.0.",
+        "Some expression/audio features described as unfinished; EmoLo-specific code/license not established by upstream audit."
+      ],
+      "gaps": "Robotics reference, not a ready spoken PTT device.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/MeRTcooking/status/2093623072880545935"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/MeRTcooking/status/2093540799254569244"
+        },
+        {
+          "label": "Assembly video",
+          "url": "https://youtu.be/DajdOeYJZdk"
+        },
+        {
+          "label": "Canonical source",
+          "url": "https://github.com/apirrone/Open_Duck_Mini/tree/v2"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm25.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2093620697709133824/img/LqgJnyaVj4yrinH4.jpg",
+        "alt": "Open Duck Mini V2 / EmoLo \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM26",
+      "name": "Bimo \u2014 Mekion Labs",
+      "category": "Robotics",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Identity resolved: Bimo v1.1.0 biped, RP2040, 45cm and approximately 1.6kg, with ROS2/RL locomotion tools.",
+      "evidence": [
+        "Apache-2.0 repo contains Python API, MCU firmware and simulation.",
+        "CAD/DIY manual still described as coming soon despite broad open-source wording."
+      ],
+      "gaps": "Not handheld voice hardware; preorder is not immediate fulfillment.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/mekionlabs/status/2095197341842117042"
+        },
+        {
+          "label": "Project",
+          "url": "https://github.com/mekion/the-bimo-project"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm26.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095196484828553217/img/YizGG4tbFKLI8d60.jpg",
+        "alt": "Mekion Labs robotics v1.1.0 \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM27",
+      "name": "Petoi Quaddle",
+      "category": "Robotics",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Approachable four-servo robotics kit; $99 early-bird Builder does not include the advertised open-domain AI conversation.",
+      "evidence": [
+        "Buddy/Scout add conversation. OpenCat is MIT; not every Quaddle part or service inherits that license.",
+        "Printable shells/mounts, but load-critical joints remain closed. Conflicting MSRP values; no verified delivered quote."
+      ],
+      "gaps": "Quaddle-specific voice firmware, backend freedom and PTT unresolved.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/PetoiCamp/status/2095333340153106905"
+        },
+        {
+          "label": "Campaign",
+          "url": "https://www.kickstarter.com/projects/petoi/quaddle-open-source-desktop-robot-kit"
+        },
+        {
+          "label": "Manufacturer",
+          "url": "https://www.petoi.com/pages/quaddle-educational-robot-kit"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm27.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095331605246255104/img/Xsif8aoPNE3dxEfI.jpg",
+        "alt": "Petoi Quaddle \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM28",
+      "name": "WATTI robotic desk lamp",
+      "category": "Robotics",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Five-motor lamp and browser timeline preview; operating code is explicitly not public yet and no license is attached.",
+      "evidence": [
+        "Future release plans include software, protocol, BOM and printable parts. Voice/MCP mode is future work."
+      ],
+      "gaps": "Design inspiration, not reusable released firmware or enclosure.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/CosmosNetwork/status/2094791757695455675"
+        },
+        {
+          "label": "Creator repository",
+          "url": "https://github.com/Nikolay-Tyulkin/Watti"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm28.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094791698190942209/img/qP6AhH45fM92KJ7i.jpg",
+        "alt": "WATTI robotic desk lamp \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM29",
+      "name": "Air-powered dot display / fluidic multiplexing",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 reference only",
+      "rank": null,
+      "summary": "3D-printed fluidic multiplexing display; mechanical display reference, not e-paper or practical voice terminal.",
+      "evidence": [
+        "Public-source claim reviewed; unestablished specifications and missing build artifacts remain unknown, not confirmed capabilities."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/BrianRoemmele/status/2092113628396957746"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm29.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2091825788488425472/img/PqpN-SfXCUEBOPpU.jpg",
+        "alt": "Air-powered dot display / fluidic multiplexing \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM30",
+      "name": "DIY Blockstream Jade variants",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "Useful compact button/battery/enclosure design references in the official DIY guide; not a voice client.",
+      "evidence": [
+        "Jade software MIT; linked third-party printable cases need separate model-license checks."
+      ],
+      "gaps": "Never reuse an active key-holding signing device for a networked microphone experiment.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/BlockstreamJade/status/2089396048888209505"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/bitcoinbutlers/status/2088751951647297906"
+        },
+        {
+          "label": "DIY guide",
+          "url": "https://github.com/Blockstream/Jade/blob/master/diy/README.md"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm30.webp",
+        "source_url": "https://pbs.twimg.com/media/HPy8075XoAEwmjZ.jpg",
+        "alt": "DIY Blockstream Jade variants \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM31",
+      "name": "Unresolved electronics X article",
+      "category": "Ecosystem / learning",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "Reviewed \u2014 unresolved",
+      "rank": null,
+      "summary": "The shortlink resolves to X article 2095038636362248196, but that target returns 404. No recovered course or repository.",
+      "evidence": [
+        "Exact article title, content and license remain unresolved."
+      ],
+      "gaps": "Learning-resource lead only, not a validated curriculum.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Av1dlive/status/2095199866901438487"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/DeRonin_/status/2095180126359105955"
+        },
+        {
+          "label": "Article target",
+          "url": "https://x.com/i/article/2095038636362248196"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm31.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095199786391744512/img/uf1ggHeC1_ffCDsu.jpg",
+        "alt": "Electronics design learning resource \u2014 @Av1dlive \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM33",
+      "name": "MimiClaw embedded agent",
+      "category": "Embedded / interaction",
+      "scope": "Public project reference",
+      "recommendation": "Software donor",
+      "status": "Source implementation checked",
+      "rank": null,
+      "summary": "Real MIT C/ESP-IDF agent architecture with local state and tools; model requests go to remote OpenAI/Anthropic providers, not an MCU-local LLM.",
+      "evidence": [
+        "Baseline 16MB flash/8MB PSRAM ESP32-S3, USB power, Wi-Fi and Telegram text interaction.",
+        "Headline $5 is not a complete audio-device cost. Keep powerful provider/agent credentials behind a narrow bridge."
+      ],
+      "gaps": "No integrated microphone/speaker, physical PTT, case or Hermes session bridge established.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/hasantoxr/status/2023727644920213902"
+        },
+        {
+          "label": "Source",
+          "url": "https://github.com/memovai/mimiclaw"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm33.webp",
+        "source_url": "https://pbs.twimg.com/media/HBW5kYfasAABZEI.jpg",
+        "alt": "MimiClaw ESP32 agent \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM34",
+      "name": "M5Stack PaperS3 Game Boy emulator",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Reference only",
+      "status": "EOL / out of stock",
+      "rank": null,
+      "summary": "PaperS3 e-ink display donor: 4.7-inch 960\u00d7540 panel and 1800 mAh battery; no onboard microphone documented.",
+      "evidence": [
+        "Direct-driven ESP32-S3 display, not the older M5Paper IT8951 architecture.",
+        "Buzzer is not a speech-output path. Audio hardware and firmware must be added.",
+        "Current manufacturer marks C139 EOL, $59/out of stock. Exact Game Boy emulator source/license unresolved."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified. Deep verification remains pending.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/zephray_wenting/status/2071480472786681904"
+        },
+        {
+          "label": "Product docs",
+          "url": "https://docs.m5stack.com/en/core/PaperS3"
+        },
+        {
+          "label": "Store",
+          "url": "https://shop.m5stack.com/products/m5papers3-esp32s3-development-kit"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm34.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2071480389412306944/img/LYKzn2dbI8y6wwtZ.jpg",
+        "alt": "M5Stack PaperS3 Game Boy emulator \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM35",
+      "name": "PaperMONO",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Voice input / text reply",
+      "status": "Primary sources checked",
+      "rank": null,
+      "summary": "PaperMono C153 e-ink handheld with PDM microphone, battery and case. Full model adds NFC/LoRa; Lite is considered separately above.",
+      "evidence": [
+        "3.97-inch 480\u00d7800 display, 1150 mAh battery, two user buttons; documented output is a buzzer, not speech.",
+        "Full C153 observed $65 and out of stock. Manufacturer warns about unstable custom refresh waveforms; prefer its OTP example."
+      ],
+      "gaps": "Speech/headphone output, Hermes firmware and safe refresh behavior need engineering.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/M5Stack/status/2079860026659971373"
+        },
+        {
+          "label": "Product docs",
+          "url": "https://docs.m5stack.com/en/core/PaperMono"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm35.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2079859971337146368/img/Zrhh6_hWySUtucYj.jpg",
+        "alt": "PaperMONO \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM36",
+      "name": "Other older reflective-screen references",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "recommendation": "Investigate",
+      "status": "Reviewed \u2014 unresolved",
+      "rank": null,
+      "summary": "Other reflective-screen references: unidentified e-ink phone, BirdNET/Gemini wall frame, display refresh claims, sunlight reading and e-paper optimization.",
+      "evidence": [
+        "E-ink phone: exact model/cellular/PTT unresolved. Bird wall frame: USB microphone \u2192 BirdNET \u2192 Gemini images; ambient output, not conversation.",
+        "60fps claim: Modos Flow is contextual only, not an identified match; 13.3-inch monitor figures do not transfer to cheap SPI panels.",
+        "Sunlight reading is a usage reference. Optimization shortlink returns to its post; no underlying guide/license established."
+      ],
+      "gaps": "No complete cellular Hermes voice terminal verified; identity, audio, released build files or licensing remain unresolved as noted.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/viemccoy/status/2071116274357444665"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/itsolelehmann/status/2069244042349535252"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/antoine_os/status/2065845034616864938"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/tritlo/status/2046921844058402915"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/mfranz_on/status/2044764786685002234"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm36.webp",
+        "source_url": "https://pbs.twimg.com/media/HL4VRtkboAA1K9y.jpg",
+        "alt": "Other older reflective-screen references \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    },
+    {
+      "id": "BM37",
+      "name": "ENILINX TICKEY",
+      "category": "E-ink / reflective",
+      "scope": "Public project reference",
+      "rank": null,
+      "recommendation": "Reference only",
+      "status": "Vendor checked / campaign unverified",
+      "summary": "Slim wearable color e-paper status display, formerly TICKET. No microphone, speech output, audio codec or PTT implementation documented.",
+      "evidence": [
+        "Vendor: ESP32-S3, 3.7-inch 720\u00d7480 color e-paper, 360 mAh, Wi-Fi/Bluetooth/NFC and physical buttons. \u201c8MB RAM / Flash\u201d wording is ambiguous.",
+        "Mobile-app editing is advertised. Open firmware claimed, but no repository established. Charm/display battery claims do not establish voice runtime.",
+        "Public post dated September 7, 2026. Campaign price, rewards and shipping blocked/unverified."
+      ],
+      "gaps": "Treat as a wearable/status-display reference, not ready voice hardware. Ring opening is not a PTT button.",
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/NanouuSymeon/status/2096887195915198728?s=20"
+        },
+        {
+          "label": "Vendor",
+          "url": "https://www.eniacelec.com/pages/ticket"
+        },
+        {
+          "label": "Campaign",
+          "url": "https://www.kickstarter.com/projects/enilinx/ticket-refresh-it-new-clip-it-on-carry-your-moment?ref=as0r6e"
+        }
+      ],
+      "image": {
+        "path": "../static/voice-device-media/bm37.webp",
+        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2096881340578676736/img/padFM0pZr1sQ5v43.jpg",
+        "alt": "ENILINX TICKEY \u2014 source image",
+        "kind": "Public post image / video thumbnail"
+      }
+    }
+  ],
+  "headline": "E-ink first. Spoken replies matter.",
+  "recommendation_summary": "Waveshare ePaper 1.54 V2 is the leading e-ink audio bench pilot. M5StickS3 is a compact LCD alternative. Neither is a ready cellular agent terminal."
+}

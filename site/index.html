@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0b0b">
+  <title>Voice hardware · Freedom Lab NYC</title>
+  <link rel="stylesheet" href="../static/styles.css?v=2">
+  <link rel="stylesheet" href="../static/display-template.css?v=1">
+  <link rel="stylesheet" href="../static/voice-device.css?v=1">
+</head>
+<body class="voice-research">
+  <div class="grain" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../"><span class="brand-mark">FL</span><span>Freedom Lab NYC</span></a>
+      <a id="github-link" class="secondary-button" href="https://github.com/Harrison-F/freedom-lab-hardware" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </header>
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Voice hardware</h1>
+      <p>Small devices for deliberate conversation. E-ink first, with transparent build costs and evidence.</p>
+    </section>
+    <section class="research-brief" aria-label="Recommendation and coverage">
+      <h2 id="recommendation-headline">Hardware pilot recommendations</h2>
+      <p id="recommendation-summary"></p>
+      <p id="notice" role="status">Loading reviewed evidence…</p>
+      <details class="coverage"><summary>Coverage &amp; decision boundary</summary><p id="coverage"></p><p>Physical PTT, microphone, spoken response and phone-independent normal use are the goal. Headphones are preferred, not mandatory. Cellular, secure relay integration and reliable battery operation still require engineering and bench acceptance. Prices and availability are dated observations, not purchase guarantees.</p></details>
+    </section>
+    <section class="procurement" aria-label="Build and delivery comparison">
+      <h2>Build &amp; delivery comparison</h2>
+      <p>ZIP 10014 · Quantity 1 · USD · Board/bundle ≠ complete Wi-Fi build ≠ cellular build. Unknown costs are not zero. Tax, shipping, firmware labor, tools and recurring service are separate.</p>
+      <label class="filter-field">Rank by <select id="cost-sort" aria-label="Rank builds"><option value="fit">Requirements fit</option><option value="affordability">Complete-build affordability</option><option value="fastest">Fastest complete-build delivery</option></select></label>
+      <p id="ranking-note" role="status"></p><div class="table-scroll"><table><thead><tr><th>Direction</th><th>Board / bundle</th><th>Complete Wi-Fi</th><th>Cellular</th><th>Shipping / arrival</th></tr></thead><tbody id="bom-rows"></tbody></table></div>
+      <details><summary>What counts as a complete build?</summary><p>Board and display; microphone and codec; speech speaker/amplifier or qualified headset path; physical push-to-talk; battery, charging/protection and power supply; cables/connectors; enclosure and fasteners; firmware and a secure agent relay. Cellular additionally requires a compatible modem, antenna, SIM/data plan, power-transient design and compressed-audio transport. A list is not proof that the parts work together.</p><p>Purchase only exact cited variants. Confirm bundle contents, stock, shipping and tax at checkout. Assemble and flash licensed firmware; test hold/release, spoken replies, reconnect, power and battery safety before deployment. Existing Wi-Fi, Internet and agent-service access are assumed infrastructure, not included hardware.</p></details>
+    </section>
+    <section class="controls research-controls" aria-label="Research filters">
+      <label class="search-field"><span class="sr-only">Search research</span><input id="search" type="search" placeholder="Search devices or evidence" autocomplete="off"></label>
+      <label class="filter-field"><span>Direction</span><select id="recommendation-filter" aria-label="Recommendation"><option value="">All</option></select></label>
+      <label class="filter-field"><span>Status</span><select id="status-filter" aria-label="Status"><option value="">All</option></select></label>
+      <label class="filter-field"><span>Category</span><select id="category-filter" aria-label="Category"><option value="">All</option></select></label>
+      <label class="filter-field"><span>Coverage</span><select id="scope-filter" aria-label="Coverage"><option value="">All</option></select></label>
+      <button class="secondary-button" type="button" id="reset">Reset filters</button>
+    </section>
+    <p class="research-count" id="count" role="status" aria-live="polite">Loading…</p>
+    <div id="collections"></div>
+    <p id="empty" class="empty" hidden>No research items match this view.</p>
+    <p id="error" class="form-error" role="alert" hidden></p>
+    <noscript>This research collection needs JavaScript to display its reviewed JSON data.</noscript>
+  </main>
+  <script src="../static/voice-device.js?v=public-1" defer></script>
+<script src="../static/procurement.js?v=1" defer></script>
+</body>
+</html>

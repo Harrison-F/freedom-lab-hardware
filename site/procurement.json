@@ -1,0 +1,616 @@
+{
+  "schema_version": 1,
+  "destination_zip": "10014",
+  "quantity": 1,
+  "currency": "USD",
+  "status": "pending shipping research",
+  "methodology": "Fit ranks are existing desk-review pilot priorities, not measured performance. Affordability requires a complete Wi-Fi build including shipping and tax. Fastest requires all required parts in hand; unknowns sort last and are not winners. Board prices are dated observations. No completed-build totals or arrival dates established.",
+  "builds": [
+    {
+      "id": "ALT01",
+      "name": "Waveshare ePaper 1.54 V2",
+      "fit_rank": 1,
+      "price_usd": 16.99,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Confirm exact non-touch battery-included V2 SKU 32298 and enclosure contents",
+        "USB power/data cable and suitable charger; qualify supplied battery",
+        "PTT firmware, authenticated relay and assembly/testing"
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Documentation",
+          "url": "https://docs.waveshare.com/ESP32-S3-ePaper-1.54"
+        },
+        {
+          "label": "Exact family",
+          "url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298"
+        },
+        {
+          "label": "Audio source",
+          "url": "https://github.com/waveshareteam/ESP32-S3-ePaper-1.54/blob/main/02_Example/Arduino/08_Audio_Test/user_app.cpp"
+        }
+      ]
+    },
+    {
+      "id": "KIT01",
+      "name": "M5StickS3",
+      "fit_rank": 2,
+      "price_usd": 21.5,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "M5StickS3 with built-in mic, speaker, buttons and 250mAh battery",
+        "USB power/data cable and charger",
+        "PTT firmware and secure relay; modem integration not included"
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "StickS3",
+          "url": "https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit"
+        },
+        {
+          "label": "Reference firmware",
+          "url": "https://github.com/AI-Guru/2026_m5sticks3_hermes"
+        },
+        {
+          "label": "Modem",
+          "url": "https://docs.m5stack.com/en/unit/cat_m"
+        },
+        {
+          "label": "Data plan",
+          "url": "https://www.1nce.com/en-us/1nce-connect/pricing"
+        }
+      ]
+    },
+    {
+      "id": "BM01",
+      "name": "Waveshare ESP32-S3 Touch-AMOLED-1.8",
+      "fit_rank": 3,
+      "price_usd": null,
+      "price_status": "pending exact variant quote",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Integrated AMOLED voice prototype: ESP32-S3, microphone, ES8311 codec, speaker and case. Not e-ink.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "Implement physical PTT and authenticated Hermes relay. Qualify runtime, headphones and cellular separately."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Alacritic_Super/status/2095894425251787060"
+        },
+        {
+          "label": "Product",
+          "url": "https://www.waveshare.com/esp32-s3-touch-amoled-1.8.htm"
+        },
+        {
+          "label": "Documentation",
+          "url": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.8"
+        },
+        {
+          "label": "Firmware",
+          "url": "https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-1.8"
+        }
+      ]
+    },
+    {
+      "id": "BM12",
+      "name": "AtomS3R AI Chatbot Kit K147",
+      "fit_rank": 4,
+      "price_usd": 21.5,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Exact K147 AtomS3R + Atomic Voice Base (not bare C126)",
+        "Battery/charging/power packaging, cables and enclosure",
+        "Optional CTIA audio base replaces Voice Base; stacking not verified",
+        "Physical PTT and relay firmware"
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/Alacritic_Super/status/2095577876871688459"
+        },
+        {
+          "label": "Audio kit",
+          "url": "https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram"
+        },
+        {
+          "label": "CTIA base",
+          "url": "https://shop.m5stack.com/products/atomic-audio-3-5-base"
+        }
+      ]
+    },
+    {
+      "id": "BM07",
+      "name": "Seeed reTerminal Sticky",
+      "fit_rank": 5,
+      "price_usd": 49.9,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "E-paper voice-input shortlist: genuine PDM microphone and physical hold \u2192 speak \u2192 release workflow. Output is a buzzer, not spoken replies.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "No documented speech/headphone path or configurable Hermes endpoint. Peripheral-demo root license unresolved."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/seeedstudio/status/2094267651506012328"
+        },
+        {
+          "label": "Product",
+          "url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html"
+        },
+        {
+          "label": "Hardware",
+          "url": "https://www.seeedstudio.com/sticky/docs/en/device-guide/hardware-overview/"
+        },
+        {
+          "label": "PTT workflow",
+          "url": "https://www.seeedstudio.com/sticky/docs/en/quick-start"
+        }
+      ]
+    },
+    {
+      "id": "DONOR02",
+      "name": "PaperMono-Lite",
+      "fit_rank": 6,
+      "price_usd": 55,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Lowest-assembly e-ink voice-input lead: microphone, physical buttons, 1150 mAh battery and case. Buzzer only; no documented speech output.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "Add a qualified speech/headphone output path and Hermes/PTT firmware. No ready cellular integration or tested replacement voice enclosure."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Lite documentation",
+          "url": "https://docs.m5stack.com/en/core/PaperMono-Lite"
+        },
+        {
+          "label": "Microphone demo",
+          "url": "https://github.com/m5stack/M5PaperMono-UserDemo"
+        },
+        {
+          "label": "OTP display demo",
+          "url": "https://github.com/m5stack/M5PaperMono-OTP-Demo"
+        }
+      ]
+    },
+    {
+      "id": "DONOR01",
+      "name": "WeatherPaper / WeAct 2.9\u2033",
+      "fit_rank": 7,
+      "price_usd": null,
+      "price_status": "pending exact variant quote",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Custom e-ink donor route: 296\u00d7128 black/white SPI module, ESP32-C3 weather firmware and printable body/lid. Not a voice BOM.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "Add microphone, speech output, physical PTT, suitable MCU/audio design, power and revised enclosure. Display I/O is 3.3V; do not infer 5V GPIO tolerance."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "WeatherPaper",
+          "url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/"
+        },
+        {
+          "label": "Display source",
+          "url": "https://github.com/WeActStudio/WeActStudio.EpaperModule"
+        },
+        {
+          "label": "Exact listing",
+          "url": "https://www.aliexpress.us/item/3256804458201128.html"
+        }
+      ]
+    },
+    {
+      "id": "BM32",
+      "name": "Pi Zero + PiSugar Whisplay",
+      "fit_rank": 8,
+      "price_usd": 75.98,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Whisplay + PiSugar 3 are only a partial subtotal",
+        "Pi Zero board, microSD, header, enclosure, cables and charger",
+        "Qualify drivers, power and firmware/agent endpoint"
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/basti_vkl/status/2025727742784983427"
+        },
+        {
+          "label": "Exact source",
+          "url": "https://github.com/sebastianvkl/pizero-openclaw"
+        },
+        {
+          "label": "Current hardware",
+          "url": "https://docs.pisugar.com/docs/product-wiki/whisplay/overview"
+        }
+      ]
+    },
+    {
+      "id": "ALT02",
+      "name": "Waveshare ePaper 3.97",
+      "fit_rank": null,
+      "price_usd": null,
+      "price_status": "pending exact variant quote",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Larger e-ink/audio and rotary-control alternative: microphone, ES8311, amplifier and speaker connector, Wi-Fi/BLE; no verified complete pocket package.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "Source license, physical PTT/Hermes code and final audio bundle need verification; no cellular/headset established."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Documentation",
+          "url": "https://docs.waveshare.com/ESP32-S3-ePaper-3.97"
+        }
+      ]
+    },
+    {
+      "id": "BM06",
+      "name": "OpenTrailPaper / LILYGO T5S3 Pro",
+      "fit_rank": null,
+      "price_usd": 84.21,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Substantive Apache-2.0 e-paper bike computer with offline maps and GPS. Music controls command a phone; they do not play audio on the board.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "Needs audio hardware, voice firmware and protection/enclosure. Vendor hardware root license unresolved."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/RaemondBW/status/2095705823096033427"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2090655732647759977"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2095733425357680882"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2081566677473632495"
+        },
+        {
+          "label": "Related post",
+          "url": "https://x.com/RaemondBW/status/2095705833216877053"
+        },
+        {
+          "label": "Project",
+          "url": "https://opentrailpaper.com/"
+        },
+        {
+          "label": "Firmware",
+          "url": "https://github.com/RaemondBW/OpenTrailPaper"
+        },
+        {
+          "label": "Hardware",
+          "url": "https://lilygo.cc/products/t5-e-paper-s3-pro"
+        }
+      ]
+    },
+    {
+      "id": "BM34",
+      "name": "M5Stack PaperS3 Game Boy emulator",
+      "fit_rank": null,
+      "price_usd": 59,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "PaperS3 e-ink display donor: 4.7-inch 960\u00d7540 panel and 1800 mAh battery; no onboard microphone documented.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "No complete cellular Hermes voice terminal verified. Deep verification remains pending."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/zephray_wenting/status/2071480472786681904"
+        },
+        {
+          "label": "Product docs",
+          "url": "https://docs.m5stack.com/en/core/PaperS3"
+        },
+        {
+          "label": "Store",
+          "url": "https://shop.m5stack.com/products/m5papers3-esp32s3-development-kit"
+        }
+      ]
+    },
+    {
+      "id": "BM35",
+      "name": "PaperMONO",
+      "fit_rank": null,
+      "price_usd": 65,
+      "price_status": "observed incomplete board/bundle subtotal",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "PaperMono C153 e-ink handheld with PDM microphone, battery and case. Full model adds NFC/LoRa; Lite is considered separately above.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "Speech/headphone output, Hermes firmware and safe refresh behavior need engineering."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/M5Stack/status/2079860026659971373"
+        },
+        {
+          "label": "Product docs",
+          "url": "https://docs.m5stack.com/en/core/PaperMono"
+        }
+      ]
+    },
+    {
+      "id": "BM37",
+      "name": "ENILINX TICKEY",
+      "fit_rank": null,
+      "price_usd": null,
+      "price_status": "pending exact variant quote",
+      "checked_at": "2026-09-07",
+      "wifi_total_usd": null,
+      "cellular_total_usd": null,
+      "shipping_usd": null,
+      "tax_usd": null,
+      "arrival_earliest": null,
+      "arrival_latest": null,
+      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "complete": false,
+      "purchase_list": [
+        "Slim wearable color e-paper status display, formerly TICKET. No microphone, speech output, audio codec or PTT implementation documented.",
+        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
+        "Treat as a wearable/status-display reference, not ready voice hardware. Ring opening is not a PTT button."
+      ],
+      "assembly_list": [
+        "Confirm revision, electrical compatibility and source licenses",
+        "Assemble/flash; implement secure PTT agent integration",
+        "Bench-test spoken response, reconnect, power and runtime"
+      ],
+      "cellular_additions": [
+        "Compatible modem and antenna, SIM/data service",
+        "Power-transient design, connectors and enclosure changes",
+        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+      ],
+      "sources": [
+        {
+          "label": "Public post",
+          "url": "https://x.com/NanouuSymeon/status/2096887195915198728?s=20"
+        },
+        {
+          "label": "Vendor",
+          "url": "https://www.eniacelec.com/pages/ticket"
+        },
+        {
+          "label": "Campaign",
+          "url": "https://www.kickstarter.com/projects/enilinx/ticket-refresh-it-new-clip-it-on-carry-your-moment?ref=as0r6e"
+        }
+      ]
+    }
+  ]
+}
