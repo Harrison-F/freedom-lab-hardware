@@ -12,6 +12,8 @@
 - `purchase_list`, `assembly_list`, `cellular_additions`: arrays of disclosed requirements; replace generic pending lists with exact cited parts as research lands.
 - `sources`: public {label,url} evidence. Add source-specific dates in notes when observations differ.
 
+The image-led procurement comparison joins each build to `data.json` by stable ID and reuses its exact existing image. Missing source images stay explicit; no substitute is invented. The original catalog remains separate and its filters do not hide procurement cards. Both use the shared four-column display template (one column on phones).
+
 Additive audited procurement fields (schema v1):
 
 - `build_status`, `bom[]`: exact line items with `name`, `quantity`, nullable `unit_price_usd`, `role` (purchase, included / verify package, unresolved purchase, not required), stock/qualification `status`, nullable public `source_url`, nullable `shipment_group`, and `note` describing included components and compatibility gaps. Included lines cost zero additional dollars, not zero replacement cost.

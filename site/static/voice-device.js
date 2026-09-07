@@ -35,7 +35,7 @@ function render() {
     }).join('');
   }
   const visibleIDs = new Set(selected.map(i => i.id));
-  for (const el of document.querySelectorAll('.display-card')) el.hidden = !visibleIDs.has(el.dataset.id);
+  for (const el of document.querySelectorAll('#collections .display-card')) el.hidden = !visibleIDs.has(el.dataset.id);
   for (const group of document.querySelectorAll('.research-collection')) group.hidden = !group.querySelector('.display-card:not([hidden])');
   $('#count').textContent = `${selected.length} of ${collection.items.length} research items · reviewed ${collection.updated_at}`;
   $('#empty').hidden = selected.length !== 0;

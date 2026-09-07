@@ -25,7 +25,20 @@
 @media (max-width: 900px) { .research-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) { .research-controls { grid-template-columns: minmax(0, 1fr); } .voice-research .topbar { gap: 12px; flex-wrap: wrap; } }
 
-.procurement {margin:40px 0;color:var(--muted);line-height:1.55}.procurement h2 {color:var(--ink);font:400 32px Georgia,serif}.procurement .filter-field {max-width:480px}.table-scroll {overflow-x:auto}table {width:100%;border-collapse:collapse;font-size:14px}th,td {padding:16px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);min-width:140px}th {color:var(--ink)}td:first-child {min-width:210px}td details {font-size:13px}.procurement small {display:block}.procurement ul {padding-left:18px}
+.procurement {margin:40px 0;color:var(--muted);line-height:1.55}
+.procurement > h2 {color:var(--ink);font:400 32px Georgia,serif}
+.procurement .filter-field {max-width:480px}
+.procurement .display-template {align-items:start}
+.procurement .identity h3 {margin:0;color:var(--ink);font:400 30px/1.05 Georgia,serif;letter-spacing:-.035em}
+.procurement-price {margin:18px 0 8px;color:var(--ink);font-size:21px;font-weight:650;line-height:1.25}
+.procurement-caption {margin:8px 0;font-size:13px;line-height:1.5}
+.procurement-delivery {margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13px}
+.procurement small {display:block;font-size:12px;line-height:1.5}
+.procurement strong {color:var(--ink)}
+.procurement details {font-size:13px}
+.procurement .research-evidence {margin-top:16px}
+.procurement .research-evidence summary,.procurement .procurement-offers summary {font-size:13px}
 .procurement .bom-parts li,.procurement .shipment,.procurement .offer {margin:18px 0;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.procurement strong {color:var(--ink)} .procurement td {overflow-wrap:anywhere} .procurement h3 {font-size:15px;color:var(--ink)}
-@media(max-width:600px) {.procurement table,.procurement tbody,.procurement tr,.procurement td {display:block;width:100%;min-width:0}.procurement thead {display:none}.procurement td {padding:12px 0;border:0}.procurement td::before {content:attr(data-label);display:block;font-weight:600;color:var(--ink);margin-bottom:6px}.procurement tr {padding:24px 0;border-bottom:1px solid var(--line)}.procurement td:first-child::before {display:none}.procurement .table-scroll {overflow:visible}}
+.procurement ul {padding-left:18px}
+.procurement h4 {font-size:15px;color:var(--ink)}
+.delivery-tradeoffs {margin:0 0 14px}

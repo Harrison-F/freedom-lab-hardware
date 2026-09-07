@@ -7,7 +7,7 @@
   <title>Voice hardware · Freedom Lab NYC</title>
   <link rel="stylesheet" href="../static/styles.css?v=2">
   <link rel="stylesheet" href="../static/display-template.css?v=1">
-  <link rel="stylesheet" href="../static/voice-device.css?v=shipping-2">
+  <link rel="stylesheet" href="../static/voice-device.css?v=image-cards-4">
 </head>
 <body class="voice-research">
   <div class="grain" aria-hidden="true"></div>
@@ -29,10 +29,10 @@
     <section class="procurement" aria-label="Build and delivery comparison">
       <h2>Build &amp; delivery comparison</h2>
       <p>ZIP 10014 · Quantity 1 · USD · Board/bundle ≠ complete Wi-Fi build ≠ cellular build. Unknown costs are not zero. Tax, shipping, firmware labor, tools and recurring service are separate.</p>
-      <p id="delivery-decision"><strong>Fast package ≠ finished device.</strong> The matching larger e-paper/audio kit (3.97-inch, battery, speaker, cable, TF card and reader) is $64.99 with quoted freight on Amazon, September 17–28; adapter, case, tax and firmware remain extra. The faster 1.54-inch offers are $24.95/$26.87 with September 9 delivery conditional on Prime, but battery inclusion is unverified: USB-powered board leads, not substitutes for the $29.89 battery-pilot BOM. The fastest concrete non-Prime subassembly offer is Whisplay HAT, $35.99 with free September 12 delivery; its required Pi is out of stock. No fastest functional full build is established.</p>
+      <details class="delivery-tradeoffs"><summary>Delivery tradeoffs &amp; exact alternatives</summary><p id="delivery-decision"><strong>Fast package ≠ finished device.</strong> The matching larger e-paper/audio kit (3.97-inch, battery, speaker, cable, TF card and reader) is $64.99 with quoted freight on Amazon, September 17–28; adapter, case, tax and firmware remain extra. The faster 1.54-inch offers are $24.95/$26.87 with September 9 delivery conditional on Prime, but battery inclusion is unverified: USB-powered board leads, not substitutes for the $29.89 battery-pilot BOM. The fastest concrete non-Prime subassembly offer is Whisplay HAT, $35.99 with free September 12 delivery; its required Pi is out of stock. No fastest functional full build is established.</p></details>
       <label class="filter-field">Rank by <select id="cost-sort" aria-label="Rank builds"><option value="fit">Requirements fit</option><option value="known">Known parts subtotal (incomplete)</option><option value="affordability">Complete-build affordability</option><option value="fastest">Fastest complete-build delivery</option></select></label>
-      <p id="ranking-note" role="status"></p><div class="table-scroll"><table><thead><tr><th>Direction</th><th>Board / bundle</th><th>Known parts / complete Wi-Fi</th><th>Cellular</th><th>Shipping / arrival</th></tr></thead><tbody id="bom-rows"></tbody></table></div>
-      <details><summary>What counts as a complete build?</summary><p>Board and display; microphone and codec; speech speaker/amplifier or qualified headset path; physical push-to-talk; battery, charging/protection and power supply; cables/connectors; enclosure and fasteners; firmware and a secure agent relay. Cellular additionally requires a compatible modem, antenna, SIM/data plan, power-transient design and compressed-audio transport. A list is not proof that the parts work together.</p><p>Purchase only exact cited variants. Confirm bundle contents, stock, shipping and tax at checkout. Assemble and flash licensed firmware; test hold/release, spoken replies, reconnect, power and battery safety before deployment. Existing Wi-Fi, Internet and agent-service access are assumed infrastructure, not included hardware.</p></details>
+      <p id="ranking-note" role="status"></p><div id="bom-rows" class="display-template" aria-label="Image-led build comparison"></div>
+      <details><summary>What counts as a complete build?</summary><p id="comparison-methodology"></p><p>Board and display; microphone and codec; speech speaker/amplifier or qualified headset path; physical push-to-talk; battery, charging/protection and power supply; cables/connectors; enclosure and fasteners; firmware and a secure agent relay. Cellular additionally requires a compatible modem, antenna, SIM/data plan, power-transient design and compressed-audio transport. A list is not proof that the parts work together.</p><p>Purchase only exact cited variants. Confirm bundle contents, stock, shipping and tax at checkout. Assemble and flash licensed firmware; test hold/release, spoken replies, reconnect, power and battery safety before deployment. Existing Wi-Fi, Internet and agent-service access are assumed infrastructure, not included hardware.</p></details>
     </section>
     <section class="controls research-controls" aria-label="Research filters">
       <label class="search-field"><span class="sr-only">Search research</span><input id="search" type="search" placeholder="Search devices or evidence" autocomplete="off"></label>
@@ -48,7 +48,7 @@
     <p id="error" class="form-error" role="alert" hidden></p>
     <noscript>This research collection needs JavaScript to display its reviewed JSON data.</noscript>
   </main>
-  <script src="../static/voice-device.js?v=public-1" defer></script>
-<script src="../static/procurement.js?v=shipping-3" defer></script>
+  <script src="../static/voice-device.js?v=image-cards-4" defer></script>
+<script src="../static/procurement.js?v=image-cards-4" defer></script>
 </body>
 </html>

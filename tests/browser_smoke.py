@@ -11,20 +11,29 @@ with sync_playwright() as p:
   page.on('console',lambda e:errors.append(e.text) if e.type=='error' else None)
   page.set_default_timeout(8000)
   response=page.goto(url,wait_until='domcontentloaded',timeout=20000);assert response.status==200
-  page.locator('.display-card').first.wait_for();page.locator('#bom-rows tr').first.wait_for()
-  count=page.locator('.display-card').count();assert count==42
-  assert page.locator('.display-card img').count()==40
-  page.locator('.display-card img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>{i.loading="eager";return i.decode()}))')
-  assert page.locator('#bom-rows tr').count()==13
+  page.locator('#collections .display-card').first.wait_for();page.locator('#bom-rows .procurement-card').first.wait_for()
+  count=page.locator('#collections .display-card').count();assert count==42
+  assert page.locator('#collections .display-card img').count()==40
+  page.locator('#collections .display-card img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>{i.loading="eager";return i.decode()}))')
+  assert page.locator('#bom-rows .procurement-card').count()==13
+  assert page.locator('#bom-rows img').count()==12
+  for image in page.locator('#bom-rows img').all():
+   identity=image.locator('xpath=ancestor::article[@data-build-id]').get_attribute('data-build-id')
+   assert image.get_attribute('src')==page.locator('#collections [data-id="'+identity+'"] img').get_attribute('src')
+  page.locator('#bom-rows img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>i.decode()))')
+  assert page.locator('#bom-rows').evaluate('(e)=>getComputedStyle(e).gridTemplateColumns.split(" ").length')==(4 if width==1280 else 1)
+  page.locator('#bom-rows').evaluate('(e)=>e.scrollIntoView({block:"start"})')
+  page.screenshot(path=str(output/f'{width}-initial-image-comparison.png'))
   columns=page.locator('.display-template').first.evaluate('(e)=>getComputedStyle(e).gridTemplateColumns.split(" ").length')
   assert columns==(4 if width==1280 else 1)
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
-  page.locator('#search').fill('Waveshare');assert page.locator('.display-card:visible').count()<count
-  page.locator('#reset').click();assert page.locator('.display-card:visible').count()==count
+  page.locator('#search').fill('Waveshare');assert page.locator('#collections .display-card:visible').count()<count
+  page.locator('#reset').click();assert page.locator('#collections .display-card:visible').count()==count
   for selector in ['#recommendation-filter','#status-filter','#category-filter','#scope-filter']:
-   value=page.locator(selector+' option').nth(1).get_attribute('value');page.locator(selector).select_option(value);assert page.locator('.display-card:visible').count()>0;page.locator('#reset').click()
-  page.locator('.research-evidence summary').first.click();assert page.locator('.research-evidence').first.get_attribute('open') is not None
-  page.locator('.display-card').first.hover();page.mouse.move(0,0)
+   value=page.locator(selector+' option').nth(1).get_attribute('value');page.locator(selector).select_option(value);assert page.locator('#collections .display-card:visible').count()>0;page.locator('#reset').click()
+  page.locator('#collections .research-evidence summary').first.click();assert page.locator('#collections .research-evidence').first.get_attribute('open') is not None
+  page.locator('#collections .display-card').first.hover();page.mouse.move(0,0)
+  assert page.locator('#bom-rows .procurement-card:visible').count()==13
   for mode in ['known','affordability','fastest','fit']:
    page.locator('#cost-sort').select_option(mode)
    if mode in ['affordability','fastest']:assert 'No defensible' in page.locator('#ranking-note').inner_text()
@@ -48,9 +57,9 @@ with sync_playwright() as p:
   with page.expect_popup() as pop:page.keyboard.press('Enter')
   popup=pop.value;assert popup.url.startswith('https://github.com/Harrison-F/freedom-lab-hardware');popup.close()
   page.locator('#bom-rows').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-comparison.png'))
-  page.locator('.research-evidence summary').first.click()
-  page.locator('.display-card').first.evaluate('(e)=>e.scrollIntoView({block:"start"})')
-  page.locator('.display-card img').first.evaluate('(e)=>e.decode()')
+  page.locator('#collections .research-evidence summary').first.click()
+  page.locator('#collections .display-card').first.evaluate('(e)=>e.scrollIntoView({block:"start"})')
+  page.locator('#collections .display-card img').first.evaluate('(e)=>e.decode()')
   page.screenshot(path=str(output/f'{width}-cards.png'))
   results.append({'width':width,'columns':columns,'cards':count,'url':page.url});page.close()
  browser.close()
