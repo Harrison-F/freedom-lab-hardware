@@ -9,7 +9,8 @@ with sync_playwright() as p:
   page=browser.new_page(viewport={'width':width,'height':900})
   page.on('pageerror',lambda e:errors.append(str(e)))
   page.on('console',lambda e:errors.append(e.text) if e.type=='error' else None)
-  response=page.goto(url,wait_until='networkidle');assert response.status==200
+  page.set_default_timeout(8000)
+  response=page.goto(url,wait_until='domcontentloaded',timeout=20000);assert response.status==200
   page.locator('.display-card').first.wait_for();page.locator('#bom-rows tr').first.wait_for()
   count=page.locator('.display-card').count();assert count>0
   columns=page.locator('.display-template').first.evaluate('(e)=>getComputedStyle(e).gridTemplateColumns.split(" ").length')
@@ -26,8 +27,11 @@ with sync_playwright() as p:
   page.locator('#github-link').focus()
   with page.expect_popup() as pop:page.keyboard.press('Enter')
   popup=pop.value;assert popup.url.startswith('https://github.com/Harrison-F/freedom-lab-hardware');popup.close()
-  page.locator('#cost-sort').scroll_into_view_if_needed();page.screenshot(path=str(output/f'{width}-comparison.png'))
-  page.locator('.display-card').first.scroll_into_view_if_needed();page.screenshot(path=str(output/f'{width}-cards.png'))
+  page.locator('#bom-rows').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-comparison.png'))
+  page.locator('.research-evidence summary').first.click()
+  page.locator('.display-card').first.evaluate('(e)=>e.scrollIntoView({block:"start"})')
+  page.locator('.display-card img').first.evaluate('(e)=>e.decode()')
+  page.screenshot(path=str(output/f'{width}-cards.png'))
   results.append({'width':width,'columns':columns,'cards':count,'url':page.url});page.close()
  browser.close()
 assert not errors,errors
