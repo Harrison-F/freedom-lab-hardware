@@ -3,15 +3,15 @@
   "destination_zip": "10014",
   "quantity": 1,
   "currency": "USD",
-  "status": "pending shipping research",
-  "methodology": "Fit ranks are existing desk-review pilot priorities, not measured performance. Affordability requires a complete Wi-Fi build including shipping and tax. Fastest requires all required parts in hand; unknowns sort last and are not winners. Board prices are dated observations. No completed-build totals or arrival dates established.",
+  "status": "Supplier shipping evidence integrated; no complete operational delivered quote",
+  "methodology": "Observed September 7, 2026, ZIP 10014, qty 1. Known parts and partial freight are shown even when qualification is incomplete. Unknowns are not zero; dated offers apply only to the named package and Prime conditions, never all required parts. No complete-build price or readiness winner is established. Assembly, firmware, tax, backend and recurring service remain separate.",
   "builds": [
     {
       "id": "ALT01",
-      "name": "Waveshare ePaper 1.54 V2",
+      "name": "Waveshare ESP32-S3-ePaper-1.54 V2 non-touch with battery",
       "fit_rank": 1,
       "price_usd": 16.99,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "32298 · Add to Cart enabled; no out-of-stock text; actual quantity not confirmed",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -19,22 +19,24 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown. Add to Cart enabled; no out-of-stock text; actual quantity not confirmed. policy_estimate_only",
       "complete": false,
       "purchase_list": [
-        "Confirm exact non-touch battery-included V2 SKU 32298 and enclosure contents",
-        "USB power/data cable and suitable charger; qualify supplied battery",
-        "PTT firmware, authenticated relay and assembly/testing"
+        "Use the exact selected variant and all purchase/unresolved lines below; included components are not charged twice."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Verify V2 silk; revision-specific firmware is not interchangeable.",
+        "Confirm cell protection/charging limits and housing closure before unattended portable use. No independent safety certification established.",
+        "No built-in headphone output or Bluetooth Classic/A2DP established; this BOM uses included speaker.",
+        "Implement and test physical key-down capture / key-up send, speech playback, asynchronous e-paper refresh, Wi-Fi provisioning and reconnect, TLS device authentication and a narrow Hermes/STT/TTS server bridge.",
+        "No candidate was flashed or bench-tested here. Voice latency, intelligibility, acoustic feedback, connected battery runtime and charging temperature remain test gates.",
+        "Existing development computer, Internet-connected 2.4GHz Wi-Fi and running backend assumed available; acquisition, hosting, STT/TTS/LLM API usage and labor are not in hardware subtotals.",
+        "Existing audit found no top-level license for vendor application; source-available reference, not automatically reusable open-source application. Use independently licensed implementation or clarify permission."
       ],
       "cellular_additions": [
-        "Compatible modem and antenna, SIM/data service",
-        "Power-transient design, connectors and enclosure changes",
-        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+        "Two-device alternative: GL.iNet GL-E750V2 Mudi EM060K $169.99, battery, antennas, enclosure, cables and wall adapter included; separate activated carrier SIM/data plan unpriced. Not cellular inside the terminal.",
+        "Carrier/IMEI acceptance, SIM/APN, activation and recurring price unverified. Test WPA2 2.4GHz Wi-Fi, reconnect and outbound TLS; no shared power or modem wiring.",
+        "Single-enclosure LTE remains unqualified: modem, antennas, peak-current power, wiring, enclosure and transport firmware not priced."
       ],
       "sources": [
         {
@@ -48,15 +50,167 @@
         {
           "label": "Audio source",
           "url": "https://github.com/waveshareteam/ESP32-S3-ePaper-1.54/blob/main/02_Example/Arduino/08_Audio_Test/user_app.cpp"
+        },
+        {
+          "label": "Exact audited offer",
+          "url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 29.89,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "SKU32298 controller/display assembly",
+          "quantity": 1,
+          "unit_price_usd": 16.99,
+          "status": "selected_variant_live",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298",
+          "shipment_group": "waveshare",
+          "note": "200x200 e-paper; current page 8MB flash/8MB PSRAM; received PCB must explicitly say V2.",
+          "role": "purchase"
+        },
+        {
+          "name": "Microphone, ES8311 codec and speech speaker",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298",
+          "shipment_group": "waveshare",
+          "note": "Manufacturer-designed voice I/O, not separately matched generic modules.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "BOOT and PWR tactile controls",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298",
+          "shipment_group": "waveshare",
+          "note": "PTT firmware mapping required; do not interfere with boot/power long-press.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "3.7V MX1.25 lithium battery and onboard charging",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included_selected_variant",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298",
+          "shipment_group": "waveshare",
+          "note": "Use vendor cell only; capacity, protection IC, charge-current/thermal behavior not established.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "Housing",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "vendor_case_evidence",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-1.54.htm?sku=32298",
+          "shipment_group": "waveshare",
+          "note": "Vendor describes included battery fitting inside case; separate package line only says board and optional battery. Verify complete housing and retention on receipt.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "Adafruit 4474 USB-A to USB-C data/power cable, 1m",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "in_stock",
+          "source_url": "https://www.adafruit.com/product/4474",
+          "shipment_group": "adafruit",
+          "note": "5V USB data and power; use for flashing and charging.",
+          "role": "purchase"
+        },
+        {
+          "name": "Adafruit 1994 USB-A wall power adapter",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "15_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "adafruit",
+          "note": "US mains plugs; manufacturer says UL-listed, 5.25V within USB tolerance, 2A available. USB-C board determines draw; no direct cell connection.",
+          "role": "purchase"
+        },
+        {
+          "name": "microSD storage",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "not_required_for_proposed_streaming_pilot",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "8MB flash/PSRAM available; streaming/ring-buffer architecture is a design choice, not tested firmware. SD required if chosen app uses local files.",
+          "role": "not required"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Waveshare",
+          "scope": "32298",
+          "shipping_usd": null,
+          "status": "policy_estimate_only",
+          "note": "Typically within 3 business days after bank-transfer receipt; policy wording is payment-method-specific. UPS 3–7, DHL 3–8, FedEx 4–8 working days; ePacket 7–15 or more; post 20–30 working days. Battery-route availability not quoted. Add-to-cart clicks did not persist; exact cart read remained empty. No ZIP-specific rate; policy says freight depends on weight/courier/address. No order submitted.",
+          "source_url": "https://www.waveshare.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [
+        {
+          "name": "Optional separate cellular hotspot",
+          "source_url": "https://www.amazon.com/dp/B0CJF7KQ3Q",
+          "price_usd": 169.99,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 169.99,
+          "arrival_earliest": "2026-09-12",
+          "arrival_latest": "2026-09-12",
+          "match": "optional separate hotspot",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "In stock; GL Technologies / Amazon. Sep 12 non-Prime; Sep 9 conditional on Prime. Excludes SIM/service/tax. Does not make a voice BOM complete."
+        },
+        {
+          "name": "1.54 fast board near-match · Bo lin",
+          "source_url": "https://www.amazon.com/dp/B0GV417JB7",
+          "price_usd": 26.87,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 26.87,
+          "arrival_earliest": "2026-09-09",
+          "arrival_latest": "2026-09-09",
+          "match": "near-match; battery inclusion unverified; Prime conditional",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "ESP32-S3-ePaper-1.54 x1 only; battery inclusion not established. Prime only: 2026-09-09. Non-Prime: FREE Sep12 only over $35 Amazon-shipped order; quantity1 alone below threshold, shipping unknown. Not verified equivalent to SKU32298 battery bundle. Good fast USB-powered electronics lead, not a complete portable BOM."
+        },
+        {
+          "name": "1.54 fast board near-match · Wonrabai Electronics",
+          "source_url": "https://www.amazon.com/dp/B0FS1LKNZT",
+          "price_usd": 24.95,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 24.95,
+          "arrival_earliest": "2026-09-09",
+          "arrival_latest": "2026-09-09",
+          "match": "near-match; battery inclusion unverified; Prime conditional",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "Battery/case bundle not conclusively enumerated. Prime only: 2026-09-09. Non-Prime: FREE Sep12 only over $35 Amazon-shipped order; quantity1 alone below threshold, shipping unknown. Not verified equivalent to SKU32298 battery bundle. Good fast USB-powered electronics lead, not a complete portable BOM."
+        }
+      ],
+      "alternatives": [],
+      "build_status": "Best low-cost integrated audio pilot; not a finished Hermes terminal"
     },
     {
       "id": "KIT01",
       "name": "M5StickS3",
       "fit_rank": 2,
       "price_usd": 21.5,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "live_in_stock",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -64,22 +218,23 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown; see per-shipment cart quotes and policy estimates.",
       "complete": false,
       "purchase_list": [
-        "M5StickS3 with built-in mic, speaker, buttons and 250mAh battery",
-        "USB power/data cable and charger",
-        "PTT firmware and secure relay; modem integration not included"
+        "Purchase every listed part; package contents are itemized under each line. Included audio, controls, enclosure and charging are not additional purchases."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Implement licensed hold-to-record/release-to-send firmware, authenticated TLS Hermes/STT/TTS bridge and Wi-Fi provisioning/reconnect.",
+        "Bench-test spoken replies, cancellation, cold boot, network loss, charging temperature and battery runtime; no hardware was flashed or physically tested in this audit.",
+        "Provisioning computer, 2.4GHz Wi-Fi, Internet and hosted backend required; hardware subtotals exclude their acquisition, hosting, API usage, labor and tools.",
+        "Reference implements Wi-Fi hold/release and spoken relay replies, but no redistribution license established: get permission or implement licensed firmware. Correct region/TLS and test end-to-end.",
+        "Keep battery speaker volume below vendor 75% recommendation. No headphones on bridged speaker pins; BLE does not establish A2DP."
       ],
       "cellular_additions": [
-        "Compatible modem and antenna, SIM/data service",
-        "Power-transient design, connectors and enclosure changes",
-        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+        "U128 SIM7080G $36.90 includes Grove cable, SMA antenna, housing and hex key. Stick + modem share ONE $10 duties-included air quote.",
+        "1NCE SIM $1 + prepaid service $14: 500MB TOTAL over up to 10 years, $0 monthly base; refill $10/500MB. Eligibility, activation/APN and NYC attachment untested. SIM freight unknown; general receipt claim 2–3 business days after payment approval.",
+        "Known parts/service $86.30, or $96.30 with M5 air only; required mount/power design, Adafruit/SIM freight and tax unresolved. Not a complete cellular total.",
+        "PCM 256kbit/s exceeds 115200 8N1 UART capacity. Compression, modem/TLS/failover firmware absent; Grove current/transients and enclosure unqualified. Never backfeed or tie independent 5V sources."
       ],
       "sources": [
         {
@@ -97,15 +252,212 @@
         {
           "label": "Data plan",
           "url": "https://www.1nce.com/en-us/1nce-connect/pricing"
+        },
+        {
+          "label": "M5StickS3 K150",
+          "url": "https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit"
+        },
+        {
+          "label": "USB-A to USB-C data/charge cable, Adafruit 4696",
+          "url": "https://www.adafruit.com/product/4696"
+        },
+        {
+          "label": "USB-A 5V/2A US wall supply, Adafruit 1994",
+          "url": "https://www.adafruit.com/product/1994"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 34.4,
+      "known_shipping_usd": 10,
+      "known_parts_plus_quoted_shipping_usd": 44.4,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "M5StickS3 K150",
+          "quantity": 1,
+          "unit_price_usd": 21.5,
+          "status": "live_in_stock",
+          "source_url": "https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit",
+          "shipment_group": "M5Stack",
+          "note": "MCU, Wi-Fi antenna, flash, mic, ES8311, speaker/amplifier, physical buttons, enclosure, 250mAh cell and onboard USB charging",
+          "role": "purchase"
+        },
+        {
+          "name": "USB-A to USB-C data/charge cable, Adafruit 4696",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.adafruit.com/product/4696",
+          "shipment_group": "Adafruit",
+          "note": "Data/charge switch: set Data before connecting to programming computer",
+          "role": "purchase"
+        },
+        {
+          "name": "USB-A 5V/2A US wall supply, Adafruit 1994",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "Adafruit",
+          "note": "US AC plug; manufacturer describes 5.25V nominal compensation, UL listed; cable separate",
+          "role": "purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "M5Stack",
+          "scope": "K150 alone, K150 + U128 together, or K147 alone: one shipment",
+          "shipping_usd": 10,
+          "status": "ZIP 10014 cart quote",
+          "note": "Registered Air Mail, duties included. Cart 10–20 days; policy 15–20 BUSINESS days after shipment. Processing unspecified; no dated arrival. Alternative DHL $31.50, cart 3–5 days / policy 3–5 business days after shipment; duties/handling NOT included.",
+          "source_url": "https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit",
+          "arrival_earliest": null,
+          "arrival_latest": null,
+          "services": [
+            {
+              "name": "Registered Air Mail",
+              "shipping_usd": 10,
+              "duties_included": true,
+              "cart_delivery_days": [
+                10,
+                20
+              ],
+              "cart_day_unit": "unspecified",
+              "policy_transit_business_days": [
+                15,
+                20
+              ],
+              "processing_days": null
+            },
+            {
+              "name": "DHL",
+              "shipping_usd": 31.5,
+              "duties_included": false,
+              "cart_delivery_days": [
+                3,
+                5
+              ],
+              "cart_day_unit": "unspecified",
+              "policy_transit_business_days": [
+                3,
+                5
+              ],
+              "processing_days": null
+            }
+          ]
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [
+        {
+          "name": "Amazon K150 · M5Stack Official Store",
+          "source_url": "https://www.amazon.com/dp/B0GWHN8HK3",
+          "price_usd": 31.9,
+          "shipping_usd": null,
+          "item_plus_shipping_usd": null,
+          "arrival_earliest": "2026-09-23",
+          "arrival_latest": "2026-10-08",
+          "match": "exact subassembly",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "Ships Amazon. Fastest Sep 23–Oct 6; standard Sep 23–Oct 8. Free eligible Amazon order threshold $35; qty1 alone below threshold. Prime not assumed."
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "Buy-new cellular engineering extension, not working cellular kit",
+          "known_parts_subtotal_usd": 86.3,
+          "known_parts_plus_quoted_shipping_usd": 96.3,
+          "note": "Includes one grouped $10 M5 air shipment only; Adafruit freight, tax and any unresolved parts extra. Missing compressed audio/modem/TLS/failover implementation and qualified portable power/mount.",
+          "bom": [
+            {
+              "name": "M5StickS3 K150",
+              "quantity": 1,
+              "unit_price_usd": 21.5,
+              "status": "live_in_stock",
+              "source_url": "https://shop.m5stack.com/products/m5sticks3-esp32s3-mini-iot-dev-kit",
+              "shipment_group": "M5Stack",
+              "note": "MCU, Wi-Fi antenna, flash, mic, ES8311, speaker/amplifier, physical buttons, enclosure, 250mAh cell and onboard USB charging",
+              "role": "purchase"
+            },
+            {
+              "name": "USB-A to USB-C data/charge cable, Adafruit 4696",
+              "quantity": 1,
+              "unit_price_usd": 4.95,
+              "status": "live_in_stock",
+              "source_url": "https://www.adafruit.com/product/4696",
+              "shipment_group": "Adafruit",
+              "note": "Data/charge switch: set Data before connecting to programming computer",
+              "role": "purchase"
+            },
+            {
+              "name": "USB-A 5V/2A US wall supply, Adafruit 1994",
+              "quantity": 1,
+              "unit_price_usd": 7.95,
+              "status": "live_in_stock",
+              "source_url": "https://www.adafruit.com/product/1994",
+              "shipment_group": "Adafruit",
+              "note": "US AC plug; manufacturer describes 5.25V nominal compensation, UL listed; cable separate",
+              "role": "purchase"
+            },
+            {
+              "name": "SIM7080G Cat-M Unit U128",
+              "quantity": 1,
+              "unit_price_usd": 36.9,
+              "status": "live_in_stock",
+              "source_url": "https://shop.m5stack.com/products/sim7080g-cat-m-nb-iot-unit",
+              "shipment_group": "M5Stack",
+              "note": "20cm Grove cable, SMA antenna, hex wrench and modem enclosure; nano SIM slot",
+              "role": "purchase"
+            },
+            {
+              "name": "1NCE Business 3-in-1 SIM",
+              "quantity": 1,
+              "unit_price_usd": 1.0,
+              "status": "live_in_stock",
+              "source_url": "https://www.1nce.com/en-us/1nce-connect/pricing",
+              "shipment_group": "1NCE",
+              "note": "Includes nano format",
+              "role": "purchase"
+            },
+            {
+              "name": "1NCE Lifetime Flat prepaid activation/service",
+              "quantity": 1,
+              "unit_price_usd": 14.0,
+              "status": "live_in_stock",
+              "source_url": "https://www.1nce.com/en-us/1nce-connect/pricing",
+              "shipment_group": "1NCE",
+              "note": "500MB TOTAL over up to 10 years; 250 device/server SMS; no monthly base fee",
+              "role": "purchase"
+            },
+            {
+              "name": "Combined Stick/modem enclosure or secure mount, strain relief, any qualified power distribution",
+              "quantity": 1,
+              "unit_price_usd": null,
+              "status": "unpriced_engineering_required",
+              "source_url": null,
+              "shipment_group": "Unselected",
+              "note": "Must be designed/quoted after power-path testing; do not improvise dual 5V sources",
+              "role": "unresolved purchase"
+            }
+          ]
+        }
+      ],
+      "build_status": "Buy-new portable Wi-Fi pilot hardware; complete listed hardware subtotal, firmware/backend excluded"
     },
     {
       "id": "BM01",
       "name": "Waveshare ESP32-S3 Touch-AMOLED-1.8",
       "fit_rank": 3,
-      "price_usd": null,
-      "price_status": "pending exact variant quote",
+      "price_usd": 29.99,
+      "price_status": "browser_selected_variant_order_button_present",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -113,17 +465,16 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown; see per-shipment cart quotes and policy estimates.",
       "complete": false,
       "purchase_list": [
-        "Integrated AMOLED voice prototype: ESP32-S3, microphone, ES8311 codec, speaker and case. Not e-ink.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "Implement physical PTT and authenticated Hermes relay. Qualify runtime, headphones and cellular separately."
+        "Purchase every listed part; package contents are itemized under each line. Included audio, controls, enclosure and charging are not additional purchases."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Implement licensed hold-to-record/release-to-send firmware, authenticated TLS Hermes/STT/TTS bridge and Wi-Fi provisioning/reconnect.",
+        "Bench-test spoken replies, cancellation, cold boot, network loss, charging temperature and battery runtime; no hardware was flashed or physically tested in this audit.",
+        "Provisioning computer, 2.4GHz Wi-Fi, Internet and hosted backend required; hardware subtotals exclude their acquisition, hosting, API usage, labor and tools.",
+        "SKU29957 includes matched MX1.25 battery and black case. Match received V1 SH8601/FT3168 or V2 CO5300/CST820 to firmware; no headphone path established."
       ],
       "cellular_additions": [
         "Compatible modem and antenna, SIM/data service",
@@ -146,15 +497,88 @@
         {
           "label": "Firmware",
           "url": "https://github.com/waveshareteam/ESP32-S3-Touch-AMOLED-1.8"
+        },
+        {
+          "label": "Waveshare battery-included 29957",
+          "url": "https://www.waveshare.com/esp32-s3-touch-amoled-1.8.htm?sku=29957"
+        },
+        {
+          "label": "USB-A to USB-C data/charge cable, Adafruit 4696",
+          "url": "https://www.adafruit.com/product/4696"
+        },
+        {
+          "label": "USB-A 5V/2A US wall supply, Adafruit 1994",
+          "url": "https://www.adafruit.com/product/1994"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 42.89,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "Waveshare battery-included 29957",
+          "quantity": 1,
+          "unit_price_usd": 29.99,
+          "status": "browser_selected_variant_order_button_present",
+          "source_url": "https://www.waveshare.com/esp32-s3-touch-amoled-1.8.htm?sku=29957",
+          "shipment_group": "Waveshare",
+          "note": "MCU, Wi-Fi antenna, 16MB flash, mic, codec, speaker, buttons/touch, black case, 3.7V MX1.25 cell, AXP2101 charging",
+          "role": "purchase"
+        },
+        {
+          "name": "USB-A to USB-C data/charge cable, Adafruit 4696",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.adafruit.com/product/4696",
+          "shipment_group": "Adafruit",
+          "note": "Data/charge switch: set Data before connecting to programming computer",
+          "role": "purchase"
+        },
+        {
+          "name": "USB-A 5V/2A US wall supply, Adafruit 1994",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "Adafruit",
+          "note": "US AC plug; manufacturer describes 5.25V nominal compensation, UL listed; cable separate",
+          "role": "purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Waveshare",
+          "scope": "Selected battery-included board bundle",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "No persisted cart or ZIP-specific freight quote. Policy: processing normally within 3 business days after bank-transfer receipt; UPS 3–7, DHL 3–8, FedEx 4–8 working days after dispatch; ePacket 7–15+; post 20–30. Battery-route eligibility unquoted.",
+          "source_url": "https://www.waveshare.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [],
+      "alternatives": [],
+      "build_status": "Buy-new battery Wi-Fi pilot hardware; complete listed hardware subtotal, firmware/backend excluded"
     },
     {
       "id": "BM12",
       "name": "AtomS3R AI Chatbot Kit K147",
       "fit_rank": 4,
       "price_usd": 21.5,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "live_in_stock",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -162,18 +586,16 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown; see per-shipment cart quotes and policy estimates.",
       "complete": false,
       "purchase_list": [
-        "Exact K147 AtomS3R + Atomic Voice Base (not bare C126)",
-        "Battery/charging/power packaging, cables and enclosure",
-        "Optional CTIA audio base replaces Voice Base; stacking not verified",
-        "Physical PTT and relay firmware"
+        "Purchase every listed part; package contents are itemized under each line. Included audio, controls, enclosure and charging are not additional purchases."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Implement licensed hold-to-record/release-to-send firmware, authenticated TLS Hermes/STT/TTS bridge and Wi-Fi provisioning/reconnect.",
+        "Bench-test spoken replies, cancellation, cold boot, network loss, charging temperature and battery runtime; no hardware was flashed or physically tested in this audit.",
+        "Provisioning computer, 2.4GHz Wi-Fi, Internet and hosted backend required; hardware subtotals exclude their acquisition, hosting, API usage, labor and tools.",
+        "Baseline is USB-tethered, not battery-powered. Optional enclosed bank may shut off at low load or reset when charging changes; disconnect Atom to recharge bank."
       ],
       "cellular_additions": [
         "Compatible modem and antenna, SIM/data service",
@@ -192,15 +614,227 @@
         {
           "label": "CTIA base",
           "url": "https://shop.m5stack.com/products/atomic-audio-3-5-base"
+        },
+        {
+          "label": "AtomS3R AI Chatbot K147",
+          "url": "https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram"
+        },
+        {
+          "label": "USB-A to USB-C data/charge cable, Adafruit 4696",
+          "url": "https://www.adafruit.com/product/4696"
+        },
+        {
+          "label": "USB-A 5V/2A US wall supply, Adafruit 1994",
+          "url": "https://www.adafruit.com/product/1994"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 34.4,
+      "known_shipping_usd": 10,
+      "known_parts_plus_quoted_shipping_usd": 44.4,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "AtomS3R AI Chatbot K147",
+          "quantity": 1,
+          "unit_price_usd": 21.5,
+          "status": "live_in_stock",
+          "source_url": "https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram",
+          "shipment_group": "M5Stack",
+          "note": "AtomS3R screen/button controller and enclosed Atomic Voice Base; mic, codec, amplifier, speaker, flash; NO battery/cable",
+          "role": "purchase"
+        },
+        {
+          "name": "USB-A to USB-C data/charge cable, Adafruit 4696",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.adafruit.com/product/4696",
+          "shipment_group": "Adafruit",
+          "note": "Data/charge switch: set Data before connecting to programming computer",
+          "role": "purchase"
+        },
+        {
+          "name": "USB-A 5V/2A US wall supply, Adafruit 1994",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "Adafruit",
+          "note": "US AC plug; manufacturer describes 5.25V nominal compensation, UL listed; cable separate",
+          "role": "purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "M5Stack",
+          "scope": "K150 alone, K150 + U128 together, or K147 alone: one shipment",
+          "shipping_usd": 10,
+          "status": "ZIP 10014 cart quote",
+          "note": "Registered Air Mail, duties included. Cart 10–20 days; policy 15–20 BUSINESS days after shipment. Processing unspecified; no dated arrival. Alternative DHL $31.50, cart 3–5 days / policy 3–5 business days after shipment; duties/handling NOT included.",
+          "source_url": "https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram",
+          "arrival_earliest": null,
+          "arrival_latest": null,
+          "services": [
+            {
+              "name": "Registered Air Mail",
+              "shipping_usd": 10,
+              "duties_included": true,
+              "cart_delivery_days": [
+                10,
+                20
+              ],
+              "cart_day_unit": "unspecified",
+              "policy_transit_business_days": [
+                15,
+                20
+              ],
+              "processing_days": null
+            },
+            {
+              "name": "DHL",
+              "shipping_usd": 31.5,
+              "duties_included": false,
+              "cart_delivery_days": [
+                3,
+                5
+              ],
+              "cart_day_unit": "unspecified",
+              "policy_transit_business_days": [
+                3,
+                5
+              ],
+              "processing_days": null
+            }
+          ]
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [],
+      "alternatives": [
+        {
+          "name": "Buy-new portable bank-powered Wi-Fi demonstrator",
+          "known_parts_subtotal_usd": 74.35,
+          "known_parts_plus_quoted_shipping_usd": 84.35,
+          "note": "Includes one grouped $10 M5 air shipment only; Adafruit freight, tax and any unresolved parts extra. Power bank low-current auto-off and charge/discharge transition reset must be tested; not a single tiny object.",
+          "bom": [
+            {
+              "name": "AtomS3R AI Chatbot K147",
+              "quantity": 1,
+              "unit_price_usd": 21.5,
+              "status": "live_in_stock",
+              "source_url": "https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram",
+              "shipment_group": "M5Stack",
+              "note": "AtomS3R screen/button controller and enclosed Atomic Voice Base; mic, codec, amplifier, speaker, flash; NO battery/cable",
+              "role": "purchase"
+            },
+            {
+              "name": "USB-A to USB-C data/charge cable, Adafruit 4696",
+              "quantity": 1,
+              "unit_price_usd": 4.95,
+              "status": "live_in_stock",
+              "source_url": "https://www.adafruit.com/product/4696",
+              "shipment_group": "Adafruit",
+              "note": "Data/charge switch: set Data before connecting to programming computer",
+              "role": "purchase"
+            },
+            {
+              "name": "USB-A 5V/2A US wall supply, Adafruit 1994",
+              "quantity": 1,
+              "unit_price_usd": 7.95,
+              "status": "live_in_stock",
+              "source_url": "https://www.adafruit.com/product/1994",
+              "shipment_group": "Adafruit",
+              "note": "US AC plug; manufacturer describes 5.25V nominal compensation, UL listed; cable separate",
+              "role": "purchase"
+            },
+            {
+              "name": "Enclosed 10000mAh USB power bank, Adafruit 1566",
+              "quantity": 1,
+              "unit_price_usd": 39.95,
+              "status": "live_in_stock",
+              "source_url": "https://www.adafruit.com/product/1566",
+              "shipment_group": "Adafruit",
+              "note": "Integrated cell/charging/boost/case; micro-B charging cable included; USB-A outputs; conservative demonstrator, not tiny integrated battery",
+              "role": "purchase"
+            }
+          ]
+        },
+        {
+          "name": "CTIA headset alternative; replaces Voice Base, never stacks",
+          "known_parts_subtotal_usd": 41.9,
+          "known_parts_plus_quoted_shipping_usd": null,
+          "note": "K147 + cable + supply + A166 $7.50; original Voice Base unused. CTIA headset unpriced; routing and firmware untested; freight must be requoted.",
+          "bom": [
+            {
+              "name": "AtomS3R AI Chatbot K147",
+              "quantity": 1,
+              "unit_price_usd": 21.5,
+              "status": "live_in_stock",
+              "source_url": "https://shop.m5stack.com/products/atoms3r-ai-chatbot-kit-8mb-psram",
+              "shipment_group": "M5Stack",
+              "note": "AtomS3R screen/button controller and enclosed Atomic Voice Base; mic, codec, amplifier, speaker, flash; NO battery/cable",
+              "role": "purchase"
+            },
+            {
+              "name": "USB-A to USB-C data/charge cable, Adafruit 4696",
+              "quantity": 1,
+              "unit_price_usd": 4.95,
+              "status": "live_in_stock",
+              "source_url": "https://www.adafruit.com/product/4696",
+              "shipment_group": "Adafruit",
+              "note": "Data/charge switch: set Data before connecting to programming computer",
+              "role": "purchase"
+            },
+            {
+              "name": "USB-A 5V/2A US wall supply, Adafruit 1994",
+              "quantity": 1,
+              "unit_price_usd": 7.95,
+              "status": "live_in_stock",
+              "source_url": "https://www.adafruit.com/product/1994",
+              "shipment_group": "Adafruit",
+              "note": "US AC plug; manufacturer describes 5.25V nominal compensation, UL listed; cable separate",
+              "role": "purchase"
+            },
+            {
+              "name": "Atomic Audio 3.5 A166 alternative base",
+              "quantity": 1,
+              "unit_price_usd": 7.5,
+              "status": "live_in_stock",
+              "source_url": "https://shop.m5stack.com/products/atomic-audio-3-5-base",
+              "shipment_group": "M5Stack",
+              "note": "CTIA TRRS output and headset mic input; includes screw/hex key; replaces Voice Base, not a simultaneous stack",
+              "role": "purchase"
+            },
+            {
+              "name": "CTIA analog TRRS headset",
+              "quantity": 1,
+              "unit_price_usd": null,
+              "status": "unpriced_unqualified",
+              "source_url": null,
+              "shipment_group": "Unselected",
+              "note": "Required only for optional wired-headset alternative; exact headset/routing not tested",
+              "role": "unresolved purchase"
+            }
+          ]
+        }
+      ],
+      "build_status": "Buy-new USB-tethered Wi-Fi pilot hardware; complete listed hardware subtotal, firmware/backend excluded"
     },
     {
       "id": "BM07",
       "name": "Seeed reTerminal Sticky",
       "fit_rank": 5,
       "price_usd": 49.9,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "100056818 · In stock, China Warehouse",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -208,22 +842,23 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown. In stock, China Warehouse. unknown",
       "complete": false,
       "purchase_list": [
-        "E-paper voice-input shortlist: genuine PDM microphone and physical hold \u2192 speak \u2192 release workflow. Output is a buzzer, not spoken replies.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "No documented speech/headphone path or configurable Hermes endpoint. Peripheral-demo root license unresolved."
+        "Use the exact selected variant and all purchase/unresolved lines below; included components are not charged twice."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Speech-output path must be designed and tested; stock enclosure likely needs revision.",
+        "Stock setup explicitly requires phone + Seeedash; custom provisioning must remove this dependency.",
+        "Implement and test physical key-down capture / key-up send, speech playback, asynchronous e-paper refresh, Wi-Fi provisioning and reconnect, TLS device authentication and a narrow Hermes/STT/TTS server bridge.",
+        "No candidate was flashed or bench-tested here. Voice latency, intelligibility, acoustic feedback, connected battery runtime and charging temperature remain test gates.",
+        "Existing development computer, Internet-connected 2.4GHz Wi-Fi and running backend assumed available; acquisition, hosting, STT/TTS/LLM API usage and labor are not in hardware subtotals.",
+        "Inspect license of peripheral demo and replace vendor/cloud app with own thin client; existing microphone code does not establish Hermes or spoken reply."
       ],
       "cellular_additions": [
-        "Compatible modem and antenna, SIM/data service",
-        "Power-transient design, connectors and enclosure changes",
-        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+        "Two-device alternative: GL.iNet GL-E750V2 Mudi EM060K $169.99, battery, antennas, enclosure, cables and wall adapter included; separate activated carrier SIM/data plan unpriced. Not cellular inside the terminal.",
+        "Carrier/IMEI acceptance, SIM/APN, activation and recurring price unverified. Test WPA2 2.4GHz Wi-Fi, reconnect and outbound TLS; no shared power or modem wiring.",
+        "Single-enclosure LTE remains unqualified: modem, antennas, peak-current power, wiring, enclosure and transport firmware not priced."
       ],
       "sources": [
         {
@@ -241,15 +876,153 @@
         {
           "label": "PTT workflow",
           "url": "https://www.seeedstudio.com/sticky/docs/en/quick-start"
+        },
+        {
+          "label": "Exact audited offer",
+          "url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 62.8,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "reTerminal Sticky",
+          "quantity": 1,
+          "unit_price_usd": 49.9,
+          "status": "in_stock",
+          "source_url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html",
+          "shipment_group": "seeed_cn",
+          "note": "",
+          "role": "purchase"
+        },
+        {
+          "name": "ESP32-S3, 3.97 e-paper, 32MB flash/8MB PSRAM, PDM mic",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html",
+          "shipment_group": "seeed_cn",
+          "note": "",
+          "role": "included / verify package"
+        },
+        {
+          "name": "AI/Power + Up + Down controls",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html",
+          "shipment_group": "seeed_cn",
+          "note": "Manufacturer quick-start documents holding AI button to speak and releasing to submit.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "750mAh cell, USB charging/fuel gauge, finished magnetic enclosure",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html",
+          "shipment_group": "seeed_cn",
+          "note": "Charge/protection details not independently safety-audited.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "Included USB-C charging cable and adhesive magnetic ring",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "package_confirmed",
+          "source_url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html",
+          "shipment_group": "seeed_cn",
+          "note": "Data capability and host-end connector not explicitly confirmed in quick-start.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "Adafruit 4474 USB-A to USB-C data/power cable, 1m",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "in_stock",
+          "source_url": "https://www.adafruit.com/product/4474",
+          "shipment_group": "adafruit",
+          "note": "5V USB data and power; use for flashing and charging.",
+          "role": "purchase"
+        },
+        {
+          "name": "Adafruit 1994 USB-A wall power adapter",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "15_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "adafruit",
+          "note": "US mains plugs; manufacturer says UL-listed, 5.25V within USB tolerance, 2A available. USB-C board determines draw; no direct cell connection.",
+          "role": "purchase"
+        },
+        {
+          "name": "Speech-output DAC/amplifier + speaker OR headphone amplifier and jack",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": "audio_custom",
+          "note": "Buzzer is NOT speech speaker. No verified plug-in audio path, spare-I2S pin allocation, power budget, wiring, or enclosure fit; do not order random MAX98357A/Grove board.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "microSD",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "not_required_for_proposed_streaming_pilot",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "",
+          "role": "not required"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Seeed (China warehouse)",
+          "scope": "100056818",
+          "shipping_usd": null,
+          "status": "unknown",
+          "note": "Exact HTTP page verified price/China stock; browser load timed out. Shipping help returned empty app shell. No successful ZIP-only rate.",
+          "source_url": "https://www.seeedstudio.com/reTerminal-Sticky-p-6861.html",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [
+        {
+          "name": "Optional separate cellular hotspot",
+          "source_url": "https://www.amazon.com/dp/B0CJF7KQ3Q",
+          "price_usd": 169.99,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 169.99,
+          "arrival_earliest": "2026-09-12",
+          "arrival_latest": "2026-09-12",
+          "match": "optional separate hotspot",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "In stock; GL Technologies / Amazon. Sep 12 non-Prime; Sep 9 conditional on Prime. Excludes SIM/service/tax. Does not make a voice BOM complete."
+        }
+      ],
+      "alternatives": [],
+      "build_status": "Voice-in/text-out only as sold; speech-output hardware unresolved"
     },
     {
       "id": "DONOR02",
-      "name": "PaperMono-Lite",
+      "name": "M5PaperMono-Lite / PaperMono Lite Dev Kit",
       "fit_rank": 6,
-      "price_usd": 55,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_usd": 55.0,
+      "price_status": "C153-LITE · Out Of Stock",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -257,22 +1030,23 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown. Out Of Stock. unavailable_out_of_stock",
       "complete": false,
       "purchase_list": [
-        "Lowest-assembly e-ink voice-input lead: microphone, physical buttons, 1150 mAh battery and case. Buzzer only; no documented speech output.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "Add a qualified speech/headphone output path and Hermes/PTT firmware. No ready cellular integration or tested replacement voice enclosure."
+        "Use the exact selected variant and all purchase/unresolved lines below; included components are not charged twice."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Stock/restock date unknown.",
+        "Need validated output circuit/pins/current, enclosure fit and battery charging/protection audit.",
+        "Implement and test physical key-down capture / key-up send, speech playback, asynchronous e-paper refresh, Wi-Fi provisioning and reconnect, TLS device authentication and a narrow Hermes/STT/TTS server bridge.",
+        "No candidate was flashed or bench-tested here. Voice latency, intelligibility, acoustic feedback, connected battery runtime and charging temperature remain test gates.",
+        "Existing development computer, Internet-connected 2.4GHz Wi-Fi and running backend assumed available; acquisition, hosting, STT/TTS/LLM API usage and labor are not in hardware subtotals.",
+        "M5PaperMono-UserDemo MIT foundation documented in previous source audit; mic HAL records 16kHz PDM on GPIO45/46. Not yet physical PTT/Hermes/TTS integration."
       ],
       "cellular_additions": [
-        "Compatible modem and antenna, SIM/data service",
-        "Power-transient design, connectors and enclosure changes",
-        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+        "Two-device alternative: GL.iNet GL-E750V2 Mudi EM060K $169.99, battery, antennas, enclosure, cables and wall adapter included; separate activated carrier SIM/data plan unpriced. Not cellular inside the terminal.",
+        "Carrier/IMEI acceptance, SIM/APN, activation and recurring price unverified. Test WPA2 2.4GHz Wi-Fi, reconnect and outbound TLS; no shared power or modem wiring.",
+        "Single-enclosure LTE remains unqualified: modem, antennas, peak-current power, wiring, enclosure and transport firmware not priced."
       ],
       "sources": [
         {
@@ -286,15 +1060,143 @@
         {
           "label": "OTP display demo",
           "url": "https://github.com/m5stack/M5PaperMono-OTP-Demo"
+        },
+        {
+          "label": "Exact audited offer",
+          "url": "https://shop.m5stack.com/products/papermono-lite-dev-kit-800x480-3-97-e-ink-display"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 67.9,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "C153-LITE enclosed controller",
+          "quantity": 1,
+          "unit_price_usd": 55.0,
+          "status": "out_of_stock_reference_price",
+          "source_url": "https://shop.m5stack.com/products/papermono-lite-dev-kit-800x480-3-97-e-ink-display",
+          "shipment_group": "m5_cn",
+          "note": "Exact Lite: 62x101x8mm, 72.4g; not C153 LoRa/NFC model.",
+          "role": "purchase"
+        },
+        {
+          "name": "ESP32-S3, 3.97 touch/frontlit e-paper, 16MB flash/8MB PSRAM, PDM mic",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://shop.m5stack.com/products/papermono-lite-dev-kit-800x480-3-97-e-ink-display",
+          "shipment_group": "m5_cn",
+          "note": "",
+          "role": "included / verify package"
+        },
+        {
+          "name": "2 user buttons + power/reset/boot",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://shop.m5stack.com/products/papermono-lite-dev-kit-800x480-3-97-e-ink-display",
+          "shipment_group": "m5_cn",
+          "note": "",
+          "role": "included / verify package"
+        },
+        {
+          "name": "1150mAh battery, M5PM1 power management and case",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://shop.m5stack.com/products/papermono-lite-dev-kit-800x480-3-97-e-ink-display",
+          "shipment_group": "m5_cn",
+          "note": "",
+          "role": "included / verify package"
+        },
+        {
+          "name": "Adafruit 4474 USB-A to USB-C data/power cable, 1m",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "in_stock",
+          "source_url": "https://www.adafruit.com/product/4474",
+          "shipment_group": "adafruit",
+          "note": "5V USB data and power; use for flashing and charging.",
+          "role": "purchase"
+        },
+        {
+          "name": "Adafruit 1994 USB-A wall power adapter",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "15_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "adafruit",
+          "note": "US mains plugs; manufacturer says UL-listed, 5.25V within USB tolerance, 2A available. USB-C board determines draw; no direct cell connection.",
+          "role": "purchase"
+        },
+        {
+          "name": "Speech-output hardware and modified enclosure",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": "audio_custom",
+          "note": "Only buzzer specified. No verified I2S/headphone expansion BOM.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "microSD",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "not_required_for_proposed_streaming_pilot",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "",
+          "role": "not required"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "M5Stack (out of stock; no shipping quote)",
+          "scope": "C153-LITE",
+          "shipping_usd": null,
+          "status": "unavailable_out_of_stock",
+          "note": "No restock ETA; Amazon exact search found no results, Adafruit catalog no papermono. Cannot infer arrival from M5 shipping policy.",
+          "source_url": "https://shop.m5stack.com/products/papermono-lite-dev-kit-800x480-3-97-e-ink-display",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [
+        {
+          "name": "Optional separate cellular hotspot",
+          "source_url": "https://www.amazon.com/dp/B0CJF7KQ3Q",
+          "price_usd": 169.99,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 169.99,
+          "arrival_earliest": "2026-09-12",
+          "arrival_latest": "2026-09-12",
+          "match": "optional separate hotspot",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "In stock; GL Technologies / Amazon. Sep 12 non-Prime; Sep 9 conditional on Prime. Excludes SIM/service/tax. Does not make a voice BOM complete."
+        }
+      ],
+      "alternatives": [],
+      "build_status": "Not currently purchasable at manufacturer; voice-in/text-out only"
     },
     {
       "id": "DONOR01",
-      "name": "WeatherPaper / WeAct 2.9\u2033",
+      "name": "WeatherPaper WeAct 2.9-inch B/W donor custom build",
       "fit_rank": 7,
       "price_usd": null,
-      "price_status": "pending exact variant quote",
+      "price_status": "AliExpress item 3256804458201128; exact 2.9 B/W selection unverified · Unknown: HTTP200 shell, not product offer",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -302,22 +1204,24 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown. Unknown: HTTP200 shell, not product offer. unknown",
       "complete": false,
       "purchase_list": [
-        "Custom e-ink donor route: 296\u00d7128 black/white SPI module, ESP32-C3 weather firmware and printable body/lid. Not a voice BOM.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "Add microphone, speech output, physical PTT, suitable MCU/audio design, power and revised enclosure. Display I/O is 3.3V; do not infer 5V GPIO tolerance."
+        "Use the exact selected variant and all purchase/unresolved lines below; included components are not charged twice."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Only weather display/controller co-compatibility is evidenced: SPI GPIO6 DIN,4 CLK,7 CS,1 DC,2 RST,3 BUSY in original C3 build.",
+        "No complete voice wiring, connector/rail/current validation or priced printed enclosure; do not fabricate a finished-device total.",
+        "Needs soldering iron, solder, flush cutters, multimeter and fabrication tools/service; existing workshop tools assumed, no purchase quote.",
+        "Implement and test physical key-down capture / key-up send, speech playback, asynchronous e-paper refresh, Wi-Fi provisioning and reconnect, TLS device authentication and a narrow Hermes/STT/TTS server bridge.",
+        "No candidate was flashed or bench-tested here. Voice latency, intelligibility, acoustic feedback, connected battery runtime and charging temperature remain test gates.",
+        "Existing development computer, Internet-connected 2.4GHz Wi-Fi and running backend assumed available; acquisition, hosting, STT/TTS/LLM API usage and labor are not in hardware subtotals.",
+        "Weather sketch and STL reuse license unestablished; GxEPD2 GPL-3.0 does not license all app/CAD/icons; WeAct top-level license not established in previous audit."
       ],
       "cellular_additions": [
-        "Compatible modem and antenna, SIM/data service",
-        "Power-transient design, connectors and enclosure changes",
-        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+        "Two-device alternative: GL.iNet GL-E750V2 Mudi EM060K $169.99, battery, antennas, enclosure, cables and wall adapter included; separate activated carrier SIM/data plan unpriced. Not cellular inside the terminal.",
+        "Carrier/IMEI acceptance, SIM/APN, activation and recurring price unverified. Test WPA2 2.4GHz Wi-Fi, reconnect and outbound TLS; no shared power or modem wiring.",
+        "Single-enclosure LTE remains unqualified: modem, antennas, peak-current power, wiring, enclosure and transport firmware not priced."
       ],
       "sources": [
         {
@@ -331,15 +1235,193 @@
         {
           "label": "Exact listing",
           "url": "https://www.aliexpress.us/item/3256804458201128.html"
+        },
+        {
+          "label": "Exact audited offer",
+          "url": "https://www.aliexpress.us/item/3256804458201128.html"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 12.9,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "WeAct 2.9-inch B/W 296x128 DEPG0290BS/SSD1680 module",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unverified_variant_offer",
+          "source_url": "https://www.aliexpress.us/item/3256804458201128.html",
+          "shipment_group": "aliexpress",
+          "note": "3.3V SPI I/O. Not four-color JD79667 model.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "ESP32-C3 Supermini",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "article_BOM_only",
+          "source_url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/",
+          "shipment_group": "unresolved_vendor",
+          "note": "",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "TP4056 charging module WITH BOOST converter",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "article_BOM_only",
+          "source_url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/",
+          "shipment_group": "unresolved_vendor",
+          "note": "Article adjusts output before connecting. Plain TP4056 is not the specified booster; load sharing and protections unqualified.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "102025 3.7V LiPo",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "article_BOM_only",
+          "source_url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/",
+          "shipment_group": "unresolved_vendor",
+          "note": "102025 is dimensions, not assured capacity/protection. No verified charge current/polarity match.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "40x60mm perfboard, insulated single-core wire, 8-pin 1.25mm display cable",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "article_BOM_only",
+          "source_url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/",
+          "shipment_group": "unresolved_vendor",
+          "note": "",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "Printed body + lid, battery retention and fixings",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "custom_fabrication",
+          "source_url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/",
+          "shipment_group": "custom_fabrication",
+          "note": "Weather-case STL exists but license and revised voice-device fit not established.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "Adafruit 4474 USB-A to USB-C data/power cable, 1m",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "in_stock",
+          "source_url": "https://www.adafruit.com/product/4474",
+          "shipment_group": "adafruit",
+          "note": "5V USB data and power; use for flashing and charging.",
+          "role": "purchase"
+        },
+        {
+          "name": "Adafruit 1994 USB-A wall power adapter",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "15_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "adafruit",
+          "note": "US mains plugs; manufacturer says UL-listed, 5.25V within USB tolerance, 2A available. USB-C board determines draw; no direct cell connection.",
+          "role": "purchase"
+        },
+        {
+          "name": "Microphone/capture front-end",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "DAC/codec, speech amplifier + matched speaker OR headphone amplifier/jack",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "PTT switch, debounce, mounting, wire and strain relief",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "Voice-capable MCU/audio/power redesign",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "No proven concurrent C3 SPI display + capture/playback + networking pin/buffer budget. If swapping MCU, requalify all wiring and enclosure.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "Storage",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "Streaming vs local buffers and MCU choice not settled.",
+          "role": "unresolved purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "AliExpress exact variant unverified",
+          "scope": "AliExpress item 3256804458201128; exact 2.9 B/W selection unverified",
+          "shipping_usd": null,
+          "status": "unknown",
+          "note": "Selected variant/offer unavailable. Additional component sellers and fabrication not qualified.",
+          "source_url": "https://www.aliexpress.us/item/3256804458201128.html",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [
+        {
+          "name": "Optional separate cellular hotspot",
+          "source_url": "https://www.amazon.com/dp/B0CJF7KQ3Q",
+          "price_usd": 169.99,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 169.99,
+          "arrival_earliest": "2026-09-12",
+          "arrival_latest": "2026-09-12",
+          "match": "optional separate hotspot",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "In stock; GL Technologies / Amazon. Sep 12 non-Prime; Sep 9 conditional on Prime. Excludes SIM/service/tax. Does not make a voice BOM complete."
+        }
+      ],
+      "alternatives": [],
+      "build_status": "Display-only weather donor, NOT a qualified voice BOM"
     },
     {
       "id": "BM32",
       "name": "Pi Zero + PiSugar Whisplay",
       "fit_rank": 8,
       "price_usd": 75.98,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "Whisplay + PiSugar 3 only; Pi, storage, supply and fitted case extra",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -347,17 +1429,18 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown; see per-shipment cart quotes and policy estimates.",
       "complete": false,
       "purchase_list": [
-        "Whisplay + PiSugar 3 are only a partial subtotal",
-        "Pi Zero board, microSD, header, enclosure, cables and charger",
-        "Qualify drivers, power and firmware/agent endpoint"
+        "Purchase every listed part; package contents are itemized under each line. Included audio, controls, enclosure and charging are not additional purchases."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Implement licensed hold-to-record/release-to-send firmware, authenticated TLS Hermes/STT/TTS bridge and Wi-Fi provisioning/reconnect.",
+        "Bench-test spoken replies, cancellation, cold boot, network loss, charging temperature and battery runtime; no hardware was flashed or physically tested in this audit.",
+        "Provisioning computer, 2.4GHz Wi-Fi, Internet and hosted backend required; hardware subtotals exclude their acquisition, hosting, API usage, labor and tools.",
+        "Pi with header is out of stock at checked US sellers; printed case unpriced; driver and endpoint adaptation required.",
+        "Current 240×280 Whisplay differs from older 240×240 README. Pin WM8960 versus ES8389 driver; adapt old imports and Hermes endpoint/session contract.",
+        "Use PiSugar charging input, no simultaneous second Pi input; configure charging within 2.5A supply budget, verify UPS/shutdown and thermal behavior. Preheader Pi is unavailable; case unpriced. MIT declared but full license text omitted in audited source."
       ],
       "cellular_additions": [
         "Compatible modem and antenna, SIM/data service",
@@ -376,15 +1459,201 @@
         {
           "label": "Current hardware",
           "url": "https://docs.pisugar.com/docs/product-wiki/whisplay/overview"
+        },
+        {
+          "label": "Raspberry Pi Zero 2 W with header SC0721 / PiShop 112-1",
+          "url": "https://www.pishop.us/product/raspberry-pi-zero-2-w-with-pre-soldered-headers/"
+        },
+        {
+          "label": "PiSugar Whisplay HAT",
+          "url": "https://www.pisugar.com/products/whisplay-hat-for-pi-zero-2w-audio-display"
+        },
+        {
+          "label": "PiSugar 3 1200mAh",
+          "url": "https://www.pisugar.com/products/pisugar-3-raspberry-pi-zero-battery"
+        },
+        {
+          "label": "SanDisk 32GB Pi OS microSD, PiShop 1363-1",
+          "url": "https://www.pishop.us/product/class-10-microsd-card-with-raspberry-pi-os-raspbian-32gb/"
+        },
+        {
+          "label": "USB microSD reader, PiShop 426",
+          "url": "https://www.pishop.us/product/high-speed-micro-sd-card-reader-maximum-128gb-black/"
+        },
+        {
+          "label": "Adafruit 1995 microUSB 5V 2.5A supply",
+          "url": "https://www.adafruit.com/product/1995"
+        },
+        {
+          "label": "Printed PiSugar3 + Whisplay case and case-specific hardware",
+          "url": "https://github.com/PiSugar/suit-cases/tree/main/pisugar3-whisplay-chatbot-fdm"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 127.88,
+      "known_shipping_usd": 0,
+      "known_parts_plus_quoted_shipping_usd": 127.88,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "Raspberry Pi Zero 2 W with header SC0721 / PiShop 112-1",
+          "quantity": 1,
+          "unit_price_usd": 20.75,
+          "status": "reference_price_out_of_stock",
+          "source_url": "https://www.pishop.us/product/raspberry-pi-zero-2-w-with-pre-soldered-headers/",
+          "shipment_group": "PiShop",
+          "note": "Pre-soldered 40pin header; Wi-Fi/Bluetooth; no storage",
+          "role": "purchase"
+        },
+        {
+          "name": "PiSugar Whisplay HAT",
+          "quantity": 1,
+          "unit_price_usd": 35.99,
+          "status": "live_in_stock",
+          "source_url": "https://www.pisugar.com/products/whisplay-hat-for-pi-zero-2w-audio-display",
+          "shipment_group": "PiSugar",
+          "note": "LCD, dual mics, audio codec, speaker, physical button, GPIO mating connector",
+          "role": "purchase"
+        },
+        {
+          "name": "PiSugar 3 1200mAh",
+          "quantity": 1,
+          "unit_price_usd": 39.99,
+          "status": "live_in_stock",
+          "source_url": "https://www.pisugar.com/products/pisugar-3-raspberry-pi-zero-battery",
+          "shipment_group": "PiSugar",
+          "note": "Battery, back-contact power board, charge/protection/UPS, power control, four screws; USB-C and microUSB input",
+          "role": "purchase"
+        },
+        {
+          "name": "SanDisk 32GB Pi OS microSD, PiShop 1363-1",
+          "quantity": 1,
+          "unit_price_usd": 19.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.pishop.us/product/class-10-microsd-card-with-raspberry-pi-os-raspbian-32gb/",
+          "shipment_group": "PiShop",
+          "note": "Reimage to pinned supported OS; do not assume vendor desktop image matches Whisplay instructions",
+          "role": "purchase"
+        },
+        {
+          "name": "USB microSD reader, PiShop 426",
+          "quantity": 1,
+          "unit_price_usd": 2.95,
+          "status": "live_in_stock",
+          "source_url": "https://www.pishop.us/product/high-speed-micro-sd-card-reader-maximum-128gb-black/",
+          "shipment_group": "PiShop",
+          "note": "Programming accessory; requires a USB-A provisioning computer",
+          "role": "purchase"
+        },
+        {
+          "name": "Adafruit 1995 microUSB 5V 2.5A supply",
+          "quantity": 1,
+          "unit_price_usd": 8.25,
+          "status": "live_in_stock",
+          "source_url": "https://www.adafruit.com/product/1995",
+          "shipment_group": "Adafruit",
+          "note": "Fixed microUSB cable included; feed PiSugar input for battery stack, not a second simultaneous Pi input; limit charge load within supply rating",
+          "role": "purchase"
+        },
+        {
+          "name": "Printed PiSugar3 + Whisplay case and case-specific hardware",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unpriced_engineering_required",
+          "source_url": "https://github.com/PiSugar/suit-cases/tree/main/pisugar3-whisplay-chatbot-fdm",
+          "shipment_group": "Custom fabrication",
+          "note": "Print/CAD fit/revision/license/fastener cost unresolved; ordinary Pi Zero case will not enclose full stack",
+          "role": "unresolved purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "PiSugar",
+          "scope": "Whisplay + PiSugar 3 grouped $75.98 order",
+          "shipping_usd": 0,
+          "status": "ZIP 10014 cart quote",
+          "note": "US Domestic Shipping: cart 5–8 days, no dated arrival. Policy processing up to 5 business days; not an all-parts delivery estimate.",
+          "source_url": "https://www.pisugar.com/products/whisplay-hat-for-pi-zero-2w-audio-display",
+          "arrival_earliest": null,
+          "arrival_latest": null,
+          "services": [
+            {
+              "name": "US Domestic Shipping",
+              "shipping_usd": 0,
+              "cart_delivery_days": [
+                5,
+                8
+              ],
+              "cart_day_unit": "unspecified",
+              "policy_processing_max_business_days": 5
+            }
+          ]
+        },
+        {
+          "seller": "PiShop",
+          "scope": "Preheader Pi, microSD and reader",
+          "shipping_usd": null,
+          "status": "unknown; Pi out of stock",
+          "note": "No restock date. Do not use shipping template as timing evidence.",
+          "source_url": "https://www.pishop.us/product/raspberry-pi-zero-2-w-with-pre-soldered-headers/",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Fabrication",
+          "scope": "Fitted Whisplay/PiSugar case",
+          "shipping_usd": null,
+          "status": "unquoted",
+          "note": "Print fit, fasteners, price and production time unqualified.",
+          "source_url": "https://github.com/PiSugar/suit-cases/tree/main/pisugar3-whisplay-chatbot-fdm",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [
+        {
+          "name": "Whisplay + PiSugar 3 grouped direct order",
+          "source_url": "https://www.pisugar.com/products/whisplay-hat-for-pi-zero-2w-audio-display",
+          "price_usd": 75.98,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 75.98,
+          "arrival_earliest": null,
+          "arrival_latest": null,
+          "match": "exact subassembly",
+          "status": "ZIP 10014 cart quote",
+          "note": "Exact cart US Domestic Shipping 5–8 days; policy processing up to 5 business days. Only HAT and battery, not Pi/storage/case."
+        },
+        {
+          "name": "Amazon Whisplay HAT · NGC 1365 Lab",
+          "source_url": "https://www.amazon.com/dp/B0H4VGZZRK",
+          "price_usd": 35.99,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 35.99,
+          "arrival_earliest": "2026-09-12",
+          "arrival_latest": "2026-09-12",
+          "match": "exact subassembly",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "In stock; ships Amazon. Sep 12 non-Prime, Sep 10 conditional Prime. HAT only: Pi, battery, storage, supply and fitted case extra."
+        }
+      ],
+      "alternatives": [],
+      "build_status": "Buy-new Pi/Whisplay portable Wi-Fi reference; includes unavailable reference price"
     },
     {
       "id": "ALT02",
-      "name": "Waveshare ePaper 3.97",
+      "name": "Waveshare ESP32-S3-ePaper-3.97 battery bundle",
       "fit_rank": null,
-      "price_usd": null,
-      "price_status": "pending exact variant quote",
+      "price_usd": 35.99,
+      "price_status": "33552 · Add to Cart enabled; selected With Lithium Batt",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -392,36 +1661,199 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "All-parts arrival unknown. Add to Cart enabled; selected With Lithium Batt. policy_estimate_only",
       "complete": false,
       "purchase_list": [
-        "Larger e-ink/audio and rotary-control alternative: microphone, ES8311, amplifier and speaker connector, Wi-Fi/BLE; no verified complete pocket package.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "Source license, physical PTT/Hermes code and final audio bundle need verification; no cellular/headset established."
+        "Use the exact selected variant and all purchase/unresolved lines below; included components are not charged twice."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Design/verify enclosure and acoustics; battery mounting and full safe charging/protection chain unresolved.",
+        "Do not attach headphones to amplified speaker pins.",
+        "Implement and test physical key-down capture / key-up send, speech playback, asynchronous e-paper refresh, Wi-Fi provisioning and reconnect, TLS device authentication and a narrow Hermes/STT/TTS server bridge.",
+        "No candidate was flashed or bench-tested here. Voice latency, intelligibility, acoustic feedback, connected battery runtime and charging temperature remain test gates.",
+        "Existing development computer, Internet-connected 2.4GHz Wi-Fi and running backend assumed available; acquisition, hosting, STT/TTS/LLM API usage and labor are not in hardware subtotals.",
+        "Vendor application license and exact 3.97 PTT implementation unresolved."
       ],
       "cellular_additions": [
-        "Compatible modem and antenna, SIM/data service",
-        "Power-transient design, connectors and enclosure changes",
-        "Compressed audio, TLS relay and recovery firmware; not a drop-in upgrade"
+        "Two-device alternative: GL.iNet GL-E750V2 Mudi EM060K $169.99, battery, antennas, enclosure, cables and wall adapter included; separate activated carrier SIM/data plan unpriced. Not cellular inside the terminal.",
+        "Carrier/IMEI acceptance, SIM/APN, activation and recurring price unverified. Test WPA2 2.4GHz Wi-Fi, reconnect and outbound TLS; no shared power or modem wiring.",
+        "Single-enclosure LTE remains unqualified: modem, antennas, peak-current power, wiring, enclosure and transport firmware not priced."
       ],
       "sources": [
         {
           "label": "Documentation",
           "url": "https://docs.waveshare.com/ESP32-S3-ePaper-3.97"
+        },
+        {
+          "label": "Exact audited offer",
+          "url": "https://www.waveshare.com/esp32-s3-epaper-3.97.htm?sku=33552"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": 48.89,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "SKU33552 controller/display assembly",
+          "quantity": 1,
+          "unit_price_usd": 35.99,
+          "status": "selected_variant_live",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-3.97.htm?sku=33552",
+          "shipment_group": "waveshare",
+          "note": "800x480; 16MB flash/8MB PSRAM (one store annotation reverses these; official docs and feature list agree).",
+          "role": "purchase"
+        },
+        {
+          "name": "Mic, ES8311 codec, NS4150B amplifier",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-3.97.htm?sku=33552",
+          "shipment_group": "waveshare",
+          "note": "",
+          "role": "included / verify package"
+        },
+        {
+          "name": "8-ohm 1W speaker with vendor connector",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "package_confirmed",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-3.97.htm?sku=33552",
+          "shipment_group": "waveshare",
+          "note": "Exact included speaker matched by manufacturer; connect to MX1.25 speaker header.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "Rotary 3-way navigation switch plus BOOT/PWR",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "included",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-3.97.htm?sku=33552",
+          "shipment_group": "waveshare",
+          "note": "",
+          "role": "included / verify package"
+        },
+        {
+          "name": "3.7V MX1.25 lithium battery + TG28 charger/power management",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "package_confirmed",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-3.97.htm?sku=33552",
+          "shipment_group": "waveshare",
+          "note": "Capacity and cell protection not established; no external charger module needed.",
+          "role": "included / verify package"
+        },
+        {
+          "name": "Adafruit 4474 USB-A to USB-C data/power cable, 1m",
+          "quantity": 1,
+          "unit_price_usd": 4.95,
+          "status": "in_stock",
+          "source_url": "https://www.adafruit.com/product/4474",
+          "shipment_group": "adafruit",
+          "note": "5V USB data and power; use for flashing and charging.",
+          "role": "purchase"
+        },
+        {
+          "name": "Adafruit 1994 USB-A wall power adapter",
+          "quantity": 1,
+          "unit_price_usd": 7.95,
+          "status": "15_in_stock",
+          "source_url": "https://www.adafruit.com/product/1994",
+          "shipment_group": "adafruit",
+          "note": "US mains plugs; manufacturer says UL-listed, 5.25V within USB tolerance, 2A available. USB-C board determines draw; no direct cell connection.",
+          "role": "purchase"
+        },
+        {
+          "name": "Protective enclosure, speaker/battery mounts, fasteners and strain relief",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": "custom_fabrication",
+          "note": "Not listed in package; no validated fitted case quote. Cannot claim a pocket-ready total.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "microSD",
+          "quantity": 1,
+          "unit_price_usd": 0,
+          "status": "not_required_for_proposed_streaming_pilot",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "If local audio/file demos needed, buy SKU33811 instead: $47.99 includes same electronics, speaker, battery, USB cable, 16GB TF and reader; wall adapter still extra.",
+          "role": "not required"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Waveshare",
+          "scope": "33552",
+          "shipping_usd": null,
+          "status": "policy_estimate_only",
+          "note": "Typically within 3 business days after bank-transfer receipt; policy wording is payment-method-specific. UPS 3–7, DHL 3–8, FedEx 4–8 working days; ePacket 7–15 or more; post 20–30 working days. Battery-route availability not quoted. Add-to-cart clicks did not persist; exact cart read remained empty. No ZIP-specific rate; policy says freight depends on weight/courier/address. No order submitted.",
+          "source_url": "https://www.waveshare.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        },
+        {
+          "seller": "Adafruit",
+          "scope": "Required accessories grouped per selected build",
+          "shipping_usd": null,
+          "status": "policy estimate; rate unknown",
+          "note": "Usually 1–2 business days dispatch. Ground Advantage 2–5 business days after dispatch; UPS Next Day Air offered. Weekday expedited orders before 11am ET usually ship same day. No ZIP-specific rate/date; battery restrictions may apply.",
+          "source_url": "https://www.adafruit.com/shipping",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [
+        {
+          "name": "Optional separate cellular hotspot",
+          "source_url": "https://www.amazon.com/dp/B0CJF7KQ3Q",
+          "price_usd": 169.99,
+          "shipping_usd": 0,
+          "item_plus_shipping_usd": 169.99,
+          "arrival_earliest": "2026-09-12",
+          "arrival_latest": "2026-09-12",
+          "match": "optional separate hotspot",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "In stock; GL Technologies / Amazon. Sep 12 non-Prime; Sep 9 conditional on Prime. Excludes SIM/service/tax. Does not make a voice BOM complete."
+        },
+        {
+          "name": "3.97 SKU33811-equivalent kit · waveshare / Amazon",
+          "source_url": "https://www.amazon.com/dp/B0GKFS8GNS",
+          "price_usd": 61.99,
+          "shipping_usd": 3.0,
+          "item_plus_shipping_usd": 64.99,
+          "arrival_earliest": "2026-09-17",
+          "arrival_latest": "2026-09-28",
+          "match": "matching larger e-paper audio/battery kit",
+          "status": "ZIP 10014 product-page quote, not checkout",
+          "note": "In stock. Board/audio, speaker, battery, USB cable, 16GB TF and reader. Excludes wall adapter, enclosure, firmware, tax/import charges. This is a kit arrival, not all-parts readiness."
+        },
+        {
+          "name": "Direct 3.97 SKU33811 kit",
+          "source_url": "https://www.waveshare.com/esp32-s3-epaper-3.97.htm?sku=33811",
+          "price_usd": 47.99,
+          "shipping_usd": null,
+          "item_plus_shipping_usd": null,
+          "arrival_earliest": null,
+          "arrival_latest": null,
+          "match": "alternative expanded kit",
+          "status": "direct selected variant; freight unknown",
+          "note": "Includes speaker, battery, USB cable, 16GB TF and reader. $55.94 known parts with $7.95 wall adapter; enclosure and delivery unresolved."
+        }
+      ],
+      "alternatives": [],
+      "build_status": "Audio electronics already matched; portable enclosure unresolved"
     },
     {
       "id": "BM06",
       "name": "OpenTrailPaper / LILYGO T5S3 Pro",
       "fit_rank": null,
       "price_usd": 84.21,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "Historical board reference only; not a current delivered offer",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -429,17 +1861,16 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "No audited orderable full voice build or all-parts ETA.",
       "complete": false,
       "purchase_list": [
         "Substantive Apache-2.0 e-paper bike computer with offline maps and GPS. Music controls command a phone; they do not play audio on the board.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "Needs audio hardware, voice firmware and protection/enclosure. Vendor hardware root license unresolved."
+        "Not a buildable target voice kit: no qualified complete two-way speech/PTT BOM or all-parts purchase order."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Substantive Apache-2.0 e-paper bike computer with offline maps and GPS. Music controls command a phone; they do not play audio on the board.",
+        "Needs audio hardware, voice firmware and protection/enclosure. Vendor hardware root license unresolved.",
+        "Qualify exact audio hardware, power, controls, enclosure and licensed Hermes integration before pricing a complete build."
       ],
       "cellular_additions": [
         "Compatible modem and antenna, SIM/data service",
@@ -479,14 +1910,55 @@
           "label": "Hardware",
           "url": "https://lilygo.cc/products/t5-e-paper-s3-pro"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": null,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "OpenTrailPaper / LILYGO T5S3 Pro reference",
+          "quantity": 1,
+          "unit_price_usd": 84.21,
+          "status": "reference_only_not_qualified",
+          "source_url": "https://lilygo.cc/products/t5-e-paper-s3-pro",
+          "shipment_group": null,
+          "note": "Substantive Apache-2.0 e-paper bike computer with offline maps and GPS. Music controls command a phone; they do not play audio on the board.",
+          "role": "purchase"
+        },
+        {
+          "name": "Complete speech/PTT power and enclosure redesign",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "Needs audio hardware, voice firmware and protection/enclosure. Vendor hardware root license unresolved.",
+          "role": "unresolved purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Unqualified",
+          "scope": "No orderable full voice BOM",
+          "shipping_usd": null,
+          "status": "unknown",
+          "note": "No audited orderable full voice build or all-parts ETA.",
+          "source_url": "https://lilygo.cc/products/t5-e-paper-s3-pro",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [],
+      "alternatives": [],
+      "build_status": "Not a buildable target voice kit; reference only"
     },
     {
       "id": "BM34",
       "name": "M5Stack PaperS3 Game Boy emulator",
       "fit_rank": null,
       "price_usd": 59,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "Historical board reference only; not a current delivered offer",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -494,17 +1966,16 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "EOL / out of stock; no restock or arrival date.",
       "complete": false,
       "purchase_list": [
-        "PaperS3 e-ink display donor: 4.7-inch 960\u00d7540 panel and 1800 mAh battery; no onboard microphone documented.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "No complete cellular Hermes voice terminal verified. Deep verification remains pending."
+        "PaperS3 e-ink display donor: 4.7-inch 960×540 panel and 1800 mAh battery; no onboard microphone documented.",
+        "Not a buildable target voice kit: no qualified complete two-way speech/PTT BOM or all-parts purchase order."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "PaperS3 e-ink display donor: 4.7-inch 960×540 panel and 1800 mAh battery; no onboard microphone documented.",
+        "No complete cellular Hermes voice terminal verified. Deep verification remains pending.",
+        "Qualify exact audio hardware, power, controls, enclosure and licensed Hermes integration before pricing a complete build."
       ],
       "cellular_additions": [
         "Compatible modem and antenna, SIM/data service",
@@ -524,14 +1995,55 @@
           "label": "Store",
           "url": "https://shop.m5stack.com/products/m5papers3-esp32s3-development-kit"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": null,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "M5Stack PaperS3 Game Boy emulator reference",
+          "quantity": 1,
+          "unit_price_usd": 59,
+          "status": "reference_only_not_qualified",
+          "source_url": "https://shop.m5stack.com/products/m5papers3-esp32s3-development-kit",
+          "shipment_group": null,
+          "note": "PaperS3 e-ink display donor: 4.7-inch 960×540 panel and 1800 mAh battery; no onboard microphone documented.",
+          "role": "purchase"
+        },
+        {
+          "name": "Complete speech/PTT power and enclosure redesign",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "No complete cellular Hermes voice terminal verified. Deep verification remains pending.",
+          "role": "unresolved purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Unqualified",
+          "scope": "No orderable full voice BOM",
+          "shipping_usd": null,
+          "status": "unknown",
+          "note": "EOL / out of stock; no restock or arrival date.",
+          "source_url": "https://shop.m5stack.com/products/m5papers3-esp32s3-development-kit",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [],
+      "alternatives": [],
+      "build_status": "EOL / out of stock; display donor, not a buildable voice kit"
     },
     {
       "id": "BM35",
       "name": "PaperMONO",
       "fit_rank": null,
       "price_usd": 65,
-      "price_status": "observed incomplete board/bundle subtotal",
+      "price_status": "Historical board reference only; not a current delivered offer",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -539,17 +2051,16 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "No audited orderable full voice build or all-parts ETA.",
       "complete": false,
       "purchase_list": [
         "PaperMono C153 e-ink handheld with PDM microphone, battery and case. Full model adds NFC/LoRa; Lite is considered separately above.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "Speech/headphone output, Hermes firmware and safe refresh behavior need engineering."
+        "Not a buildable target voice kit: no qualified complete two-way speech/PTT BOM or all-parts purchase order."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "PaperMono C153 e-ink handheld with PDM microphone, battery and case. Full model adds NFC/LoRa; Lite is considered separately above.",
+        "Speech/headphone output, Hermes firmware and safe refresh behavior need engineering.",
+        "Qualify exact audio hardware, power, controls, enclosure and licensed Hermes integration before pricing a complete build."
       ],
       "cellular_additions": [
         "Compatible modem and antenna, SIM/data service",
@@ -565,14 +2076,55 @@
           "label": "Product docs",
           "url": "https://docs.m5stack.com/en/core/PaperMono"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": null,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "PaperMONO reference",
+          "quantity": 1,
+          "unit_price_usd": 65,
+          "status": "reference_only_not_qualified",
+          "source_url": "https://docs.m5stack.com/en/core/PaperMono",
+          "shipment_group": null,
+          "note": "PaperMono C153 e-ink handheld with PDM microphone, battery and case. Full model adds NFC/LoRa; Lite is considered separately above.",
+          "role": "purchase"
+        },
+        {
+          "name": "Complete speech/PTT power and enclosure redesign",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "Speech/headphone output, Hermes firmware and safe refresh behavior need engineering.",
+          "role": "unresolved purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Unqualified",
+          "scope": "No orderable full voice BOM",
+          "shipping_usd": null,
+          "status": "unknown",
+          "note": "No audited orderable full voice build or all-parts ETA.",
+          "source_url": "https://docs.m5stack.com/en/core/PaperMono",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [],
+      "alternatives": [],
+      "build_status": "Not a buildable target voice kit; reference only"
     },
     {
       "id": "BM37",
       "name": "ENILINX TICKEY",
       "fit_rank": null,
       "price_usd": null,
-      "price_status": "pending exact variant quote",
+      "price_status": "No verified production offer",
       "checked_at": "2026-09-07",
       "wifi_total_usd": null,
       "cellular_total_usd": null,
@@ -580,17 +2132,16 @@
       "tax_usd": null,
       "arrival_earliest": null,
       "arrival_latest": null,
-      "delivery_status": "pending ZIP-specific quote; no guaranteed arrival",
+      "delivery_status": "No audited orderable full voice build or all-parts ETA.",
       "complete": false,
       "purchase_list": [
         "Slim wearable color e-paper status display, formerly TICKET. No microphone, speech output, audio codec or PTT implementation documented.",
-        "Verify exact bundle contents and buy missing microphone, speech output, PTT, battery/power, cables and enclosure as applicable",
-        "Treat as a wearable/status-display reference, not ready voice hardware. Ring opening is not a PTT button."
+        "Not a buildable target voice kit: no qualified complete two-way speech/PTT BOM or all-parts purchase order."
       ],
       "assembly_list": [
-        "Confirm revision, electrical compatibility and source licenses",
-        "Assemble/flash; implement secure PTT agent integration",
-        "Bench-test spoken response, reconnect, power and runtime"
+        "Slim wearable color e-paper status display, formerly TICKET. No microphone, speech output, audio codec or PTT implementation documented.",
+        "Treat as a wearable/status-display reference, not ready voice hardware. Ring opening is not a PTT button.",
+        "Qualify exact audio hardware, power, controls, enclosure and licensed Hermes integration before pricing a complete build."
       ],
       "cellular_additions": [
         "Compatible modem and antenna, SIM/data service",
@@ -610,7 +2161,48 @@
           "label": "Campaign",
           "url": "https://www.kickstarter.com/projects/enilinx/ticket-refresh-it-new-clip-it-on-carry-your-moment?ref=as0r6e"
         }
-      ]
+      ],
+      "known_parts_subtotal_usd": null,
+      "known_shipping_usd": null,
+      "known_parts_plus_quoted_shipping_usd": null,
+      "delivered_total_usd": null,
+      "bom": [
+        {
+          "name": "ENILINX TICKEY reference",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "reference_only_not_qualified",
+          "source_url": "https://www.kickstarter.com/projects/enilinx/ticket-refresh-it-new-clip-it-on-carry-your-moment?ref=as0r6e",
+          "shipment_group": null,
+          "note": "Slim wearable color e-paper status display, formerly TICKET. No microphone, speech output, audio codec or PTT implementation documented.",
+          "role": "unresolved purchase"
+        },
+        {
+          "name": "Complete speech/PTT power and enclosure redesign",
+          "quantity": 1,
+          "unit_price_usd": null,
+          "status": "unresolved",
+          "source_url": null,
+          "shipment_group": null,
+          "note": "Treat as a wearable/status-display reference, not ready voice hardware. Ring opening is not a PTT button.",
+          "role": "unresolved purchase"
+        }
+      ],
+      "shipments": [
+        {
+          "seller": "Unqualified",
+          "scope": "No orderable full voice BOM",
+          "shipping_usd": null,
+          "status": "unknown",
+          "note": "No audited orderable full voice build or all-parts ETA.",
+          "source_url": "https://www.kickstarter.com/projects/enilinx/ticket-refresh-it-new-clip-it-on-carry-your-moment?ref=as0r6e",
+          "arrival_earliest": null,
+          "arrival_latest": null
+        }
+      ],
+      "offers": [],
+      "alternatives": [],
+      "build_status": "Wearable status-display reference; no verified released voice BOM"
     }
   ]
 }

@@ -12,7 +12,10 @@ with sync_playwright() as p:
   page.set_default_timeout(8000)
   response=page.goto(url,wait_until='domcontentloaded',timeout=20000);assert response.status==200
   page.locator('.display-card').first.wait_for();page.locator('#bom-rows tr').first.wait_for()
-  count=page.locator('.display-card').count();assert count>0
+  count=page.locator('.display-card').count();assert count==42
+  assert page.locator('.display-card img').count()==40
+  page.locator('.display-card img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>{i.loading="eager";return i.decode()}))')
+  assert page.locator('#bom-rows tr').count()==13
   columns=page.locator('.display-template').first.evaluate('(e)=>getComputedStyle(e).gridTemplateColumns.split(" ").length')
   assert columns==(4 if width==1280 else 1)
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
@@ -22,8 +25,25 @@ with sync_playwright() as p:
    value=page.locator(selector+' option').nth(1).get_attribute('value');page.locator(selector).select_option(value);assert page.locator('.display-card:visible').count()>0;page.locator('#reset').click()
   page.locator('.research-evidence summary').first.click();assert page.locator('.research-evidence').first.get_attribute('open') is not None
   page.locator('.display-card').first.hover();page.mouse.move(0,0)
-  for mode in ['affordability','fastest','fit']:page.locator('#cost-sort').select_option(mode)
+  for mode in ['known','affordability','fastest','fit']:
+   page.locator('#cost-sort').select_option(mode)
+   if mode in ['affordability','fastest']:assert 'No defensible' in page.locator('#ranking-note').inner_text()
+   if mode=='known':assert 'NOT an affordability ranking' in page.locator('#ranking-note').inner_text()
+  assert '$29.89 known parts' in page.locator('[data-build-id="ALT01"]').inner_text()
+  assert '$44.40 known parts + quoted freight only' in page.locator('[data-build-id="KIT01"]').inner_text()
+  row=page.locator('[data-build-id="ALT02"]');row.locator('summary').last.click()
+  assert '$64.99' in row.inner_text() and '2026-09-28' in row.inner_text()
+  row.locator('.offer').filter(has_text='$64.99').last.evaluate('(e)=>e.scrollIntoView({block:"start"})')
+  page.screenshot(path=str(output/f'{width}-shipping-offer.png'))
+  row.locator('summary').last.click()
+  row=page.locator('[data-build-id="ALT01"]');row.locator('summary').last.click()
+  assert 'Prime conditional' in row.inner_text() and 'battery inclusion unverified' in row.inner_text()
+  row.locator('.offer').filter(has_text='1.54 fast board near-match').last.evaluate('(e)=>e.scrollIntoView({block:"start"})')
+  page.screenshot(path=str(output/f'{width}-near-match.png'))
+  row.locator('summary').last.click()
   page.locator('#bom-rows summary').first.click();assert page.locator('#bom-rows details').first.get_attribute('open') is not None
+  assert 'Adafruit 4474' in page.locator('[data-build-id="ALT01"]').inner_text()
+  assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
   page.locator('#github-link').focus()
   with page.expect_popup() as pop:page.keyboard.press('Enter')
   popup=pop.value;assert popup.url.startswith('https://github.com/Harrison-F/freedom-lab-hardware');popup.close()
