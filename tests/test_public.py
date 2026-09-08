@@ -89,7 +89,17 @@ def main():
   for f in fs:
    assert f['status'] in ['Included','Documented add-on','Engineering plan','Unsupported','Reference only','Hardware test required'] and f['text']
    for s in f['links']+f['evidence']:assert s['url'].startswith('https://') and s['label']
- assert alt01['feature_review']['features'][3]['status']=='Documented add-on'
+ assert alt01['feature_review']['features'][3]['status']=='Engineering plan'
+ cellular=alt01['feature_review']['features'][3]
+ assert '34.81 board + antenna only' in cellular['text']
+ assert 'sim7080g-cat-m-nb-iot-hat.htm' in cellular['links'][0]['url']
+ assert 'taoglas-fxp40-cellular-antenna' in cellular['links'][1]['url']
+ option=rows['ALT01']['alternatives'][0]
+ assert option['known_parts_subtotal_usd']==34.81
+ assert round(sum(p['unit_price_usd'] or 0 for p in option['bom']),2)==34.81
+ assert any(p['unit_price_usd'] is None for p in option['bom'])
+ for marker in ['No genuinely smaller-footprint complete board verified','65 × 30.5','73.5 × 24','3.3V UART logic but 5V power','12%','17%','nonreturnable','no ready-attach','Do not parallel chargers','authenticated TLS']:
+  assert marker in option['note']
  assert 'Separate device, not built-in LTE' in alt01['feature_review']['features'][3]['text']
  assert 'repeat(4' not in (ROOT/'site/static/voice-device-rows.css').read_text()
  for name in ['styles.css','display-template.css']:assert (ROOT/'shared'/name).read_bytes()==(ROOT/'site/static'/name).read_bytes()

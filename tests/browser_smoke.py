@@ -69,6 +69,15 @@ with sync_playwright() as p:
   row.scroll_into_view_if_needed();row.evaluate('(e)=>e.scrollIntoView({block:"start"})')
   page.screenshot(path=str(output/f'{width}-first-row.png'))
   row.locator('.addons summary').click();assert row.locator('.addons a[href="https://www.amazon.com/dp/B0CJF7KQ3Q"]').is_visible()
+  for surface in ['.feature-list','.addons']:
+   for urlpart in ['https://www.waveshare.com/sim7080g-cat-m-nb-iot-hat.htm','https://westwardsales.com/taoglas-fxp40-cellular-antenna']:
+    component=row.locator(f'{surface} a[href="{urlpart}"]')
+    assert component.is_visible() and component.get_attribute('target')=='_blank'
+   text=row.locator(surface).inner_text()
+   assert '65 × 30.5 mm' in text and '42.6 × 12.1 mm' in text and '$34.81' in text
+   assert text.index('ENGINEERING OPTION')<text.index('hotspot')
+  assert 'No genuinely smaller-footprint complete board verified' in row.locator('.addons').inner_text()
+  assert 'nonreturnable' in row.locator('.addons').inner_text()
   row.locator('.addons').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-addons.png'))
   row.locator('.addons summary').click()
   row.locator('.procurement-offers summary').click()

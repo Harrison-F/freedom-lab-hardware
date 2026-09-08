@@ -36,7 +36,7 @@
       "cellular_additions": [
         "Two-device alternative: GL.iNet GL-E750V2 Mudi EM060K $169.99, battery, antennas, enclosure, cables and wall adapter included; separate activated carrier SIM/data plan unpriced. Not cellular inside the terminal.",
         "Carrier/IMEI acceptance, SIM/APN, activation and recurring price unverified. Test WPA2 2.4GHz Wi-Fi, reconnect and outbound TLS; no shared power or modem wiring.",
-        "Single-enclosure LTE remains unqualified: modem, antennas, peak-current power, wiring, enclosure and transport firmware not priced."
+        "Single-enclosure LTE remains unqualified: optional modem + flat antenna priced separately above; peak-current power, wiring, enclosure, SIM/service, possible RF adapter and transport firmware remain unresolved."
       ],
       "sources": [
         {
@@ -202,7 +202,46 @@
           "note": "Battery/case bundle not conclusively enumerated. Prime only: 2026-09-09. Non-Prime: FREE Sep12 only over $35 Amazon-shipped order; quantity1 alone below threshold, shipping unknown. Not verified equivalent to SKU32298 battery bundle. Good fast USB-powered electronics lead, not a complete portable BOM."
         }
       ],
-      "alternatives": [],
+      "alternatives": [
+        {
+          "name": "Attached LTE modem + flat antenna — ENGINEERING OPTION / untested",
+          "known_parts_subtotal_usd": 34.81,
+          "known_parts_plus_quoted_shipping_usd": null,
+          "note": "No genuinely smaller-footprint complete board verified: HAT 65 × 30.5 mm is shorter but wider than Pico 73.5 × 24 mm, not smaller overall. Connectors, wiring and height need extra enclosure space; not verified to fit the supplied display case. HAT SKU17693: $32.99, 3.3V UART logic but 5V power. Never power the modem from the display 3.3V rail. Exact non-touch V2 schematic/pinout and power ratings remain unresolved; no ready-attach or numbered pin-to-pin wiring is approved. Do not parallel chargers or assume a shared battery is safe. Taoglas FXP40.07.0085A: $1.82, 42.6 × 12.1 mm, 85 mm coax, MHF I / U.FL-compatible, not SMA or MHF4. Exact HAT RF connector matching is unconfirmed; an adapter may add cost/height. Retailer lead time 2–3 weeks or less; nonreturnable (NCNR), not verified in-hand stock. LTE bands 12/13 are covered, but low-band antenna efficiency is only 12% in free space / 17% on 2 mm ABS. Compactness trades away RF performance; test indoor reception and hand loading. Mount on plastic, separated from battery foil/display metal; verify antenna and host regulatory integration before deployment. Known $34.81 is modem board + antenna only. Required power/boost, wiring, mounting/enclosure, SIM/service and possible RF adapter are unpriced; shipping and tax unknown. Complete cellular cost and all-parts arrival remain unknown. Firmware is not implemented: add audio compression/decoding and buffering, modem AT/control and UART flow control, SIM/APN/LTE-M registration, data transport, authenticated TLS to the Hermes bridge, reconnect/backoff and sustained bidirectional audio tests. Existing Wi-Fi firmware is not a modem client. Confirm physical 1.8V-capable SIM, carrier/IMEI eligibility and local attach; prefer LTE-M, not NB-IoT, for interactive audio. Bench-test with independently correct host/HAT power and verified common logic ground; resolve UART boot-log conflicts and prevent backfeeding. Size and measure peak-current power delivery before any shared-battery design. No prototype or hardware qualification is claimed.",
+          "bom": [
+            {
+              "name": "Waveshare SIM7080G HAT SKU17693 · 65 × 30.5 mm · $32.99",
+              "quantity": 1,
+              "unit_price_usd": 32.99,
+              "role": "unresolved purchase",
+              "status": "engineering_option_unqualified",
+              "source_url": "https://www.waveshare.com/sim7080g-cat-m-nb-iot-hat.htm",
+              "shipment_group": null,
+              "note": "3.3V logic; requires 5V power. Exact display connection not approved."
+            },
+            {
+              "name": "Taoglas FXP40.07.0085A · 42.6 × 12.1 mm · $1.82",
+              "quantity": 1,
+              "unit_price_usd": 1.82,
+              "role": "unresolved purchase",
+              "status": "engineering_option_unqualified",
+              "source_url": "https://westwardsales.com/taoglas-fxp40-cellular-antenna",
+              "shipment_group": null,
+              "note": "85 mm MHF I / U.FL lead, not SMA; connector matching unconfirmed. 2–3 weeks or less; nonreturnable."
+            },
+            {
+              "name": "Power/boost, wiring, mounting/enclosure, SIM/service and possible RF adapter",
+              "quantity": 1,
+              "unit_price_usd": null,
+              "role": "unresolved purchase",
+              "status": "engineering_option_unqualified",
+              "source_url": null,
+              "shipment_group": null,
+              "note": "Required, unpriced; full cost, shipping and tax unknown."
+            }
+          ]
+        }
+      ],
       "build_status": "Best low-cost integrated audio pilot; not a finished Hermes terminal"
     },
     {

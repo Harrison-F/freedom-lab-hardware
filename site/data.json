@@ -158,15 +158,35 @@
           },
           {
             "name": "Cellular",
-            "status": "Documented add-on",
-            "text": "Connects over Wi-Fi, with its own SIM and battery; no phone needed. $169.99 device-only observed quote; SIM/data, tax and unquoted shipping extra. Separate device, not built-in LTE. Connection/hardware test required.",
+            "status": "Engineering plan",
+            "text": "Attached LTE-M modem + flat antenna: ENGINEERING OPTION, untested. $34.81 board + antenna only; incomplete, not a cheaper complete kit. Needs power, wiring, enclosure, SIM and compressed-audio/modem/TLS firmware. Hotspot fallback: connects over Wi-Fi, with its own SIM and battery; no phone needed. $169.99 device-only observed quote; SIM/data, tax and unquoted shipping extra. Separate device, not built-in LTE. Connection/hardware test required.",
             "links": [
+              {
+                "label": "ENGINEERING OPTION — Waveshare SIM7080G HAT SKU17693 · 65 × 30.5 mm · $32.99",
+                "url": "https://www.waveshare.com/sim7080g-cat-m-nb-iot-hat.htm"
+              },
+              {
+                "label": "Taoglas FXP40.07.0085A · 42.6 × 12.1 mm · $1.82",
+                "url": "https://westwardsales.com/taoglas-fxp40-cellular-antenna"
+              },
               {
                 "label": "Add a standalone cellular hotspot — GL.iNet Mudi V2",
                 "url": "https://www.gl-inet.com/products/gl-e750/"
               }
             ],
             "evidence": [
+              {
+                "label": "Waveshare SIM7080G HAT SKU17693 · 65 × 30.5 mm · $32.99",
+                "url": "https://www.waveshare.com/sim7080g-cat-m-nb-iot-hat.htm"
+              },
+              {
+                "label": "Taoglas FXP40.07.0085A · 42.6 × 12.1 mm · $1.82",
+                "url": "https://westwardsales.com/taoglas-fxp40-cellular-antenna"
+              },
+              {
+                "label": "FXP40 manufacturer datasheet / mechanical drawing",
+                "url": "https://www.taoglas.com/datasheets/FXP40.07.0085A.pdf"
+              },
               {
                 "url": "https://www.gl-inet.com/products/gl-e750/",
                 "label": "Primary evidence"
@@ -180,12 +200,19 @@
                 "label": "Primary evidence"
               }
             ],
-            "detail": "Common GL.iNet GL-E750V2 Mudi V2 with preinstalled EM060K Cat6 modem, internal LTE antennas, own 7000mAh battery/case, nano-SIM slot and 2.4GHz Wi-Fi. Documented network architecture, not a manufacturer-tested pairing with each terminal. Exact carrier/IMEI/SIM acceptance and terminal firmware remain gates.",
+            "detail": "Attached LTE-M option is untested and not plug-and-play. No genuinely smaller-footprint complete board verified: HAT 65 × 30.5 mm is shorter but wider than Pico 73.5 × 24 mm, not smaller overall. Connectors, wiring and height need extra enclosure space; not verified to fit the supplied display case. Hotspot fallback: Common GL.iNet GL-E750V2 Mudi V2 with preinstalled EM060K Cat6 modem, internal LTE antennas, own 7000mAh battery/case, nano-SIM slot and 2.4GHz Wi-Fi. Documented network architecture, not a manufacturer-tested pairing with each terminal. Exact carrier/IMEI/SIM acceptance and terminal firmware remain gates.",
             "work_required": [
-              "Add one separate Mudi V2 and activated compatible physical nano-SIM/data plan. Configure SIM/APN and a 2.4GHz WPA2 SSID in router web admin from a computer; no phone tethering, modem soldering or common battery needed.",
-              "Provision terminal SSID/password and outbound authenticated TLS bridge; implement reconnect/backoff and keep hardware credentials narrow. BM06 requires a new Wi-Fi voice client; DONOR01 weather Wi-Fi is not already a voice bridge.",
-              "Keep hotspot on its supplied power system/charger. Existing terminal battery/charger remains separate. No per-board LTE UART/USB modem engineering required.",
-              "BM07 stock initial provisioning still requires phone/app per existing evidence; computer-only terminal provisioning is a separate firmware task, so hotspot alone does not make stock first setup phone-free."
+              "No genuinely smaller-footprint complete board verified: HAT 65 × 30.5 mm is shorter but wider than Pico 73.5 × 24 mm, not smaller overall. Connectors, wiring and height need extra enclosure space; not verified to fit the supplied display case.",
+              "HAT SKU17693: $32.99, 3.3V UART logic but 5V power. Never power the modem from the display 3.3V rail. Exact non-touch V2 schematic/pinout and power ratings remain unresolved; no ready-attach or numbered pin-to-pin wiring is approved. Do not parallel chargers or assume a shared battery is safe.",
+              "Taoglas FXP40.07.0085A: $1.82, 42.6 × 12.1 mm, 85 mm coax, MHF I / U.FL-compatible, not SMA or MHF4. Exact HAT RF connector matching is unconfirmed; an adapter may add cost/height. Retailer lead time 2–3 weeks or less; nonreturnable (NCNR), not verified in-hand stock.",
+              "LTE bands 12/13 are covered, but low-band antenna efficiency is only 12% in free space / 17% on 2 mm ABS. Compactness trades away RF performance; test indoor reception and hand loading. Mount on plastic, separated from battery foil/display metal; verify antenna and host regulatory integration before deployment.",
+              "Known $34.81 is modem board + antenna only. Required power/boost, wiring, mounting/enclosure, SIM/service and possible RF adapter are unpriced; shipping and tax unknown. Complete cellular cost and all-parts arrival remain unknown.",
+              "Firmware is not implemented: add audio compression/decoding and buffering, modem AT/control and UART flow control, SIM/APN/LTE-M registration, data transport, authenticated TLS to the Hermes bridge, reconnect/backoff and sustained bidirectional audio tests. Existing Wi-Fi firmware is not a modem client. Confirm physical 1.8V-capable SIM, carrier/IMEI eligibility and local attach; prefer LTE-M, not NB-IoT, for interactive audio.",
+              "Bench-test with independently correct host/HAT power and verified common logic ground; resolve UART boot-log conflicts and prevent backfeeding. Size and measure peak-current power delivery before any shared-battery design. No prototype or hardware qualification is claimed.",
+              "Hotspot fallback only: Add one separate Mudi V2 and activated compatible physical nano-SIM/data plan. Configure SIM/APN and a 2.4GHz WPA2 SSID in router web admin from a computer; no phone tethering, modem soldering or common battery needed.",
+              "Hotspot fallback only: Provision terminal SSID/password and outbound authenticated TLS bridge; implement reconnect/backoff and keep hardware credentials narrow. BM06 requires a new Wi-Fi voice client; DONOR01 weather Wi-Fi is not already a voice bridge.",
+              "Hotspot fallback only: Keep hotspot on its supplied power system/charger. Existing terminal battery/charger remains separate. No per-board LTE UART/USB modem engineering required.",
+              "Hotspot fallback only: BM07 stock initial provisioning still requires phone/app per existing evidence; computer-only terminal provisioning is a separate firmware task, so hotspot alone does not make stock first setup phone-free."
             ]
           },
           {
