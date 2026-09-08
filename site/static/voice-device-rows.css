@@ -1,0 +1,47 @@
+/* Voice hardware route only. Shared Contributors geometry remains unchanged. */
+.voice-research .intro {padding-bottom:24px}
+.voice-research .research-brief {max-width:950px;margin-bottom:24px}
+.voice-research .research-brief p,.voice-research .group-note {color:var(--muted);line-height:1.55}
+.voice-research summary {cursor:pointer;min-height:44px;padding:12px 0;color:var(--accent);font-weight:600}
+.voice-research .research-controls {grid-template-columns:repeat(3,minmax(0,1fr))}
+.voice-research .research-controls label,.voice-research .research-controls input,.voice-research .research-controls select {min-width:0}
+.voice-research .research-controls select {width:0}
+.voice-research .research-count,.voice-research #ranking-note {color:var(--muted);font-size:13px;line-height:1.5}
+.voice-research .collection-heading {font:400 34px/1.15 Georgia,serif;letter-spacing:-.025em;margin:44px 0 12px}
+.voice-research .group-count {font:400 16px/1.4 sans-serif;color:var(--muted);margin-left:10px}
+.voice-research .hardware-rows {display:grid;grid-template-columns:minmax(0,1fr)}
+.voice-research .hardware-row {display:grid;grid-template-columns:minmax(220px,30%) minmax(0,1fr);gap:36px;padding:32px 0;border-top:1px solid var(--line);align-items:start;min-width:0;overflow-wrap:anywhere}
+.voice-research .hardware-identity,.voice-research .hardware-components {min-width:0}
+.voice-research .hardware-image {height:220px;background:#202322;border-radius:12px;overflow:hidden;display:grid;place-items:center}
+.voice-research .hardware-image img {width:100%;height:100%;max-height:220px;object-fit:contain}
+.voice-research .hardware-identity h3 {font:400 30px/1.13 Georgia,serif;margin:18px 0 12px;letter-spacing:-.025em}
+.voice-research .hardware-identity p {font-size:14px;line-height:1.5}
+.voice-research .hardware-row a {color:var(--accent);text-underline-offset:3px}
+.voice-research .hardware-row a:focus-visible {outline:2px solid var(--accent);outline-offset:4px}
+.voice-research .row-summary {margin:0 0 18px;line-height:1.6;color:var(--ink)}
+.voice-research .feature-list {margin:0 0 22px}
+.voice-research .feature-list>div {display:grid;grid-template-columns:145px minmax(0,1fr);gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5}
+.voice-research dt {font-weight:600}
+.voice-research dd {margin:0;color:var(--muted)}
+.voice-research dt small {display:block;font-size:11px;font-weight:400;color:var(--muted)}
+.voice-research h4 {font-size:15px;line-height:1.5;margin:18px 0 8px}
+.voice-research .parts {padding-left:18px;margin:8px 0 18px;font-size:14px;line-height:1.55}
+.voice-research .parts li {margin:8px 0}
+.voice-research .parts small {display:block;color:var(--muted)}
+.voice-research .parts p {margin:5px 0}
+.voice-research .software-needed {font-size:14px;line-height:1.55;color:var(--ink)}
+.voice-research .cost-line {font-weight:600;font-size:15px;line-height:1.55;margin:20px 0}
+.voice-research .delivery-preview {font-size:13px;line-height:1.6;color:var(--muted)}
+.voice-research .cost-line span {font-weight:400;color:var(--muted)}
+.voice-research .hardware-components details {border-top:1px solid var(--line);font-size:14px;line-height:1.6;color:var(--muted)}
+.voice-research .hardware-components details ul {padding-left:18px}
+.voice-research .hardware-components details li {margin-bottom:10px}
+.voice-research .offer,.voice-research .shipment {border-bottom:1px solid var(--line);padding-bottom:12px}
+.voice-research .subtle,.voice-research .image-unavailable {color:var(--muted)}
+.voice-research .reference-row .hardware-image {height:140px}
+.voice-research .reference-row .hardware-image img {max-height:140px}
+.voice-research .reference-row .hardware-identity h3 {font-size:24px}
+.voice-research .reference-row .feature-list>div {padding:4px 0;font-size:12px}
+.voice-research [hidden] {display:none!important}
+@media(max-width:900px){.voice-research .research-controls {grid-template-columns:repeat(2,minmax(0,1fr))}.voice-research .hardware-row {gap:24px;grid-template-columns:minmax(190px,30%) minmax(0,1fr)}}
+@media(max-width:600px){.voice-research .research-controls {grid-template-columns:minmax(0,1fr)}.voice-research .hardware-row {grid-template-columns:minmax(0,1fr);gap:20px}.voice-research .feature-list>div {grid-template-columns:112px minmax(0,1fr)}.voice-research .topbar {gap:12px}.voice-research .brand {font-size:13px}.voice-research .collection-heading {font-size:28px}.voice-research .hardware-image {height:210px}}

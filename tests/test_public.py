@@ -59,9 +59,11 @@ def main():
  assert any(o['arrival_latest']=='2026-09-09' and 'near-match' in o['match'] for o in rows['ALT01']['offers'])
  assert all(r['arrival_latest'] is None and r['delivered_total_usd'] is None for r in rows.values())
  html=(ROOT/'site/index.html').read_text()
- assert 'id="bom-rows" class="display-template"' in html and '<table' not in html
- assert "items.get(r.id)" in (ROOT/'site/static/procurement.js').read_text()
- assert "querySelectorAll('#collections .display-card')" in (ROOT/'site/static/voice-device.js').read_text()
+ assert 'id="bom-rows"' not in html and '<table' not in html and 'procurement.js' not in html
+ js=(ROOT/'site/static/voice-device-rows.js').read_text()
+ assert 'builds.get(i.id)' in js and 'grouped-rows-5' in html
+ assert all(label in js for label in ['E-ink voice devices','Other compact voice devices','Build-it-yourself options','Design references—not complete builds','Microphone','Speech output','Headphone jack','Cellular','Battery','Enclosure'])
+ assert 'repeat(4' not in (ROOT/'site/static/voice-device-rows.css').read_text()
  for name in ['styles.css','display-template.css']:assert (ROOT/'shared'/name).read_bytes()==(ROOT/'site/static'/name).read_bytes()
  assert 'repeat(4, minmax(0, 1fr))' in (ROOT/'shared/display-template.css').read_text()
  print(json.dumps({'passed':True,'allowlisted_files':len(allowed),'research_items':len(d['items']),'schema':'valid','shared_css':'byte-identical'}))

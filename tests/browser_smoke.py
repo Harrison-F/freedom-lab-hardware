@@ -2,66 +2,74 @@ import json,sys,time,tempfile
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 url=sys.argv[1] if len(sys.argv)>1 else 'https://hardware.freedomlab.nyc/'
-start=time.monotonic();errors=[];results=[];output=Path(tempfile.mkdtemp(prefix='hardware-qa-'))
+start=time.monotonic();errors=[];results=[];output=Path(tempfile.mkdtemp(prefix='hardware-rows-qa-'))
 with sync_playwright() as p:
  browser=p.chromium.launch(headless=True)
  for width in [1280,390]:
-  page=browser.new_page(viewport={'width':width,'height':900})
+  page=browser.new_page(viewport={'width':width,'height':1000})
   page.on('pageerror',lambda e:errors.append(str(e)))
   page.on('console',lambda e:errors.append(e.text) if e.type=='error' else None)
-  page.set_default_timeout(8000)
-  response=page.goto(url,wait_until='domcontentloaded',timeout=20000);assert response.status==200
-  page.locator('#collections .display-card').first.wait_for();page.locator('#bom-rows .procurement-card').first.wait_for()
-  count=page.locator('#collections .display-card').count();assert count==42
-  assert page.locator('#collections .display-card img').count()==40
-  page.locator('#collections .display-card img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>{i.loading="eager";return i.decode()}))')
-  assert page.locator('#bom-rows .procurement-card').count()==13
-  assert page.locator('#bom-rows img').count()==12
-  for image in page.locator('#bom-rows img').all():
-   identity=image.locator('xpath=ancestor::article[@data-build-id]').get_attribute('data-build-id')
-   assert image.get_attribute('src')==page.locator('#collections [data-id="'+identity+'"] img').get_attribute('src')
-  page.locator('#bom-rows img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>i.decode()))')
-  assert page.locator('#bom-rows').evaluate('(e)=>getComputedStyle(e).gridTemplateColumns.split(" ").length')==(4 if width==1280 else 1)
-  page.locator('#bom-rows').evaluate('(e)=>e.scrollIntoView({block:"start"})')
-  page.screenshot(path=str(output/f'{width}-initial-image-comparison.png'))
-  columns=page.locator('.display-template').first.evaluate('(e)=>getComputedStyle(e).gridTemplateColumns.split(" ").length')
-  assert columns==(4 if width==1280 else 1)
-  assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
-  page.locator('#search').fill('Waveshare');assert page.locator('#collections .display-card:visible').count()<count
-  page.locator('#reset').click();assert page.locator('#collections .display-card:visible').count()==count
+  page.set_default_timeout(10000)
+  response=page.goto(url,wait_until='domcontentloaded',timeout=30000);assert response.status==200
+  page.locator('.hardware-row').first.wait_for()
+  assert page.locator('.hardware-row').count()==42
+  assert page.locator('[data-build-id]').count()==13
+  assert page.locator('.hardware-row img').count()==40
+  page.locator('.hardware-row img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>{i.loading="eager";return i.decode()}))')
+  assert page.locator('#bom-rows').count()==0
+  groups=page.locator('.research-collection').evaluate_all('(els)=>els.map(e=>({name:e.dataset.category,count:e.querySelectorAll(".hardware-row").length,label:Number(e.querySelector(".group-count").textContent)}))')
+  assert [g['count'] for g in groups]==[5,3,4,30]
+  assert all(g['count']==g['label'] for g in groups)
+  checks=page.locator('.hardware-row').evaluate_all('''els=>els.map(e=>{const a=e.getBoundingClientRect(),b=e.querySelector('.hardware-identity').getBoundingClientRect(),c=e.querySelector('.hardware-components').getBoundingClientRect(),p=e.parentElement.getBoundingClientRect();return {full:Math.abs(a.width-p.width)<2,left:b.right<c.left,above:b.bottom<=c.top,labels:e.querySelectorAll('dt').length,values:[...e.querySelectorAll('dd')].map(d=>d.textContent)}})''')
+  for geom in checks:
+   assert geom['labels']==6 and len(geom['values'])==6
+   assert all(s.startswith(('Included','Add','Not yet solved')) for s in geom['values'])
+   assert geom['full'] and geom['left' if width==1280 else 'above'],geom
+  # Every verified required accessory source is exposed in the main right-hand list.
+  parity=page.evaluate('''async()=>{const d=await (await fetch('procurement.json')).json();return d.builds.every(r=>r.bom.slice(1).filter(p=>p.role==='purchase'&&p.source_url).every(p=>[...document.querySelector(`[data-id="${r.id}"] .required-parts`).querySelectorAll('a')].some(a=>a.href===new URL(p.source_url).href))) }''')
+  assert parity
+  assert page.evaluate('innerWidth')==width
+  assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+  page.screenshot(path=str(output/f'{width}-top.png'))
+  row=page.locator('[data-id="ALT01"]')
+  assert '$29.89 known parts' in row.inner_text()
+  assert row.locator('.required-parts a[href="https://www.adafruit.com/product/4474"]').is_visible()
+  assert row.locator('.required-parts a[href="https://www.adafruit.com/product/1994"]').is_visible()
+  row.scroll_into_view_if_needed();row.evaluate('(e)=>e.scrollIntoView({block:"start"})')
+  page.screenshot(path=str(output/f'{width}-first-row.png'))
+  row.locator('.addons summary').click();assert row.locator('.addons a[href="https://www.amazon.com/dp/B0CJF7KQ3Q"]').is_visible()
+  row.locator('.addons').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-addons.png'))
+  row.locator('.addons summary').click()
+  row.locator('.procurement-offers summary').click()
+  assert 'Prime conditional' in row.inner_text() and 'battery inclusion unverified' in row.inner_text()
+  row.locator('.procurement-offers summary').click()
+  row=page.locator('[data-id="ALT02"]');row.locator('.procurement-offers summary').click()
+  assert '$64.99' in row.inner_text() and '2026-09-28' in row.inner_text()
+  row.locator('.offer').filter(has_text='$64.99').last.evaluate('(e)=>e.scrollIntoView({block:"start"})')
+  page.screenshot(path=str(output/f'{width}-shipping.png'))
+  page.locator('#search').fill('Waveshare');assert 0<page.locator('.hardware-row').count()<42
+  page.locator('#reset').click();assert page.locator('.hardware-row').count()==42
   for selector in ['#recommendation-filter','#status-filter','#category-filter','#scope-filter']:
-   value=page.locator(selector+' option').nth(1).get_attribute('value');page.locator(selector).select_option(value);assert page.locator('#collections .display-card:visible').count()>0;page.locator('#reset').click()
-  page.locator('#collections .research-evidence summary').first.click();assert page.locator('#collections .research-evidence').first.get_attribute('open') is not None
-  page.locator('#collections .display-card').first.hover();page.mouse.move(0,0)
-  assert page.locator('#bom-rows .procurement-card:visible').count()==13
+   page.locator(selector).select_option(page.locator(selector+' option').nth(1).get_attribute('value'))
+   assert 0<page.locator('.hardware-row').count()<42;page.locator('#reset').click()
   for mode in ['known','affordability','fastest','fit']:
    page.locator('#cost-sort').select_option(mode)
    if mode in ['affordability','fastest']:assert 'No defensible' in page.locator('#ranking-note').inner_text()
    if mode=='known':assert 'NOT an affordability ranking' in page.locator('#ranking-note').inner_text()
-  assert '$29.89 known parts' in page.locator('[data-build-id="ALT01"]').inner_text()
-  assert '$44.40 known parts + quoted freight only' in page.locator('[data-build-id="KIT01"]').inner_text()
-  row=page.locator('[data-build-id="ALT02"]');row.locator('summary').last.click()
-  assert '$64.99' in row.inner_text() and '2026-09-28' in row.inner_text()
-  row.locator('.offer').filter(has_text='$64.99').last.evaluate('(e)=>e.scrollIntoView({block:"start"})')
-  page.screenshot(path=str(output/f'{width}-shipping-offer.png'))
-  row.locator('summary').last.click()
-  row=page.locator('[data-build-id="ALT01"]');row.locator('summary').last.click()
-  assert 'Prime conditional' in row.inner_text() and 'battery inclusion unverified' in row.inner_text()
-  row.locator('.offer').filter(has_text='1.54 fast board near-match').last.evaluate('(e)=>e.scrollIntoView({block:"start"})')
-  page.screenshot(path=str(output/f'{width}-near-match.png'))
-  row.locator('summary').last.click()
-  page.locator('#bom-rows summary').first.click();assert page.locator('#bom-rows details').first.get_attribute('open') is not None
-  assert 'Adafruit 4474' in page.locator('[data-build-id="ALT01"]').inner_text()
-  assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+   assert page.locator('.research-collection').count()==4
+  row=page.locator('[data-id="BM12"]');row.locator('.addons summary').click()
+  assert 'replaces Voice Base' in row.inner_text()
+  assert row.locator('.addons a').count()==2
+  row.locator('.addons').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-headphones.png'))
+  row=page.locator('[data-id="KIT01"]');assert '$44.40 with quoted freight only' in row.inner_text()
+  row.locator('.addons summary').click();assert row.locator('.addons a').count()==3
+  page.locator('.research-evidence summary').first.click();assert page.locator('.research-evidence').first.get_attribute('open') is not None
+  page.locator('.hardware-row').first.hover();page.mouse.move(0,0)
   page.locator('#github-link').focus()
   with page.expect_popup() as pop:page.keyboard.press('Enter')
   popup=pop.value;assert popup.url.startswith('https://github.com/Harrison-F/freedom-lab-hardware');popup.close()
-  page.locator('#bom-rows').evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-comparison.png'))
-  page.locator('#collections .research-evidence summary').first.click()
-  page.locator('#collections .display-card').first.evaluate('(e)=>e.scrollIntoView({block:"start"})')
-  page.locator('#collections .display-card img').first.evaluate('(e)=>e.decode()')
-  page.screenshot(path=str(output/f'{width}-cards.png'))
-  results.append({'width':width,'columns':columns,'cards':count,'url':page.url});page.close()
+  assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+  results.append({'width':width,'rows':42,'images':40,'groups':groups,'url':page.url});page.close()
  browser.close()
 assert not errors,errors
 print(json.dumps({'passed':True,'seconds':round(time.monotonic()-start,2),'results':results,'errors':errors,'screenshots':str(output)}))

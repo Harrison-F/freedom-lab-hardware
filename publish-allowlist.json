@@ -53,6 +53,8 @@
   "site/static/voice-device-media/donor01.webp",
   "site/static/voice-device-media/donor02.webp",
   "site/static/voice-device-media/kit01.webp",
+  "site/static/voice-device-rows.css",
+  "site/static/voice-device-rows.js",
   "site/static/voice-device.css",
   "site/static/voice-device.js",
   "tests/browser_smoke.py",
