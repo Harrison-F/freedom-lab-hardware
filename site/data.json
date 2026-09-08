@@ -42,6 +42,31 @@
         "source_url": "https://www.waveshare.com/img/devkit/ESP32-S3-ePaper-1.54/ESP32-S3-ePaper-1.54-details-size.jpg",
         "alt": "Waveshare ESP32-S3-ePaper-1.54 manufacturer dimension diagram",
         "kind": "Manufacturer dimension diagram — verify delivered V2"
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://docs.waveshare.com/ESP32-S3-ePaper-1.54",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://files.waveshare.com/wiki/ESP32-S3-ePaper-1.54/ESP32-S3-Touch-ePaper-1.54-Schematic.pdf",
+          "kind": "schematic",
+          "label": "Touch-family schematic (PDF)"
+        },
+        {
+          "url": "https://files.waveshare.com/wiki/common/1.54inch_e-paper_V2_Datasheet.pdf",
+          "kind": "component_datasheet_pdf",
+          "label": "Display-only datasheet (PDF)"
+        }
+      ],
+      "spec_note": "Use the non-touch V2 / SKU 32298 specifications, not V1 or the touch bundle. Resource-page schematic is touch-family N8R8; exact non-touch V2 schematic applicability is not confirmed. Panel PDF is display-only, not a device datasheet.",
+      "source_license": {
+        "firmware": "Source available — project license missing",
+        "hardware": "Schematics published — open-hardware license not verified",
+        "note": "Nested codec/library licenses do not cover the vendor examples.",
+        "url": "https://github.com/waveshareteam/ESP32-S3-ePaper-1.54"
       }
     },
     {
@@ -82,7 +107,26 @@
         "source_url": "https://cdn.shopify.com/s/files/1/0056/7689/2250/files/1_f50b328d-f753-4bef-92ec-6f0e8a69e5c0.webp?v=1769049123",
         "alt": "M5StickS3 manufacturer source image",
         "kind": "Manufacturer image"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://docs.m5stack.com/en/core/StickS3",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/pdf/static/en/core/StickS3.pdf",
+          "kind": "specs_pdf",
+          "label": "Specs (PDF)"
+        },
+        {
+          "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1207/K150_Stick_S3_PRJ_V0.6_20251111_2025_11_17_16_10_24.pdf",
+          "kind": "schematic",
+          "label": "Schematic (PDF)"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM01",
@@ -121,7 +165,21 @@
         "source_url": "https://pbs.twimg.com/media/HRYc2SWbwAA9ma6.jpg",
         "alt": "Waveshare ESP32-S3 Touch-AMOLED-1.8 — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://docs.waveshare.com/ESP32-S3-Touch-AMOLED-1.8",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://files.waveshare.com/wiki/ESP32-S3-Touch-AMOLED-1.8/ESP32-S3-Touch-AMOLED-1.8.pdf",
+          "kind": "schematic",
+          "label": "Schematic (PDF)"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM12",
@@ -156,7 +214,21 @@
         "source_url": "https://cdn.shopify.com/s/files/1/0056/7689/2250/files/AtomS3R_AI_Chatbot_Kit_8MB_PSRAM_9.webp?v=1786609615",
         "alt": "AtomS3R AI Chatbot Kit K147 with Atomic Voice Base",
         "kind": "Manufacturer image — exact K147 audio kit"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://docs.m5stack.com/en/products/sku/K147",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/AtomS3R/Sch_M5_AtomS3R_v0.4.1.pdf",
+          "kind": "schematic",
+          "label": "AtomS3R schematic (PDF)"
+        }
+      ],
+      "spec_note": "Exact K147 kit: AtomS3R plus Atomic Voice Base. Controller schematic alone does not cover the whole kit."
     },
     {
       "id": "BM07",
@@ -195,7 +267,21 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094267241034633216/img/C0QrhNZh9RP3RLbp.jpg",
         "alt": "Seeed reTerminal Sticky — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://www.seeedstudio.com/sticky/docs/en/device-guide/hardware-overview/",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://files.seeedstudio.com/wiki/reterminal_sticky/res/reTerminal_Sticky_Schematic_diagram_260609.pdf",
+          "kind": "schematic",
+          "label": "Schematic (PDF)"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "DONOR02",
@@ -231,7 +317,26 @@
         "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_main_pictures_01.webp",
         "alt": "PaperMono-Lite — source image",
         "kind": "Manufacturer image"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://docs.m5stack.com/en/core/PaperMono-Lite",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/pdf/static/en/core/PaperMono-Lite.pdf",
+          "kind": "specs_pdf",
+          "label": "Specs (PDF)"
+        },
+        {
+          "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522.pdf",
+          "kind": "schematic",
+          "label": "Schematic (PDF)"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "DONOR01",
@@ -267,7 +372,21 @@
         "source_url": "https://raw.githubusercontent.com/WeActStudio/WeActStudio.EpaperModule/master/Images/2.png",
         "alt": "WeatherPaper / WeAct 2.9″ — source image",
         "kind": "Manufacturer image"
-      }
+      },
+      "spec_status": "build_docs_only",
+      "spec_links": [
+        {
+          "url": "https://www.instructables.com/WeatherPaper-Real-Time-Weather-on-E-Paper-Display/",
+          "kind": "build_docs",
+          "label": "Build docs"
+        },
+        {
+          "url": "https://github.com/WeActStudio/WeActStudio.EpaperModule",
+          "kind": "component_specs",
+          "label": "WeAct display specs"
+        }
+      ],
+      "spec_note": "Build docs for WeatherPaper; no complete assembled voice-device specification. WeAct display module documentation is not a complete device datasheet."
     },
     {
       "id": "BM32",
@@ -303,7 +422,31 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2025727582822653952/img/PLSL_sDBxst_cC3f.jpg",
         "alt": "Pi Zero W OpenClaw PTT handheld — @basti_vkl — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "build_docs_only",
+      "spec_links": [
+        {
+          "url": "https://github.com/sebastianvkl/pizero-openclaw",
+          "kind": "build_docs",
+          "label": "Build docs"
+        },
+        {
+          "url": "https://docs.pisugar.com/docs/product-wiki/whisplay/overview",
+          "kind": "component_specs",
+          "label": "Whisplay HAT specs"
+        },
+        {
+          "url": "https://cdn.pisugar.com/pisugar-docs/documents/whisplay/WhisPlay_ES8389.pdf",
+          "kind": "schematic",
+          "label": "Whisplay ES8389 schematic (PDF)"
+        },
+        {
+          "url": "https://cdn.pisugar.com/pisugar-docs/documents/whisplay/Whisplay_wm8960.pdf",
+          "kind": "schematic",
+          "label": "Whisplay WM8960 schematic (PDF)"
+        }
+      ],
+      "spec_note": "Build docs for the Pi/Whisplay stack. Current Whisplay specs describe the HAT, not the full assembly; older project display dimensions conflict with current hardware."
     },
     {
       "id": "ALT02",
@@ -325,7 +468,21 @@
       "rank": null,
       "recommendation": "Investigate",
       "status": "Primary sources checked",
-      "image": null
+      "image": null,
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://docs.waveshare.com/ESP32-S3-ePaper-3.97",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://files.waveshare.com/wiki/ESP32-S3-ePaper-3.97/ESP32-S3_e-Paper-3.97-schematic.pdf",
+          "kind": "schematic",
+          "label": "Schematic (PDF)"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM02",
@@ -351,7 +508,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094122120032710656/img/g-CYN1KJ0vU51jQ9.jpg",
         "alt": "Grok Pocket — Bobby Thakkar — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM03",
@@ -386,7 +546,10 @@
         "source_url": "https://pbs.twimg.com/media/HRV0E63bkAALqvI.jpg",
         "alt": "DayRing / DayRing for Kids — Henry Li — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM04",
@@ -417,7 +580,16 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094906267693432832/img/FIWIvWvo6WMfKlhA.jpg",
         "alt": "Pamir AI unlabeled handheld — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://www.pamir.ai/",
+          "kind": "specs",
+          "label": "Specs"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM05",
@@ -448,7 +620,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094556692898004992/img/rRAWLw6P9LbBbP2p.jpg",
         "alt": "Sarvasv Kulpati colorful small computers — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM06",
@@ -503,7 +678,16 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2090655678956552192/img/WhmIL2_9y0ncqYjG.jpg",
         "alt": "OpenTrailPaper / LILYGO e-ink bike computer — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://lilygo.cc/products/t5-e-paper-s3-pro",
+          "kind": "specs",
+          "label": "Specs"
+        }
+      ],
+      "spec_note": "Specs cover the LILYGO T5 E-Paper S3 Pro donor; select the with-GPS variant for OpenTrailPaper. Not a specification for a completed voice build."
     },
     {
       "id": "BM08",
@@ -529,7 +713,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095748489368236032/img/q7xUg_GSVx8agfW2.jpg",
         "alt": "Santek EZ Sign — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM09",
@@ -559,7 +746,10 @@
         "source_url": "https://pbs.twimg.com/media/HPrlhXZWIAEKHMq.jpg",
         "alt": "Pocket e-reader: “iPod for reading” — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM10",
@@ -585,7 +775,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2092362412964126720/img/fY7npC8t2VVzywtD.jpg",
         "alt": "Giant color e-ink curriculum display — Jesse Genet — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM11",
@@ -615,7 +808,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2065771595876982784/img/hCXbMMf1zmf9A6xY.jpg",
         "alt": "60 fps paper-like reflective displays — @_welf — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM13",
@@ -641,7 +837,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2096120424681910272/img/Ai6EeLk1yraCdbND.jpg",
         "alt": "Spotify Puck — @atq_ren — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM14",
@@ -671,7 +870,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095893078477615104/img/Xp2OPNYbF3Xh8jiy.jpg",
         "alt": "Robert Bye interactive desktop ESP32 device — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM15",
@@ -701,7 +903,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095940405296857088/img/_jI1wO2xPTRfQBPB.jpg",
         "alt": "Maks Surguy synchronized mini touch art displays — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM16",
@@ -735,7 +940,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095928746687791104/img/CPiPoaDhR2xsVqfn.jpg",
         "alt": "Three.js Conf buddy badges — @rbriaux — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM17",
@@ -761,7 +969,10 @@
         "source_url": "https://pbs.twimg.com/media/HPt94l9bgAAM_Iv.jpg",
         "alt": "Hardware with the girls desk-buddy workshop — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_device",
+      "spec_links": [],
+      "spec_note": "Not a device — workshop, directory or software/resource reference; no single hardware specification applies."
     },
     {
       "id": "BM18",
@@ -791,7 +1002,10 @@
           "url": "https://github.com/esphome/esphome/blob/main/LICENSE"
         }
       ],
-      "image": null
+      "image": null,
+      "spec_status": "not_device",
+      "spec_links": [],
+      "spec_note": "Not a device — workshop, directory or software/resource reference; no single hardware specification applies."
     },
     {
       "id": "BM19",
@@ -826,7 +1040,10 @@
         "source_url": "https://pbs.twimg.com/media/HPDgbifW8AADpyt.jpg",
         "alt": "Steve Ruiz little-computers seed / tldraw event — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_device",
+      "spec_links": [],
+      "spec_note": "Not a device — workshop, directory or software/resource reference; no single hardware specification applies."
     },
     {
       "id": "BM20",
@@ -861,7 +1078,10 @@
         "source_url": "https://pbs.twimg.com/media/HPDQvX2WwAEfj12.jpg",
         "alt": "Build in Public gadgets directory — Marc Köhlbrugge — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_device",
+      "spec_links": [],
+      "spec_note": "Not a device — workshop, directory or software/resource reference; no single hardware specification applies."
     },
     {
       "id": "BM21",
@@ -896,7 +1116,16 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095294532451790848/img/yPRucr9de2iBWCK2.jpg",
         "alt": "Palmimo DevKit — Jizai — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://palmimo.dev/",
+          "kind": "specs",
+          "label": "Specs"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM22",
@@ -931,219 +1160,16 @@
         "source_url": "https://pbs.twimg.com/media/HROqplGaEAAvbnH.jpg",
         "alt": "Ato voice computer for seniors — source image",
         "kind": "Public post image / video thumbnail"
-      }
-    },
-    {
-      "id": "BM23",
-      "name": "Microduck / proposed open PCB",
-      "category": "Robotics",
-      "scope": "Public project reference",
-      "recommendation": "Reference only",
-      "status": "Primary sources checked",
-      "rank": null,
-      "summary": "Pollen Robotics biped with real Apache-2.0 software; roughly 25cm/800g, not a minimal pocket terminal.",
-      "evidence": [
-        "Rust daemons, servo control, Wi-Fi/Bluetooth and media handling.",
-        "Separate fully open PCB effort remains a promise, not a verified release."
-      ],
-      "gaps": "Software license does not establish fully open hardware or independent PCB availability.",
-      "sources": [
+      },
+      "spec_status": "published",
+      "spec_links": [
         {
-          "label": "Public post",
-          "url": "https://x.com/DeRonin_/status/2095832887635386440"
-        },
-        {
-          "label": "Related post",
-          "url": "https://x.com/ChihYang04/status/2095322008175435780"
-        },
-        {
-          "label": "Related post",
-          "url": "https://x.com/Scav/status/2093781288742437184"
-        },
-        {
-          "label": "Related post",
-          "url": "https://x.com/tspy/status/2094963381220622638"
-        },
-        {
-          "label": "Related post",
-          "url": "https://x.com/RemiFabreRobot/status/2093465891191042057"
-        },
-        {
-          "label": "Source",
-          "url": "https://github.com/pollen-robotics/microduck"
+          "url": "https://heyato.ai/",
+          "kind": "specs",
+          "label": "Specs"
         }
       ],
-      "image": {
-        "path": "../static/voice-device-media/bm23.webp",
-        "source_url": "https://pbs.twimg.com/media/HRQUMGVa0AA6cuu.jpg",
-        "alt": "Microduck + open circuit-board effort — source image",
-        "kind": "Public post image / video thumbnail"
-      }
-    },
-    {
-      "id": "BM24",
-      "name": "Microdino — David Feldt",
-      "category": "Robotics",
-      "scope": "Public project reference",
-      "recommendation": "Reference only",
-      "status": "Reviewed — unresolved",
-      "rank": null,
-      "summary": "Microduck-like blueprint.io build claim; exact project files, BOM and equivalence unresolved.",
-      "evidence": [
-        "Quoted $399/Christmas offer refers to Microduck, not Microdino or verified current availability."
-      ],
-      "gaps": "Robotics workshop lead only; no verified build license or voice kit.",
-      "sources": [
-        {
-          "label": "Public post",
-          "url": "https://x.com/davidfeldt/status/2093491570867884322"
-        },
-        {
-          "label": "Related post",
-          "url": "https://x.com/pollenrobotics/status/2092915032052879425"
-        }
-      ],
-      "image": {
-        "path": "../static/voice-device-media/bm24.webp",
-        "source_url": "https://pbs.twimg.com/media/HQ2SqBLbUAAPkup.png",
-        "alt": "Microdino — David Feldt — source image",
-        "kind": "Public post image / video thumbnail"
-      }
-    },
-    {
-      "id": "BM25",
-      "name": "Open Duck Mini V2 / EmoLo",
-      "category": "Robotics",
-      "scope": "Public project reference",
-      "recommendation": "Reference only",
-      "status": "Primary sources checked",
-      "rank": null,
-      "summary": "Substantial biped CAD/BOM/assembly and Pi Zero 2 W runtime; excessive actuation and assembly for a pocket voice terminal.",
-      "evidence": [
-        "Canonical Open Duck Mini v2 metadata identifies Apache-2.0.",
-        "Some expression/audio features described as unfinished; EmoLo-specific code/license not established by upstream audit."
-      ],
-      "gaps": "Robotics reference, not a ready spoken PTT device.",
-      "sources": [
-        {
-          "label": "Public post",
-          "url": "https://x.com/MeRTcooking/status/2093623072880545935"
-        },
-        {
-          "label": "Related post",
-          "url": "https://x.com/MeRTcooking/status/2093540799254569244"
-        },
-        {
-          "label": "Assembly video",
-          "url": "https://youtu.be/DajdOeYJZdk"
-        },
-        {
-          "label": "Canonical source",
-          "url": "https://github.com/apirrone/Open_Duck_Mini/tree/v2"
-        }
-      ],
-      "image": {
-        "path": "../static/voice-device-media/bm25.webp",
-        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2093620697709133824/img/LqgJnyaVj4yrinH4.jpg",
-        "alt": "Open Duck Mini V2 / EmoLo — source image",
-        "kind": "Public post image / video thumbnail"
-      }
-    },
-    {
-      "id": "BM26",
-      "name": "Bimo — Mekion Labs",
-      "category": "Robotics",
-      "scope": "Public project reference",
-      "recommendation": "Reference only",
-      "status": "Primary sources checked",
-      "rank": null,
-      "summary": "Identity resolved: Bimo v1.1.0 biped, RP2040, 45cm and approximately 1.6kg, with ROS2/RL locomotion tools.",
-      "evidence": [
-        "Apache-2.0 repo contains Python API, MCU firmware and simulation.",
-        "CAD/DIY manual still described as coming soon despite broad open-source wording."
-      ],
-      "gaps": "Not handheld voice hardware; preorder is not immediate fulfillment.",
-      "sources": [
-        {
-          "label": "Public post",
-          "url": "https://x.com/mekionlabs/status/2095197341842117042"
-        },
-        {
-          "label": "Project",
-          "url": "https://github.com/mekion/the-bimo-project"
-        }
-      ],
-      "image": {
-        "path": "../static/voice-device-media/bm26.webp",
-        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095196484828553217/img/YizGG4tbFKLI8d60.jpg",
-        "alt": "Mekion Labs robotics v1.1.0 — source image",
-        "kind": "Public post image / video thumbnail"
-      }
-    },
-    {
-      "id": "BM27",
-      "name": "Petoi Quaddle",
-      "category": "Robotics",
-      "scope": "Public project reference",
-      "recommendation": "Reference only",
-      "status": "Primary sources checked",
-      "rank": null,
-      "summary": "Approachable four-servo robotics kit; $99 early-bird Builder does not include the advertised open-domain AI conversation.",
-      "evidence": [
-        "Buddy/Scout add conversation. OpenCat is MIT; not every Quaddle part or service inherits that license.",
-        "Printable shells/mounts, but load-critical joints remain closed. Conflicting MSRP values; no verified delivered quote."
-      ],
-      "gaps": "Quaddle-specific voice firmware, backend freedom and PTT unresolved.",
-      "sources": [
-        {
-          "label": "Public post",
-          "url": "https://x.com/PetoiCamp/status/2095333340153106905"
-        },
-        {
-          "label": "Campaign",
-          "url": "https://www.kickstarter.com/projects/petoi/quaddle-open-source-desktop-robot-kit"
-        },
-        {
-          "label": "Manufacturer",
-          "url": "https://www.petoi.com/pages/quaddle-educational-robot-kit"
-        }
-      ],
-      "image": {
-        "path": "../static/voice-device-media/bm27.webp",
-        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095331605246255104/img/Xsif8aoPNE3dxEfI.jpg",
-        "alt": "Petoi Quaddle — source image",
-        "kind": "Public post image / video thumbnail"
-      }
-    },
-    {
-      "id": "BM28",
-      "name": "WATTI robotic desk lamp",
-      "category": "Robotics",
-      "scope": "Public project reference",
-      "recommendation": "Reference only",
-      "status": "Primary sources checked",
-      "rank": null,
-      "summary": "Five-motor lamp and browser timeline preview; operating code is explicitly not public yet and no license is attached.",
-      "evidence": [
-        "Future release plans include software, protocol, BOM and printable parts. Voice/MCP mode is future work."
-      ],
-      "gaps": "Design inspiration, not reusable released firmware or enclosure.",
-      "sources": [
-        {
-          "label": "Public post",
-          "url": "https://x.com/CosmosNetwork/status/2094791757695455675"
-        },
-        {
-          "label": "Creator repository",
-          "url": "https://github.com/Nikolay-Tyulkin/Watti"
-        }
-      ],
-      "image": {
-        "path": "../static/voice-device-media/bm28.webp",
-        "source_url": "https://pbs.twimg.com/amplify_video_thumb/2094791698190942209/img/qP6AhH45fM92KJ7i.jpg",
-        "alt": "WATTI robotic desk lamp — source image",
-        "kind": "Public post image / video thumbnail"
-      }
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM29",
@@ -1169,7 +1195,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2091825788488425472/img/PqpN-SfXCUEBOPpU.jpg",
         "alt": "Air-powered dot display / fluidic multiplexing — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM30",
@@ -1203,7 +1232,16 @@
         "source_url": "https://pbs.twimg.com/media/HPy8075XoAEwmjZ.jpg",
         "alt": "DIY Blockstream Jade variants — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "build_docs_only",
+      "spec_links": [
+        {
+          "url": "https://github.com/Blockstream/Jade/blob/master/diy/README.md",
+          "kind": "build_docs",
+          "label": "Build docs"
+        }
+      ],
+      "spec_note": "Build docs for multiple DIY Jade boards and cases, not a single assembled-device specification."
     },
     {
       "id": "BM31",
@@ -1237,7 +1275,10 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2095199786391744512/img/uf1ggHeC1_ffCDsu.jpg",
         "alt": "Electronics design learning resource — @Av1dlive — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_device",
+      "spec_links": [],
+      "spec_note": "Not a device — workshop, directory or software/resource reference; no single hardware specification applies."
     },
     {
       "id": "BM33",
@@ -1268,7 +1309,10 @@
         "source_url": "https://pbs.twimg.com/media/HBW5kYfasAABZEI.jpg",
         "alt": "MimiClaw ESP32 agent — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_device",
+      "spec_links": [],
+      "spec_note": "Not a device — workshop, directory or software/resource reference; no single hardware specification applies."
     },
     {
       "id": "BM34",
@@ -1304,7 +1348,16 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2071480389412306944/img/LYKzn2dbI8y6wwtZ.jpg",
         "alt": "M5Stack PaperS3 Game Boy emulator — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://shop.m5stack.com/products/m5papers3-esp32s3-development-kit",
+          "kind": "specs",
+          "label": "Specs"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM35",
@@ -1335,7 +1388,21 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2079859971337146368/img/Zrhh6_hWySUtucYj.jpg",
         "alt": "PaperMONO — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://docs.m5stack.com/en/core/PaperMono",
+          "kind": "specs",
+          "label": "Specs"
+        },
+        {
+          "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522.pdf",
+          "kind": "schematic",
+          "label": "Schematic (PDF)"
+        }
+      ],
+      "spec_note": "Manufacturer/creator device specifications; not independently hardware-tested."
     },
     {
       "id": "BM36",
@@ -1379,7 +1446,10 @@
         "source_url": "https://pbs.twimg.com/media/HL4VRtkboAA1K9y.jpg",
         "alt": "Other older reflective-screen references — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "not_found",
+      "spec_links": [],
+      "spec_note": "No public device specs found for this exact model or concept in the reviewed primary sources."
     },
     {
       "id": "BM37",
@@ -1415,7 +1485,16 @@
         "source_url": "https://pbs.twimg.com/amplify_video_thumb/2096881340578676736/img/padFM0pZr1sQ5v43.jpg",
         "alt": "ENILINX TICKEY — source image",
         "kind": "Public post image / video thumbnail"
-      }
+      },
+      "spec_status": "published",
+      "spec_links": [
+        {
+          "url": "https://www.eniacelec.com/pages/ticket",
+          "kind": "specs",
+          "label": "Specs"
+        }
+      ],
+      "spec_note": "Exact TICKEY (renamed from TICKET) manufacturer specifications. No whole-device PDF datasheet found; ambiguous memory wording is not expanded into invented capacities."
     }
   ],
   "headline": "E-ink first. Spoken replies matter.",

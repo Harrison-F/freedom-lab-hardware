@@ -12,13 +12,25 @@ with sync_playwright() as p:
   page.set_default_timeout(10000)
   response=page.goto(url,wait_until='domcontentloaded',timeout=30000);assert response.status==200
   page.locator('.hardware-row').first.wait_for()
-  assert page.locator('.hardware-row').count()==42
+  assert page.locator('.hardware-row').count()==36
   assert page.locator('[data-build-id]').count()==13
-  assert page.locator('.hardware-row img').count()==40
+  assert page.locator('.hardware-identity .device-specs').count()==36
+  assert page.locator('.device-specs > .source-links a').count()==32
+  assert page.locator('[data-id="BM02"] .device-specs').inner_text().startswith('No public device specs found')
+  assert 'Not a device' in page.locator('[data-id="BM18"] .device-specs').inner_text()
+  assert 'project license missing' in page.locator('[data-id="ALT01"] .source-license').inner_text()
+  spec=page.locator('[data-id="ALT01"] .device-specs > .source-links a').first
+  assert spec.get_attribute('href')=='https://docs.waveshare.com/ESP32-S3-ePaper-1.54'
+  spec.hover();page.mouse.move(0,0);spec.focus()
+  with page.expect_popup() as pop:page.keyboard.press('Enter')
+  popup=pop.value;popup.wait_for_load_state('domcontentloaded');assert popup.url.startswith('https://docs.waveshare.com/ESP32-S3-ePaper-1.54');popup.close()
+  scope=page.locator('[data-id="ALT01"] .device-specs details')
+  scope.locator('summary').click();assert 'exact non-touch V2 schematic applicability is not confirmed' in scope.inner_text();scope.locator('summary').click()
+  assert page.locator('.hardware-row img').count()==34
   page.locator('.hardware-row img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>{i.loading="eager";return i.decode()}))')
   assert page.locator('#bom-rows').count()==0
   groups=page.locator('.research-collection').evaluate_all('(els)=>els.map(e=>({name:e.dataset.category,count:e.querySelectorAll(".hardware-row").length,label:Number(e.querySelector(".group-count").textContent)}))')
-  assert [g['count'] for g in groups]==[5,3,4,30]
+  assert [g['count'] for g in groups]==[5,3,4,24]
   assert all(g['count']==g['label'] for g in groups)
   checks=page.locator('.hardware-row').evaluate_all('''els=>els.map(e=>{const a=e.getBoundingClientRect(),b=e.querySelector('.hardware-identity').getBoundingClientRect(),c=e.querySelector('.hardware-components').getBoundingClientRect(),p=e.parentElement.getBoundingClientRect();return {full:Math.abs(a.width-p.width)<2,left:b.right<c.left,above:b.bottom<=c.top,labels:e.querySelectorAll('dt').length,values:[...e.querySelectorAll('dd')].map(d=>d.textContent)}})''')
   for geom in checks:
@@ -47,11 +59,11 @@ with sync_playwright() as p:
   assert '$64.99' in row.inner_text() and '2026-09-28' in row.inner_text()
   row.locator('.offer').filter(has_text='$64.99').last.evaluate('(e)=>e.scrollIntoView({block:"start"})')
   page.screenshot(path=str(output/f'{width}-shipping.png'))
-  page.locator('#search').fill('Waveshare');assert 0<page.locator('.hardware-row').count()<42
-  page.locator('#reset').click();assert page.locator('.hardware-row').count()==42
+  page.locator('#search').fill('Waveshare');assert 0<page.locator('.hardware-row').count()<36
+  page.locator('#reset').click();assert page.locator('.hardware-row').count()==36
   for selector in ['#recommendation-filter','#status-filter','#category-filter','#scope-filter']:
    page.locator(selector).select_option(page.locator(selector+' option').nth(1).get_attribute('value'))
-   assert 0<page.locator('.hardware-row').count()<42;page.locator('#reset').click()
+   assert 0<page.locator('.hardware-row').count()<36;page.locator('#reset').click()
   for mode in ['known','affordability','fastest','fit']:
    page.locator('#cost-sort').select_option(mode)
    if mode in ['affordability','fastest']:assert 'No defensible' in page.locator('#ranking-note').inner_text()
@@ -69,7 +81,7 @@ with sync_playwright() as p:
   with page.expect_popup() as pop:page.keyboard.press('Enter')
   popup=pop.value;assert popup.url.startswith('https://github.com/Harrison-F/freedom-lab-hardware');popup.close()
   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
-  results.append({'width':width,'rows':42,'images':40,'groups':groups,'url':page.url});page.close()
+  results.append({'width':width,'rows':36,'images':34,'groups':groups,'url':page.url});page.close()
  browser.close()
 assert not errors,errors
 print(json.dumps({'passed':True,'seconds':round(time.monotonic()-start,2),'results':results,'errors':errors,'screenshots':str(output)}))

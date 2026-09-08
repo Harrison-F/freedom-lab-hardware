@@ -2,6 +2,10 @@
 
 `site/data.json` holds `schema_version`, `updated_at`, public methodology/notice, and `items`. Item IDs are stable research identifiers for merging updates, not ownership or purchase records. Each item has name, summary, evidence[], gaps, sources[{label,url}], category, scope, nullable fit rank, recommendation, status and nullable image {path,source_url,alt,kind}. URLs must be public HTTPS. Images must resolve within the media allowlist.
 
+Each catalog item also has `spec_status` (`published`, `build_docs_only`, `not_found`, `not_device`), `spec_note`, and `spec_links[]` of `{url,kind,label}`. Kinds: `specs` (whole device or explicitly identified donor manufacturer technical page), `specs_pdf` (device documentation export), `datasheet_pdf` (whole-device datasheet), `schematic` (circuit diagram, not a spec sheet), `build_docs`, `component_specs`, `component_datasheet_pdf`. Component and revision scope must be explicit in labels/notes. Never substitute an ESP32 chip datasheet for a device datasheet. Absence means no public exact-device specifications found in bounded research, not proof none can exist. Manufacturer PDF exports are labeled Specs (PDF), not standalone datasheets. Links appear next to the main hardware/purchase identity; scope notes are expandable.
+
+Optional `source_license` has public strings `firmware`, `hardware`, `note` and official repository `url`. Source availability without an applicable license is not open source; firmware and hardware licensing are separate. Coverage beyond explicitly populated records is not implied.
+
 `site/procurement.json`: schema_version=1, destination_zip="10014", quantity=1, currency="USD", status, methodology, builds[]. Each build has:
 
 - `id`, `name`, nullable `fit_rank`, `checked_at` (YYYY-MM-DD).

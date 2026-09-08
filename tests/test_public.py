@@ -47,10 +47,24 @@ def main():
  d=json.loads((ROOT/'site/data.json').read_text());assert len({i['id'] for i in d['items']})==len(d['items'])
  for i in d['items']:
   for s in i['sources']:assert s['url'].startswith('https://')
+  assert i['spec_status'] in ['published','build_docs_only','not_found','not_device']
+  assert isinstance(i['spec_links'],list) and i['spec_note']
+  for s in i['spec_links']:
+   assert set(s)=={'url','kind','label'} and s['url'].startswith('https://') and s['label']
+   assert s['kind'] in ['specs','specs_pdf','datasheet_pdf','schematic','build_docs','component_specs','component_datasheet_pdf']
+   if s['kind'].endswith('_pdf') or s['kind']=='schematic':assert '.pdf' in s['url'].lower()
+   assert 'esp32-s3_datasheet' not in s['url'].lower()
+  if i['spec_status']=='published':assert any(s['kind']=='specs' for s in i['spec_links'])
+  if i['spec_status'] in ['not_found','not_device']:assert not i['spec_links']
   if i['image']:assert (ROOT/'site'/i['image']['path'].replace('../','',1)).is_file()
  procurement=json.loads((ROOT/'site/procurement.json').read_text());validate_procurement(procurement)
  rows={r['id']:r for r in procurement['builds']};assert len(rows)==13
- assert len(d['items'])==42 and sum(bool(i['image']) for i in d['items'])==40
+ assert len(d['items'])==36 and sum(bool(i['image']) for i in d['items'])==34
+ assert not {'BM23','BM24','BM25','BM26','BM27','BM28'} & {i['id'] for i in d['items']}
+ assert 'BM21' in {i['id'] for i in d['items']}
+ alt01=next(i for i in d['items'] if i['id']=='ALT01')
+ assert alt01['source_license']['firmware']=='Source available — project license missing'
+ assert alt01['spec_links'][0]['url']=='https://docs.waveshare.com/ESP32-S3-ePaper-1.54'
  assert rows['ALT01']['known_parts_subtotal_usd']==29.89 and not rows['ALT01']['complete']
  assert rows['KIT01']['known_parts_plus_quoted_shipping_usd']==44.4
  assert rows['BM12']['alternatives'][0]['known_parts_subtotal_usd']==74.35
