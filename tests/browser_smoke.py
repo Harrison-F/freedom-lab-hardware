@@ -24,8 +24,16 @@ with sync_playwright() as p:
   spec.hover();page.mouse.move(0,0);spec.focus()
   with page.expect_popup() as pop:page.keyboard.press('Enter')
   popup=pop.value;popup.wait_for_load_state('domcontentloaded');assert popup.url.startswith('https://docs.waveshare.com/ESP32-S3-ePaper-1.54');popup.close()
-  scope=page.locator('[data-id="ALT01"] .device-specs details')
+  scope=page.locator('[data-id="ALT01"] .device-specs > details')
   scope.locator('summary').click();assert 'exact non-touch V2 schematic applicability is not confirmed' in scope.inner_text();scope.locator('summary').click()
+  assert page.locator('.source-license').count()==36
+  for id,expected in [('ALT01','nested codec/library terms'),('BM01','Apache-2.0'),('BM30','collection is subject to GPL3'),('ALT02','Espressif-only'),('BM32','GPL-2.0-only')]:
+   license=page.locator(f'[data-id="{id}"] .source-license details')
+   license.locator('summary').click();assert expected in license.inner_text()
+   assert license.locator('a').count()>0
+   if id=='BM01':
+    license.evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-license-expanded.png'))
+   license.locator('summary').click()
   assert page.locator('.hardware-row img').count()==34
   page.locator('.hardware-row img').evaluate_all('(imgs)=>Promise.all(imgs.map(i=>{i.loading="eager";return i.decode()}))')
   assert page.locator('#bom-rows').count()==0
@@ -35,7 +43,7 @@ with sync_playwright() as p:
   checks=page.locator('.hardware-row').evaluate_all('''els=>els.map(e=>{const a=e.getBoundingClientRect(),b=e.querySelector('.hardware-identity').getBoundingClientRect(),c=e.querySelector('.hardware-components').getBoundingClientRect(),p=e.parentElement.getBoundingClientRect();return {full:Math.abs(a.width-p.width)<2,left:b.right<c.left,above:b.bottom<=c.top,labels:e.querySelectorAll('dt').length,values:[...e.querySelectorAll('dd')].map(d=>d.textContent)}})''')
   for geom in checks:
    assert geom['labels']==6 and len(geom['values'])==6
-   assert all(s.startswith(('Included','Add','Not yet solved')) for s in geom['values'])
+   assert all(s.startswith(('Included','Documented add-on','Engineering plan','Unsupported','Reference only','Hardware test required')) for s in geom['values'])
    assert geom['full'] and geom['left' if width==1280 else 'above'],geom
   # Every verified required accessory source is exposed in the main right-hand list.
   parity=page.evaluate('''async()=>{const d=await (await fetch('procurement.json')).json();return d.builds.every(r=>r.bom.slice(1).filter(p=>p.role==='purchase'&&p.source_url).every(p=>[...document.querySelector(`[data-id="${r.id}"] .required-parts`).querySelectorAll('a')].some(a=>a.href===new URL(p.source_url).href))) }''')
@@ -44,6 +52,17 @@ with sync_playwright() as p:
   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
   page.screenshot(path=str(output/f'{width}-top.png'))
   row=page.locator('[data-id="ALT01"]')
+  assert 'Add a standalone cellular hotspot' in row.locator('.feature-list').inner_text()
+  assert '$169.99 device-only' in row.locator('.feature-list').inner_text()
+  assert 'Separate device, not built-in LTE' in row.locator('.feature-list').inner_text()
+  hotspot=row.locator('.feature-list a[href="https://www.gl-inet.com/products/gl-e750/"]')
+  assert hotspot.is_visible()
+  with page.expect_popup() as pop:hotspot.click()
+  popup=pop.value;popup.wait_for_load_state('domcontentloaded');assert popup.url.startswith('https://www.gl-inet.com/products/gl-e750/');popup.close()
+  row.locator('.feature-list > div').nth(3).evaluate('(e)=>e.scrollIntoView({block:"start"})');page.screenshot(path=str(output/f'{width}-cellular.png'))
+  row.locator('.feature-review summary').click();assert 'Unsupported means' in row.locator('.feature-review').inner_text();row.locator('.feature-review summary').click()
+  assert '1500 mAh' in page.locator('[data-id="BM06"] .feature-list').inner_text()
+  assert 'Reference only' in page.locator('[data-id="BM02"] .feature-list').inner_text()
   assert '$29.89 known parts' in row.inner_text()
   assert row.locator('.required-parts a[href="https://www.adafruit.com/product/4474"]').is_visible()
   assert row.locator('.required-parts a[href="https://www.adafruit.com/product/1994"]').is_visible()

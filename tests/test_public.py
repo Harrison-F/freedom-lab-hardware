@@ -49,6 +49,12 @@ def main():
   for s in i['sources']:assert s['url'].startswith('https://')
   assert i['spec_status'] in ['published','build_docs_only','not_found','not_device']
   assert isinstance(i['spec_links'],list) and i['spec_note']
+  licensing=i['source_license']
+  assert licensing['firmware'] and licensing['hardware'] and licensing['audited_at']
+  for boundary in ['firmware','hardware']:
+   b=licensing['boundaries'][boundary]
+   assert b['label']==licensing[boundary] and b['status'] and b['scope']
+   for source in b['sources']:assert source['url'].startswith('https://') and source['label']
   for s in i['spec_links']:
    assert set(s)=={'url','kind','label'} and s['url'].startswith('https://') and s['label']
    assert s['kind'] in ['specs','specs_pdf','datasheet_pdf','schematic','build_docs','component_specs','component_datasheet_pdf']
@@ -76,7 +82,15 @@ def main():
  assert 'id="bom-rows"' not in html and '<table' not in html and 'procurement.js' not in html
  js=(ROOT/'site/static/voice-device-rows.js').read_text()
  assert 'builds.get(i.id)' in js and 'grouped-rows-5' in html
- assert all(label in js for label in ['E-ink voice devices','Other compact voice devices','Build-it-yourself options','Design references—not complete builds','Microphone','Speech output','Headphone jack','Cellular','Battery','Enclosure'])
+ assert all(label in js for label in ['E-ink voice devices','Other compact voice devices','Build-it-yourself options','Design references—not complete builds'])
+ for i in d['items']:
+  fs=i['feature_review']['features']
+  assert [f['name'] for f in fs]==['Microphone','Speech output','Headphone jack','Cellular','Battery','Enclosure']
+  for f in fs:
+   assert f['status'] in ['Included','Documented add-on','Engineering plan','Unsupported','Reference only','Hardware test required'] and f['text']
+   for s in f['links']+f['evidence']:assert s['url'].startswith('https://') and s['label']
+ assert alt01['feature_review']['features'][3]['status']=='Documented add-on'
+ assert 'Separate device, not built-in LTE' in alt01['feature_review']['features'][3]['text']
  assert 'repeat(4' not in (ROOT/'site/static/voice-device-rows.css').read_text()
  for name in ['styles.css','display-template.css']:assert (ROOT/'shared'/name).read_bytes()==(ROOT/'site/static'/name).read_bytes()
  assert 'repeat(4, minmax(0, 1fr))' in (ROOT/'shared/display-template.css').read_text()

@@ -11,30 +11,14 @@ const groupIDs = [['ALT01','ALT02','BM07','DONOR02','BM35'],['KIT01','BM01','BM1
 const groupOf = i => {const n=groupIDs.findIndex(ids=>ids.includes(i.id));return groups[n<0?3:n];};
 const filters=['recommendation','status','category','scope'];
 let collection,procurement,builds;
-// Explicit package evidence, never inferred from a chip's capabilities.
-// Six positions: mic, speech, headphones, cellular, battery, enclosure.
-const included = {
- ALT01:['Included — onboard microphone','Included — speaker',null,null,'Included — selected battery variant','Included per vendor description — verify housing on receipt'],
- ALT02:['Included — onboard microphone','Included — supplied speaker; attach its connector',null,null,'Included — vendor battery',null],
- KIT01:['Included — onboard microphone','Included — speaker',null,null,'Included — 250 mAh battery','Included — device case'],
- BM01:['Included — onboard microphone','Included — speaker',null,null,'Included — select battery SKU 29957','Included — black case'],
- BM12:['Included — K147 Voice Base microphone','Included — K147 Voice Base speaker',null,null,null,'Included — controller and Voice Base cases'],
- BM07:['Included — microphone','Not yet solved — buzzer cannot speak',null,null,'Included — 750 mAh battery','Included — magnetic case'],
- DONOR02:['Included — microphone','Not yet solved — buzzer cannot speak',null,null,'Included — 1150 mAh battery','Included — case'],
- BM35:['Included — microphone',null,null,null,'Included — battery','Included — case'],
- BM34:[null,null,null,null,'Included — 1800 mAh battery',null],
- BM04:['Included per device documentation — dual microphones','Included per device documentation — speaker',null,null,null,null]
-};
+// Explicit evidence-qualified feature decisions, not inferred chip capabilities.
 function features(i,r) {
- const names=['Microphone','Speech output','Headphone jack','Cellular','Battery','Enclosure'];
- const state=[...(included[i.id]||[])];
- const add=(n,p,note='')=>{if(p)state[n]=`Add ${link(p.source_url,p.name)}${note?' — '+esc(note):''}`;};
- if(i.id==='BM32'){add(0,r.bom[1],'includes microphones');add(1,r.bom[1],'includes speaker');add(4,r.bom[2],'separate battery board');}
- if(i.id==='BM12'){
-  add(2,r.alternatives[1].bom.find(p=>p.name.includes('A166')),'replaces Voice Base, not stackable; headset still unselected');
-  add(4,r.alternatives[0].bom.find(p=>p.name.includes('power bank')),'optional external power bank; USB-powered without it');
- }
- return `<dl class="feature-list">${names.map((n,k)=>`<div><dt>${n}${k===2||k===3?' <small>optional upgrade</small>':''}</dt><dd>${state[k]?.startsWith('Add ')?state[k]:esc(state[k]||(k===3?'Not yet solved — no built-in cellular verified':k===2?'Not yet solved — no verified headphone jack':'Not yet solved — exact compatible part unselected'))}</dd></div>`).join('')}</dl>`;
+ const review=i.feature_review;
+ return `<dl class="feature-list">${review.features.map((f,k)=>`<div><dt>${esc(f.name)}${k===2||k===3?' <small>optional upgrade</small>':''}</dt><dd><strong>${esc(f.status)}</strong> — ${f.links.map(s=>link(s.url,s.label)).join(' · ')}${f.links.length?'<br>':''}${esc(f.text)}</dd></div>`).join('')}</dl>`;
+}
+function featureEvidence(i){
+ const r=i.feature_review;
+ return `<details class="feature-review"><summary>Feature decisions &amp; build plans</summary><p>${esc(r.note)}</p>${r.features.map(f=>`<h4>${esc(f.name)} — ${esc(f.status)}</h4><p>${esc(f.detail||f.text)}</p>${list(f.work_required)}<div class="source-links">${f.evidence.map(s=>link(s.url,s.label)).join(' · ')}</div>`).join('')}${r.plans.map(p=>`<h4>${esc(p.label)}</h4><p>${esc(p.text)}</p><div class="source-links">${p.links.map(s=>link(s.url,s.label)).join(' · ')}</div>`).join('')}</details>`;
 }
 function part(p,technical=false){
  const unresolved=p.role.includes('unresolved')||p.status.includes('reference_only')||p.status.includes('unverified_variant');
@@ -60,9 +44,13 @@ const plainSummary={
  BM34:'An e-ink display and battery donor. No onboard microphone is documented; a complete voice hardware design is still needed.'
 };
 function deliveryPreview(r){const o=r.offers.find(o=>o.match!=='optional separate hotspot');return o?`<p class="delivery-preview">Package-only offer: ${link(o.source_url,o.name)} · ${money(o.item_plus_shipping_usd??o.price_usd)}${typeof o.item_plus_shipping_usd==='number'?' with quoted freight':' before shipping'} · ${esc(o.arrival_earliest)}${o.arrival_latest!==o.arrival_earliest?' – '+esc(o.arrival_latest):''}. ${esc(o.match)}. Before tax; conditions below, not all-parts arrival.</p>`:'';}
+function licensing(i){
+ const s=i.source_license;if(!s)return '';
+ return `<div class="source-license"><p><strong>Firmware:</strong> ${esc(s.firmware)}.<br><strong>Hardware:</strong> ${esc(s.hardware)}.</p><details><summary>License scope &amp; evidence</summary><p>Reviewed ${esc(s.audited_at)}. Not verified does not mean closed source. Licenses cover named artifacts, not automatically the complete product.</p>${['firmware','hardware'].map(k=>{const b=s.boundaries[k];return `<h4>${k==='firmware'?'Firmware / software':'Hardware / CAD'}</h4><p>${esc(b.scope)}</p><ul>${b.sources.map(x=>`<li>${link(x.url,x.label)}</li>`).join('')}</ul>`;}).join('')}<p>${esc(s.implementation)}</p>${list(s.caveats)}</details></div>`;
+}
 function specifications(i){
  const absent=i.spec_status==='not_device'?'Not a device':i.spec_status==='not_found'?'No public device specs found':i.spec_status==='build_docs_only'?'No complete device spec sheet found':'';
- return `<div class="device-specs">${absent?`<p class="subtle">${absent}</p>`:''}<p class="source-links">${(i.spec_links||[]).map(s=>link(s.url,s.label)).join(' · ')}</p><details><summary>Specification scope</summary><p>${esc(i.spec_note)}</p></details>${i.source_license?`<p class="source-license"><strong>Firmware:</strong> ${esc(i.source_license.firmware)}.<br><strong>Hardware:</strong> ${esc(i.source_license.hardware)}.<br>${link(i.source_license.url,'Official source')} · ${esc(i.source_license.note)}</p>`:''}</div>`;
+ return `<div class="device-specs">${absent?`<p class="subtle">${absent}</p>`:''}<p class="source-links">${(i.spec_links||[]).map(s=>link(s.url,s.label)).join(' · ')}</p><details><summary>Specification scope</summary><p>${esc(i.spec_note)}</p></details>${licensing(i)}</div>`;
 }
 function card(i){
  const r=builds.get(i.id),reference=groupOf(i)===groups[3];
@@ -71,7 +59,7 @@ function card(i){
  const extras=r?r.bom.slice(1).filter(p=>p.role.includes('purchase')):[];
  return `<article class="hardware-row${reference?' reference-row':''}" data-id="${esc(i.id)}" ${r?`data-build-id="${esc(i.id)}"`:''}>
  <div class="hardware-identity"><div class="hardware-image">${image?`<img src="${esc(image.path)}" alt="${esc(image.alt)}" loading="lazy">`:'<p class="image-unavailable">No verified source image</p>'}</div><h3>${esc(i.name)}</h3>${primary?`<p class="main-purchase">${link(primary.source_url,purchase?'Buy '+primary.name:'Source / variant to verify')}${money(r.price_usd)?' · '+money(r.price_usd):''}</p>`:`<p>${link(i.sources[0]?.url,'Project source')}</p>`}${specifications(i)}${primary?.status.includes('out_of_stock')?'<p>Out of stock at review</p>':''}${reference?'<p class="subtle">Design reference, not a complete build</p>':''}</div>
- <div class="hardware-components"><p class="row-summary">${esc(plainSummary[i.id]||i.summary)}</p>${features(i,r)}
+ <div class="hardware-components"><p class="row-summary">${esc(plainSummary[i.id]||i.summary)}</p>${features(i,r)}${featureEvidence(i)}
  ${r?`<section class="required-parts"><h4>What else to buy for Wi-Fi + spoken replies</h4><ul class="parts">${extras.map(p=>part(p)).join('')}</ul>${!extras.length?'<p>No complete additional-parts list verified.</p>':''}</section><p class="software-needed">Needs programming to talk to Hermes. Assembly and testing still required.</p><p class="cost-line">${money(r.known_parts_subtotal_usd)?money(r.known_parts_subtotal_usd)+' known parts':'Parts subtotal not established'}${money(r.known_parts_plus_quoted_shipping_usd)?' · '+money(r.known_parts_plus_quoted_shipping_usd)+' with quoted freight only':''}. <span>Not a complete delivered total; tax, missing parts and unquoted shipping extra.</span></p>${deliveryPreview(r)}${alternatives(r)}${shipping(r)}`:'<p class="software-needed">Not yet solved — no verified complete voice-device shopping list or Hermes setup.</p>'}
  <details class="research-evidence"><summary>Technical evidence &amp; unresolved work</summary><p>${esc(i.id)} · ${esc(i.status)} · ${esc(i.scope)}</p><p>Original desk-review summary (later exact-package evidence below takes precedence): ${esc(i.summary)}</p>${list(i.evidence)}<h4>Still needed</h4><p>${esc(i.gaps)}</p>${r?`<h4>Exact package &amp; parts evidence</h4><p>${esc(r.name)} · ${esc(r.price_status)} · ${esc(r.build_status)}</p>${list(r.purchase_list)}<ul class="parts">${r.bom.map(p=>part(p,true)).join('')}</ul><h4>Assembly &amp; firmware evidence</h4>${list(r.assembly_list)}`:''}<div class="source-links">${i.sources.map(s=>link(s.url,s.label)).join(' · ')}</div>${r?`<div class="source-links">${r.sources.map(s=>link(s.url,s.label)).join(' · ')}</div>`:''}${image?`<p>${esc(image.kind)} · ${link(image.source_url,'Exact image source')}</p>`:''}</details></div></article>`;
 }
