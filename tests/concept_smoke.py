@@ -32,9 +32,12 @@ with sync_playwright() as p:
   assert page.locator('.hardware-row').count()==36
   page.locator('#search').fill('Waveshare');assert 0<page.locator('.hardware-row:visible').count()<36
   page.locator('#search').fill('');assert page.locator('.hardware-row:visible').count()==36
-  page.locator('#concept-renders').scroll_into_view_if_needed()
-  page.locator('#concept-renders').screenshot(path=str(out/(label+'-gallery.png')))
-  page.locator('#concept-compact154').screenshot(path=str(out/(label+'-first-concept.png')))
+  # Viewport capture avoids locator auto-scroll fighting the site's smooth scrolling.
+  page.locator('#concept-renders').evaluate("e=>e.scrollIntoView({block:'start',behavior:'instant'})")
+  page.screenshot(path=str(out/(label+'-gallery.png')))
+  for device in ['compact154','reader397','sticks3']:
+   page.locator('#concept-'+device).evaluate("e=>e.scrollIntoView({block:'start',behavior:'instant'})")
+   page.screenshot(path=str(out/(label+'-'+device+'.png')))
   assert not errors,errors
   results.append({'viewport':label,'width':width,'render_images':6,'devices':3,'catalog_items':36,'download_bytes':len(raw),'console_errors':errors,'overflow':False})
   context.close()
