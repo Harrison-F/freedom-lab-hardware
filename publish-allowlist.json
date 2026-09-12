@@ -13,6 +13,14 @@
   "site/static/display-template.css",
   "site/static/procurement.js",
   "site/static/styles.css",
+  "site/static/voice-concepts-v1.css",
+  "site/static/voice-concepts-v1/blender-sources.zip",
+  "site/static/voice-concepts-v1/compact154-exploded.webp",
+  "site/static/voice-concepts-v1/compact154-finished.webp",
+  "site/static/voice-concepts-v1/reader397-exploded.webp",
+  "site/static/voice-concepts-v1/reader397-finished.webp",
+  "site/static/voice-concepts-v1/sticks3-exploded.webp",
+  "site/static/voice-concepts-v1/sticks3-finished.webp",
   "site/static/voice-device-media/alt01.webp",
   "site/static/voice-device-media/bm01.webp",
   "site/static/voice-device-media/bm02.webp",
@@ -58,5 +66,6 @@
   "site/static/voice-device.css",
   "site/static/voice-device.js",
   "tests/browser_smoke.py",
+  "tests/concept_smoke.py",
   "tests/test_public.py"
 ]

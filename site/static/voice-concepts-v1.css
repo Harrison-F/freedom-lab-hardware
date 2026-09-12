@@ -1,0 +1,20 @@
+/* Scoped concept gallery; catalog styles and data are unchanged. */
+.voice-research .concept-gallery{padding:12px 0 44px;border-bottom:1px solid var(--line);margin-bottom:36px;scroll-margin-top:20px}
+.voice-research .concept-title-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.voice-research .concept-title-row h2{font:400 40px/1.1 Georgia,serif;letter-spacing:-.025em;margin:0}
+.voice-research .concept-intro{font-size:16px;line-height:1.6;max-width:850px;margin:18px 0 8px}
+.voice-research .concept-caveat{font-size:13px;line-height:1.6;color:var(--muted);max-width:880px;margin:0 0 12px}
+.voice-research .concept-device{padding:26px 0 20px;border-top:1px solid var(--line);margin-top:26px}
+.voice-research .concept-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;margin-bottom:18px}
+.voice-research .concept-heading h3{font:400 30px/1.15 Georgia,serif;letter-spacing:-.02em;margin:0}
+.voice-research .concept-heading p{font-size:14px;color:var(--muted);margin:0}
+.voice-research .concept-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.voice-research .concept-pair figure{margin:0;min-width:0}
+.voice-research .concept-render{display:block;line-height:0;border-radius:12px;overflow:hidden;background:#aaa9a1}
+.voice-research .concept-render img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.voice-research .concept-render:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.voice-research .concept-pair figcaption{padding-top:10px;font-size:14px;color:var(--muted)}
+.voice-research .concept-dimensions{font-size:13px;line-height:1.6;color:var(--muted);margin:16px 0 0}
+.voice-research .concept-source-links{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:18px}
+.voice-research .concept-source-links span{font-size:13px;color:var(--muted)}
+@media(max-width:600px){.voice-research .concept-pair{grid-template-columns:minmax(0,1fr);gap:22px}.voice-research .concept-title-row h2{font-size:32px}.voice-research .concept-heading h3{font-size:27px}.voice-research .concept-heading{display:block}.voice-research .concept-heading p{margin-top:8px}}

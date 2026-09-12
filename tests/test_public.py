@@ -43,7 +43,18 @@ def main():
  assert actual==allowed,'Exact publish allowlist mismatch'
  for relative in allowed:
   p=ROOT/relative;assert not p.is_symlink()
-  if p.suffix!='.webp' and relative!='tests/test_public.py':audit_text(p.read_text())
+  if p.suffix=='.zip':
+   import zipfile
+   with zipfile.ZipFile(p) as z:
+    assert z.testzip() is None
+    expected={f'{device}-{view}.blend' for device in ['compact154','reader397','sticks3'] for view in ['finished','exploded']}|{'README.md','evidence.json','render_devices.py'}
+    assert set(z.namelist())==expected
+    for name in z.namelist():
+     raw=z.read(name)
+     if name.endswith('.blend'):
+      assert raw.startswith(b'BLENDER') and b'/Users/' not in raw and b'/home/' not in raw
+     else:audit_text(raw.decode('utf-8'))
+  elif p.suffix!='.webp' and relative!='tests/test_public.py':audit_text(p.read_text())
  d=json.loads((ROOT/'site/data.json').read_text());assert len({i['id'] for i in d['items']})==len(d['items'])
  for i in d['items']:
   for s in i['sources']:assert s['url'].startswith('https://')
